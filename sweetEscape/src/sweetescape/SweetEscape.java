@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package sweetescape;
+import byui.cit260.sweetEscape.model.Player;
+
 
 /**
  *
@@ -15,7 +17,17 @@ public class SweetEscape {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+       Player playerOne = new Player();
+       
+       playerOne.setName("Stephen McMansley");
+       playerOne.setBestTime(7.00);
+       
+       String playerOneName = playerOne.getName();
+       double playerOneTime = playerOne.getBestTime();
+       
+       System.out.println("Name = " + playerOneName +
+                           ", time = " + playerOneTime);
+       
     }
     
 }
