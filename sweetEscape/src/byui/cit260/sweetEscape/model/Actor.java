@@ -5,10 +5,54 @@
  */
 package byui.cit260.sweetEscape.model;
 
+import java.awt.Point;
+
 /**
  *
  * @author chadh
  */
-public class Actor {
+public enum Actor {
+    
+    Jinseob("Jinseob", "He is also trapped, but he speaks Korean.", new Point(5,6));
+    
+    private String name;
+    private String description;
+    private Point coordinates;
+
+    Actor(String name, String description, Point coordinates) {
+        this.name = name;
+        this.description = description;
+        this. coordinates = coordinates;
+        
+}
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Point getCoordinates() {
+        return coordinates;
+    }
+
+    @Override
+    public String toString() {
+        return "Actor{" + "name=" + name + ", description=" + description + ", coordinates=" + coordinates + '}';
+    }
+
+    public void setCoordinates(Point coordinates) {
+        this.coordinates = coordinates;
+    }
     
 }
