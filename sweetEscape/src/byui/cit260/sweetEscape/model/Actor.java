@@ -6,12 +6,13 @@
 package byui.cit260.sweetEscape.model;
 
 import java.awt.Point;
+import java.io.Serializable;
 
 /**
  *
  * @author chadh
  */
-public enum Actor {
+public enum Actor implements Serializable {
     
     Jinseob("Jinseob", "He is also trapped, but he speaks Korean.", new Point(5,6));
     
