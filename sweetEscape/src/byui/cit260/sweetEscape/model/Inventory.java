@@ -4,15 +4,20 @@
  * and open the template in the editor.
  */
 package byui.cit260.sweetEscape.model;
-import java.io.Serializable;
+import java.awt.Point;
 
 /**
  *
  * @author chadh
  */
-public class Inventory implements Serializable {
+public enum Inventory {
     
-    private int inspectItem;
+    2-Liter Bottle("2-Liter Bottle", "An old soda bottle.", new Point(1,0));
+    Drift Pin ("Drift Pin", "Drift Pin", new point (2,0));
+    
+    
+    
+    private String inspectItem;
     private int itemName;
     private double itemDescription;
 
