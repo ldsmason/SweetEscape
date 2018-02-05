@@ -4,55 +4,61 @@
  * and open the template in the editor.
  */
 package byui.cit260.sweetEscape.model;
+import java.io.Serializable;
 import java.awt.Point;
+        
 
 /**
  *
  * @author chadh
  */
-public enum Inventory {
+public enum Inventory implements Serializable {
     
-    2-Liter Bottle("2-Liter Bottle", "An old soda bottle.", new Point(1,0));
-    Drift Pin ("Drift Pin", "Drift Pin", new point (2,0));
+    Hammer ("Hammer", "Hammer", new Point(1,0)),
+    DriftPin ("Drift Pin", "Drift Pin", new Point(2,0)),
+    LockPick ("Lock Pick", "Lock Pick", new Point(3,0)),
+    TwoLiterBottle ("Two-Liter Bottle","Two-Liter Bottle", new Point(4,0)),
+    Sand ("Sand","Sand", new Point(5,0));
     
+    private String itemName;
+    private String itemDescription;
+    private Point coordinates;
     
-    
-    private String inspectItem;
-    private int itemName;
-    private double itemDescription;
-
-    public Inventory(int inspectItem, int itemName, double itemDescription) {
-        this.inspectItem = inspectItem;
+    Inventory (String itemName, String itemDescription, Point coordinates){
         this.itemName = itemName;
         this.itemDescription = itemDescription;
-    }
-    
-
-    public int getInspectItem() {
-        return inspectItem;
+        this.coordinates = coordinates;
     }
 
-    public void setInspectItem(int inspectItem) {
-        this.inspectItem = inspectItem;
-    }
-
-    public int getItemName() {
+    public String getItemName() {
         return itemName;
     }
 
-    public void setItemName(int itemName) {
+    public void setItemName(String itemName) {
         this.itemName = itemName;
     }
 
-    public double getItemDescription() {
+    public String getItemDescription() {
         return itemDescription;
     }
 
-    public void setItemDescription(double itemDescription) {
+    public void setItemDescription(String itemDescription) {
         this.itemDescription = itemDescription;
+    }
+
+    public Point getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(Point coordinates) {
+        this.coordinates = coordinates;
+    }
+
+    @Override
+    public String toString() {
+        return "Inventory{" + "itemName=" + itemName + ", itemDescription=" + itemDescription + ", coordinates=" + coordinates + '}';
     }
     
     
-    
 
-}
+    }
