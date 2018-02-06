@@ -31,7 +31,7 @@ public class SweetEscape {
        double playerOneTime = playerOne.getBestTime();
        
        System.out.println("Name = " + playerOneName +
-                           ", time = " + playerOneTime);
+                          ", time = " + playerOneTime);
        
        doorOne.setDoorNumber(1);
        double doorOneDoorNumber = doorOne.getDoorNumber();
