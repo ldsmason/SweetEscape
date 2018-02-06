@@ -12,28 +12,26 @@ import java.io.Serializable;
  */
 public class Doors implements Serializable {
     
-    private String openDoor;
-    private String unableToOpen;
+    private double openDoor;
+    private double unableToOpen;
     private int doorNumber;
 
     public Doors() {
     }
-    
-    
-    
-    public String getOpenDoor() {
+
+    public double getOpenDoor() {
         return openDoor;
     }
 
-    public void setOpenDoor(String openDoor) {
+    public void setOpenDoor(double openDoor) {
         this.openDoor = openDoor;
     }
 
-    public String getUnableToOpen() {
+    public double getUnableToOpen() {
         return unableToOpen;
     }
 
-    public void setUnableToOpen(String unableToOpen) {
+    public void setUnableToOpen(double unableToOpen) {
         this.unableToOpen = unableToOpen;
     }
 
