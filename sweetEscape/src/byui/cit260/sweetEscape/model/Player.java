@@ -20,8 +20,6 @@ public class Player implements Serializable {
         private double bestTime;
         private ArrayList<Game> games = new ArrayList<Game>();
 
-    
-
 
 
     public Player() {
