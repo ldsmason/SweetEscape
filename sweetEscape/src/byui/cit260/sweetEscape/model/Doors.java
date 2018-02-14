@@ -42,7 +42,44 @@ public class Doors implements Serializable {
     public void setDoorNumber(int doorNumber) {
         this.doorNumber = doorNumber;
     }
-    
-    
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 79 * hash + (int) (Double.doubleToLongBits(this.openDoor) ^ (Double.doubleToLongBits(this.openDoor) >>> 32));
+        hash = 79 * hash + (int) (Double.doubleToLongBits(this.unableToOpen) ^ (Double.doubleToLongBits(this.unableToOpen) >>> 32));
+        hash = 79 * hash + this.doorNumber;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Doors other = (Doors) obj;
+        if (Double.doubleToLongBits(this.openDoor) != Double.doubleToLongBits(other.openDoor)) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.unableToOpen) != Double.doubleToLongBits(other.unableToOpen)) {
+            return false;
+        }
+        if (this.doorNumber != other.doorNumber) {
+            return false;
+        }
+        return true;
+       
+    }
+
+    @Override
+    public String toString() {
+        return "Doors{" + "openDoor=" + openDoor + ", unableToOpen=" + unableToOpen + ", doorNumber=" + doorNumber + '}';
+    }
     
 }
