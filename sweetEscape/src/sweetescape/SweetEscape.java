@@ -19,6 +19,7 @@ public class SweetEscape {
     public static void main(String[] args) {
        Player playerOne = new Player();
        
+       
        playerOne.setName("Stephen McMansley");
        playerOne.setBestTime(7.00);
        
