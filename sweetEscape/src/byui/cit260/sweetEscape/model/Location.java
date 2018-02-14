@@ -54,6 +54,43 @@ public class Location implements Serializable {
     public void setAmountRemaining(ArrayList<Game> amountRemaining) {
         this.amountRemaining = amountRemaining;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 83 * hash + Objects.hashCode(this.row);
+        hash = 83 * hash + Objects.hashCode(this.column);
+        hash = 83 * hash + Objects.hashCode(this.alreadyVisited);
+        hash = 83 * hash + Objects.hashCode(this.amountRemaining);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Location other = (Location) obj;
+        if (!Objects.equals(this.row, other.row)) {
+            return false;
+        }
+        if (!Objects.equals(this.column, other.column)) {
+            return false;
+        }
+        if (!Objects.equals(this.alreadyVisited, other.alreadyVisited)) {
+            return false;
+        }
+        if (!Objects.equals(this.amountRemaining, other.amountRemaining)) {
+            return false;
+        }
+        return true;
+    }
     
     
     
