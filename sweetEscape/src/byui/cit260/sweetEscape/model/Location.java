@@ -91,6 +91,11 @@ public class Location implements Serializable {
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Location{" + "row=" + row + ", column=" + column + ", alreadyVisited=" + alreadyVisited + ", amountRemaining=" + amountRemaining + '}';
+    }
     
     
     

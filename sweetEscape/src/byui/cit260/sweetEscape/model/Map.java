@@ -6,6 +6,7 @@
 package byui.cit260.sweetEscape.model;
 import java.awt.Point;
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  *
@@ -57,6 +58,52 @@ public class Map implements Serializable {
 
     public void setAmountRemaining(double amountRemaining) {
         this.amountRemaining = amountRemaining;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 61 * hash + Objects.hashCode(this.point);
+        hash = 61 * hash + Objects.hashCode(this.row);
+        hash = 61 * hash + Objects.hashCode(this.column);
+        hash = 61 * hash + (int) (Double.doubleToLongBits(this.visited) ^ (Double.doubleToLongBits(this.visited) >>> 32));
+        hash = 61 * hash + (int) (Double.doubleToLongBits(this.amountRemaining) ^ (Double.doubleToLongBits(this.amountRemaining) >>> 32));
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Map other = (Map) obj;
+        if (Double.doubleToLongBits(this.visited) != Double.doubleToLongBits(other.visited)) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.amountRemaining) != Double.doubleToLongBits(other.amountRemaining)) {
+            return false;
+        }
+        if (!Objects.equals(this.row, other.row)) {
+            return false;
+        }
+        if (!Objects.equals(this.column, other.column)) {
+            return false;
+        }
+        if (!Objects.equals(this.point, other.point)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Map{" + "point=" + point + ", row=" + row + ", column=" + column + ", visited=" + visited + ", amountRemaining=" + amountRemaining + '}';
     }
 
    
