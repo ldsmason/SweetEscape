@@ -8,6 +8,13 @@ import byui.cit260.sweetEscape.model.Player;
 import byui.cit260.sweetEscape.model.Doors;
 import byui.cit260.sweetEscape.model.RegularSceneType;
 import byui.cit260.sweetEscape.model.Question;
+import byui.cit260.sweetEscape.model.Actor;
+import byui.cit260.sweetEscape.model.Inventory:
+import byui.cit260.sweetEscape.model.Map;
+import byui.cit260.sweetEscape.model.Location;
+import java.io.Serializable;
+import java.awt.Point;
+
 
 /**
  *
@@ -23,7 +30,18 @@ public class SweetEscape {
        Doors doorOne = new Doors();
        RegularSceneType theDescription = new RegularSceneType();
        Question response = new Question();
+       Actor actorOne = new Actor();
        
+       actorOne.setName("Jinseob");
+       actorOne.setDescription("He is also trapped, but he speaks Korean.");
+       actorOne.setCoordinates(new Point(5,6));
+       
+       String actorOneName = actorOne.getName();
+       String actorOneDescription = actorOne.getDescription();
+       Point actorOneCoordinates = actorOne.getCoordinates();
+       
+       System.out.println("Name = " + actorOneName + ", " + actorOneDescription
+                            + ", " + actorOneCoordinates);
        
        playerOne.setName("Stephen McMansley");
        playerOne.setBestTime(7.00);
