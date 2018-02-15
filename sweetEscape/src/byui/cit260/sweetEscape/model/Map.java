@@ -19,6 +19,30 @@ public class Map implements Serializable {
     private String column;
     private double visited;
     private double amountRemaining;
+    Location playerLoc;
+
+    public Map() {
+    }
+
+    public Map(Point point, String row, String column, double visited, double amountRemaining, Location playerLoc) {
+        this.point = point;
+        this.row = row;
+        this.column = column;
+        this.visited = visited;
+        this.amountRemaining = amountRemaining;
+        this.playerLoc = playerLoc;
+    }
+    
+    
+
+    public Location getPlayerLoc() {
+        return playerLoc;
+    }
+
+    public void setPlayerLoc(Location playerLoc) {
+        this.playerLoc = playerLoc;
+    }
+    
 
     public Point getPoint() {
         return point;
