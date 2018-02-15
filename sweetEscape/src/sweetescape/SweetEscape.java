@@ -4,16 +4,16 @@
  * and open the template in the editor.
  */
 package sweetescape;
-import byui.cit260.sweetEscape.model.Player;
-import byui.cit260.sweetEscape.model.Doors;
-import byui.cit260.sweetEscape.model.RegularSceneType;
-import byui.cit260.sweetEscape.model.Question;
+import byui.cit260.sweetEscape.model.*;
+import java.io.Serializable;
+import java.awt.Point;
+
 
 /**
  *
  * @author nathanielmason
  */
-public class SweetEscape {
+public class SweetEscape implements Serializable{
 
     /**
      * @param args the command line arguments
@@ -23,6 +23,18 @@ public class SweetEscape {
        Doors doorOne = new Doors();
        RegularSceneType theDescription = new RegularSceneType();
        Question response = new Question();
+       Actor.Jinseob.getName();
+       Inventory.Hammer.getItemName();
+       Map map = new Map();
+       
+       Inventory.Hammer.setItemName("derp");
+       System.out.println(Inventory.Hammer.getItemName());
+      
+       map.setPoint(new Point (1,0));
+       System.out.println(map.getPlayerLoc().getColumn());
+       System.out.println(map.getPlayerLoc().getRow());
+       Actor.Jinseob.setName("Korean");
+       System.out.println(Actor.Jinseob.getName());
        
        
        playerOne.setName("Stephen McMansley");
