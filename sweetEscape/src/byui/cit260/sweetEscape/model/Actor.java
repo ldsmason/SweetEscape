@@ -20,6 +20,11 @@ public enum Actor implements Serializable {
     private String description;
     private Point coordinates;
 
+    private Actor() {
+    }
+    
+  
+    
     Actor(String name, String description, Point coordinates) {
         this.name = name;
         this.description = description;

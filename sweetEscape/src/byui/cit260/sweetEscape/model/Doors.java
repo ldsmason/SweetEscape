@@ -15,6 +15,8 @@ public class Doors implements Serializable {
     private double openDoor;
     private double unableToOpen;
     private int doorNumber;
+    double price = 40;
+   
 
     public Doors() {
     }
