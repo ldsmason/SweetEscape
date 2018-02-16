@@ -4,12 +4,43 @@
  * and open the template in the editor.
  */
 package byui.cit260.sweetEscape.control;
+import java.io.Serializable;
 
 /**
  *
  * @author nathanielmason
  */
-public class inventoryControl {
+public class inventoryControl implements Serializable{
+    
+public static double kickDoor(double mass, double accel, double accel2){
+    
+    if (accel < 450 || accel > 650){
+        return -1;
+    }
+    
+    double force = mass * accel;
+    
+    if (accel > 450 && accel < 650){
+       
+        double force2 = mass*accel2;
+        
+        if (accel2 <= 2000 || accel2 > 5000){
+            
+            return -2;
+        
+        }
+        
+        return force2;
+        
+    }
+   
+    double force2 = mass * accel2;
+    
+    if (accel2 > 2000 && accel2 <= 5000){
+    
+    }
+  return force2;
+}
     
 public static double calcLiters(double lbs, double guess){
     if (lbs < 1 || lbs > 50) {
