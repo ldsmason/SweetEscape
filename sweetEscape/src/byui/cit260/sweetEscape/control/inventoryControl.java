@@ -22,22 +22,15 @@ public static double kickDoor(double mass, double accel, double accel2){
     
     if (accel > 450 && accel < 650){
        
-        double force2 = mass*accel2;
-        
-        if (accel2 <= 2000 || accel2 > 5000){
-            
-            return -2;
+        return force;
         
         }
-        
-        return force2;
-        
-    }
    
     double force2 = mass * accel2;
     
-    if (accel2 > 2000 && accel2 <= 5000){
-    
+    if (accel2 < 2000 || accel2 >= 5000){
+        
+        return 0;
     }
   return force2;
 }
