@@ -90,7 +90,7 @@ public class inventoryControlTest {
         double mass = 40.0;
         double accel = 550.0;
         double accel2 = 2500.0;
-        double expResult = 22000.0;
+        double expResult = 100000.0;
         double result = inventoryControl.kickDoor(mass, accel, accel2);
         assertEquals(expResult, result, 0.0);
        
@@ -133,18 +133,18 @@ public class inventoryControlTest {
         //Test Case 6
         System.out.println("\tTest Case 6");
         mass = 40.0;
-        accel = 450.0;
+        accel = 550.0;
         accel2 = 2500.0;
-        expResult = 22000.0;
+        expResult = 100000.0;
         result = inventoryControl.kickDoor(mass, accel, accel2);
         assertEquals(expResult, result, 0.0);
        
         //Test Case 7
         System.out.println("\tTest Case 7");
         mass = 40.0;
-        accel = 650.0;
+        accel = 550.0;
         accel2 = 2500.0;
-        expResult = 22000.0;
+        expResult = 100000.0;
         result = inventoryControl.kickDoor(mass, accel, accel2);
         assertEquals(expResult, result, 0.0);
         
@@ -152,7 +152,7 @@ public class inventoryControlTest {
         System.out.println("\tTest Case 8");
         mass = 40.0;
         accel = 550.0;
-        accel2 = 2500.0;
+        accel2 = 2000.0;
         expResult = 80000.0;
         result = inventoryControl.kickDoor(mass, accel, accel2);
         assertEquals(expResult, result, 0.0);
