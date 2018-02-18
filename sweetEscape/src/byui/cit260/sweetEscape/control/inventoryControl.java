@@ -15,23 +15,23 @@ public class inventoryControl implements Serializable{
 public static double kickDoor(double mass, double accel, double accel2){
     
     if (accel < 450 || accel > 650){
+       
         return -1;
+    
     }
     
-    double force = mass * accel;
+    double force2 = mass * accel2;
     
     if (accel > 450 && accel < 650){
        
-        return force;
-        
-        }
-   
-    double force2 = mass * accel2;
-    
-    if (accel2 < 2000 || accel2 >= 5000){
+        if (accel2 < 2000 || accel2 >= 5000){
         
         return 0;
-    }
+        
+        }
+        
+      }
+     
   return force2;
 }
     
