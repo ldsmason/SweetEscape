@@ -5,6 +5,7 @@
  */
 package sweetescape;
 import byui.cit260.sweetEscape.model.*;
+import byui.cit260.sweetEscape.view.*;
 import java.io.Serializable;
 import java.awt.Point;
 
@@ -60,6 +61,9 @@ public class SweetEscape implements Serializable{
        String theAnswer = response.getAnswer();
        
        System.out.println("The answer is " + theAnswer);
+       
+       StartProgramView startProgramView = new StartProgramView();
+       startProgramView.display();
        
        
     }
