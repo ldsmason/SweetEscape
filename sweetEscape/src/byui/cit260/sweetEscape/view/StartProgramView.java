@@ -5,7 +5,8 @@
  */
 package byui.cit260.sweetEscape.view;
 import java.io.Serializable;
-import java.util.ArrayList;
+//import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -37,10 +38,33 @@ public class StartProgramView implements Serializable{
     }
 
     private String[] getInputs() {
-       System.out.println("**** getInputs() called ***");
-       
        String[] inputs = new String[1];
-       inputs[0] = "testInput";
+       
+        //Display the welcome banner
+       
+       boolean valid = false;
+       
+       while (valid == false){
+           //Display the prompt message
+           System.out.println("Enter player's name");
+           
+           Scanner nameInput;
+           nameInput = new Scanner(System.in);
+           
+           String name = nameInput.nextLine();
+           
+           String nameWithTrim = name.trim();
+           
+           if (inputs.length < 2){
+               System.out.println("You must enter a value");
+           }
+           
+           else {
+           inputs[0] = nameWithTrim;
+           valid = true;
+           }
+       }
+       
        
        return inputs;
     }
