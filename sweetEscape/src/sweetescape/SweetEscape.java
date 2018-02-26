@@ -32,8 +32,8 @@ public class SweetEscape implements Serializable{
        System.out.println(Inventory.Hammer.getItemName());
       
        map.setPoint(new Point (1,0));
-       System.out.println(map.getPlayerLoc().getColumn());
-       System.out.println(map.getPlayerLoc().getRow());
+       //System.out.println(map.getPlayerLoc().getColumn());
+       //System.out.println(map.getPlayerLoc().getRow());
        Actor.Jinseob.setName("Korean");
        System.out.println(Actor.Jinseob.getName());
        
@@ -62,8 +62,8 @@ public class SweetEscape implements Serializable{
        
        System.out.println("The answer is " + theAnswer);
        
-       StartProgramView startProgramView = new StartProgramView();
-       startProgramView.display();
+      StartProgramView startProgramView = new StartProgramView();
+      startProgramView.displayPublicStartView();
        
        
     }
