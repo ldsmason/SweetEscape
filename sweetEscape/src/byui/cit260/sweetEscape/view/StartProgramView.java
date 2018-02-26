@@ -16,17 +16,20 @@ public class StartProgramView implements Serializable{
     public StartProgramView() {
         
     }
-    private ArrayList<StartProgramView> inputs = new ArrayList<StartProgramView>();
+    
+    //private ArrayList<StartProgramView> inputs = new ArrayList<StartProgramView>();
+    
     public void displayPublicStartView(){
         boolean endView = false;
         do {
                 String[] inputs = this.getInputs();
+                String value = inputs[0].toUpperCase();
                 
                 if (inputs.length < 1 || inputs.equals('Q')){
                    return; 
                 }
                 endView = doAction(inputs);
-                doAction(inputs);
+                
           
                 }
         while (endView != true);
