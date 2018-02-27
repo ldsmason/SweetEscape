@@ -55,13 +55,13 @@ public class StartProgramView implements Serializable{
            
            String nameWithTrim = name.trim();
            
-           if (inputs.length < 2){
+           if (inputs.length < 1){
                System.out.println("You must enter a value");
            }
            
            else {
-           inputs[0] = nameWithTrim;
-           valid = true;
+                inputs[0] = nameWithTrim;
+                valid = true;
            }
        }
        
@@ -70,8 +70,7 @@ public class StartProgramView implements Serializable{
     }
 
     private boolean doAction(String[] inputs) {
-       System.out.println("**** doAction() called ***");
-       System.out.println("\tinputs = " + inputs[0]);
+       
        
        return true;
     }
