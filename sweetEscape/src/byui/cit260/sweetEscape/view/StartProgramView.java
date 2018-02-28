@@ -81,7 +81,7 @@ public class StartProgramView implements Serializable{
 
     private boolean doAction(String[] inputs) {
        String playersName = inputs[0];
-       Player player = gameControl.savePlayer(playersName);
+       Player player = GameControl.savePlayer(playersName);
        
        if (player == null) {
         System.out.println("Could not create the player." + 

@@ -10,6 +10,10 @@ package byui.cit260.sweetEscape.view;
  * @author nathanielmason
  */
 class GameMenuView {
+
+    public GameMenuView() {
+    }
+    
     public void displayGameMenuView() {
         boolean endView = false;
         do {

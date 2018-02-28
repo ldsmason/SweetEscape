@@ -12,7 +12,7 @@ import sweetescape.SweetEscape;
  *
  * @author nathanielmason
  */
-public class gameControl implements Serializable {
+public class GameControl implements Serializable {
     
     public static Player savePlayer(String name) {
         Player player = new Player();
@@ -28,5 +28,8 @@ public class gameControl implements Serializable {
        return player;     
     }
     
+    public static void createNewGame(Player player) {
+    System.out.println("createNewGame is called");
     
+}
 }

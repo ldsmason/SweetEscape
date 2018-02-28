@@ -5,23 +5,16 @@
  */
 package byui.cit260.sweetEscape.view;
 
-import byui.cit260.sweetEscape.model.Game;
-import byui.cit260.sweetEscape.control.*;
 import java.util.Scanner;
-import sweetescape.SweetEscape;
 
 /**
  *
  * @author nathanielmason
  */
-public class MainMenuView {
+class HelpMenuView {
 
-    public MainMenuView() {
-    }
-    
-    
-    public void displayMainMenuView() {
-        boolean endView = false;
+    void displayHelpMenuView() {
+         boolean endView = false;
         do {
                 String[] inputs = this.getInputs();
                 String value = inputs[0].toUpperCase();
@@ -34,18 +27,18 @@ public class MainMenuView {
           
                 }
         while (endView != true);
-        
     }
 
     private String[] getInputs() {
-       String[] inputs = new String[1];
+      String[] inputs = new String[1];
        
        boolean valid = false;
        while (valid == false) {
-           System.out.println("N - Start new game \n" +
-                              "R - Restart saved game\n" +
-                              "H - Get help on how to play the game\n" +
-                              "E - Exit  ");
+           System.out.println("G - What is the goal of the game?\n" +
+                              "M - How to move\n" +
+                              "D -  Doors open \n" +
+                              "T - Tools\n" +
+                              "Q - Quit ");
            
            Scanner nameInput;
            nameInput = new Scanner(System.in);
@@ -65,46 +58,43 @@ public class MainMenuView {
            }
        }
       return inputs;
+
     }
 
     private boolean doAction(String[] inputs) {
-       String menuItem = inputs[0];
+      String menuItem = inputs[0];
        menuItem = inputs[0].toUpperCase();
        
        switch (menuItem) {
-           case "N" : startNewGame();
+           case "G" : goalOfGame();
            break;
-           case "R" : restartGame();
+           case "M" : howToMove();
            break;
-           case "H" : getHelp();
+           case "D" : doorsOpen();
            break;
-           case "E" : return true;
+           case "T" : tools();
+           case "Q" : return true;
            default : System.out.println("Invalid menu item"); 
            
 
     }
        return false;
-  }
-
-    private void startNewGame() {
-      Game game = new Game();
-      
-      GameControl.createNewGame(SweetEscape.getPlayer());
-
-      GameMenuView gameMenuView = new GameMenuView();
-      gameMenuView.displayGameMenuView();
-       
-       
     }
 
-    private void restartGame() {
-         StartExistingGameView  startExistingGameView = new StartExistingGameView();
-         startExistingGameView.displayStartExistingGameView();
+    private void goalOfGame() {
+       System.out.println("*** goalOfGame called ***");
     }
 
-    private void getHelp() {
-         HelpMenuView helpMenuView = new HelpMenuView();
-         helpMenuView.displayHelpMenuView();
+    private void howToMove() {
+       System.out.println("*** howToMove called ***");
     }
+
+    private void doorsOpen() {
+        System.out.println("*** doorsOpen called ***");
+    }
+
+    private void tools() {
+        System.out.println("*** tools called ***");
+    }
+    
 }
-
