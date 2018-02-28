@@ -82,19 +82,37 @@ class HelpMenuView {
     }
 
     private void goalOfGame() {
-       System.out.println("*** goalOfGame called ***");
+       System.out.println(
+               "\nYou have been kidnapped and taken to an abandoned warehouse in "
+             + "\nthe middle of North Korea.  You wake up in a dark room, dazed,"
+             + "\nconfused, and unaware of how you got there.  The objective "
+             + "\nis to search the area and find a way to make a SWEET ESCAPE.  "
+             + "\nThe user will need to locate objects and another victim in "
+             + "\norder to escape.");
     }
 
     private void howToMove() {
-       System.out.println("*** howToMove called ***");
+       System.out.println(
+               "Using the grid found on the map screen, enter coordinates to go "
+               + "\nto your desired location.  There are some coordinates that "
+               + "\nwill you will be unable to go to until those locations have "
+               + "\nbeen unlocked.");
     }
 
     private void doorsOpen() {
-        System.out.println("*** doorsOpen called ***");
+        System.out.println(
+                "In order to make your SWEET ESCAPE, there are three keys "
+              + "\ntrapped behind locked doors that are going to need to opened "
+              + "\nvia a variety of puzzles and challengs.  You will be able to "
+              + "\nopen the doors by accessing items in your inventory.");
     }
 
     private void tools() {
-        System.out.println("*** tools called ***");
+        System.out.println(
+                "As you make your daring SWEET ESCAPE, you will need several "
+              + "\ntools and other objects to be used to unlock doors and obtain "
+              + "\nother items.  You can access and view these tools in your "
+              + "\ninventory.");
     }
     
 }
