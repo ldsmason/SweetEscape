@@ -19,8 +19,12 @@ public class SweetEscape implements Serializable{
     /**
      * @param args the command line arguments
      */
+    
+    private static Game currentGame = null;
+    private static Player player = null;
+    
     public static void main(String[] args) {
-       Player playerOne = new Player();
+       /*Player playerOne = new Player();
        Doors doorOne = new Doors();
        RegularSceneType theDescription = new RegularSceneType();
        Question response = new Question();
@@ -32,8 +36,11 @@ public class SweetEscape implements Serializable{
        System.out.println(Inventory.Hammer.getItemName());
       
        map.setPoint(new Point (1,0));
-       //System.out.println(map.getPlayerLoc().getColumn());
-       //System.out.println(map.getPlayerLoc().getRow());
+       map.setPlayerLoc(new Location());
+       map.getPlayerLoc().setColumn("5");
+       map.getPlayerLoc().setRow("1");
+       System.out.println(map.getPlayerLoc().getColumn());
+       System.out.println(map.getPlayerLoc().getRow());
        Actor.Jinseob.setName("Korean");
        System.out.println(Actor.Jinseob.getName());
        
@@ -60,12 +67,29 @@ public class SweetEscape implements Serializable{
        response.setAnswer("yes");
        String theAnswer = response.getAnswer();
        
-       System.out.println("The answer is " + theAnswer);
+       System.out.println("The answer is " + theAnswer);*/
        
       StartProgramView startProgramView = new StartProgramView();
       startProgramView.displayPublicStartView();
        
+      
        
+    }
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        SweetEscape.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        SweetEscape.player = player;
     }
     
 }
