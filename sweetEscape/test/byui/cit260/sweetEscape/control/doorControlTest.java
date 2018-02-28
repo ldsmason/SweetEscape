@@ -28,7 +28,7 @@ public class doorControlTest {
     }
 
     /**
-     * Test of calcKeypad method, of class doorControl.
+     * Test of calcKeypad method, of class DoorControl.
      */
     @Test
     public void testCalcKeypad() {
@@ -39,7 +39,7 @@ public class doorControlTest {
         double num = 1.0;
         double answer = 32.5;
         long expResult = 1056;
-        long result = doorControl.calcKeypad(num, answer);
+        long result = DoorControl.calcKeypad(num, answer);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         
@@ -48,7 +48,7 @@ public class doorControlTest {
         num = -1.0;
         answer = 31.5;
         expResult = -1;
-        result = doorControl.calcKeypad(num, answer);
+        result = DoorControl.calcKeypad(num, answer);
         assertEquals(expResult, result);
         
         // Test Case  3
@@ -56,7 +56,7 @@ public class doorControlTest {
         num = 136.0;
         answer = 100.0;
         expResult = -2;
-        result = doorControl.calcKeypad(num, answer);
+        result = DoorControl.calcKeypad(num, answer);
         assertEquals(expResult, result);
         
         // Boundary Test 1
@@ -64,7 +64,7 @@ public class doorControlTest {
         num = 0.0;
         answer = 32.0;
         expResult = 1024;
-        result = doorControl.calcKeypad(num, answer);
+        result = DoorControl.calcKeypad(num, answer);
         assertEquals(expResult, result);
         
         // Boundary Test 2
@@ -72,7 +72,7 @@ public class doorControlTest {
         num = 135.0;
         answer = 99.5;
         expResult = 9900;
-        result = doorControl.calcKeypad(num, answer);
+        result = DoorControl.calcKeypad(num, answer);
         assertEquals(expResult, result);
 
     }

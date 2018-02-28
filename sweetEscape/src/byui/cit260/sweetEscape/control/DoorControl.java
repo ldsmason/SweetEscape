@@ -10,7 +10,7 @@ package byui.cit260.sweetEscape.control;
  *
  * @author nathanielmason
  */
-public class doorControl {
+public class DoorControl {
     
    public static long calcKeypad (double num, double answer) {
      
