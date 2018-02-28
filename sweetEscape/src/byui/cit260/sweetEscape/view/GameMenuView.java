@@ -41,6 +41,7 @@ class GameMenuView {
            System.out.println("M - View Map\n" +
                               "I - View Inventory\n" +
                               "T - View list of tools\n" +
+                              "P - Move the player\n" +
                               "E - Exit game menus\n" +
                               "S - Save Game\n" +
                               "H - Help\n" +
@@ -77,6 +78,8 @@ class GameMenuView {
            break;
            case "T" : seeTools();
            break;
+           case "P" : movePlayer();
+           break;
            case "Q" : quitGame();
            break;
            case "S" : saveGame();
@@ -101,7 +104,10 @@ class GameMenuView {
     private void seeTools() {
         System.out.println("seeTools called");
     }
-
+    
+     private void movePlayer() {
+        System.out.println("movePlayer called");
+    }
 
     private void quitGame() {
            System.out.println("quitGame called");
@@ -115,6 +121,8 @@ class GameMenuView {
     private void getHelp() {
         System.out.println("getHekp called");
     }
+
+   
 
 
 }

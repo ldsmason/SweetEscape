@@ -64,7 +64,7 @@ public class StartProgramView implements Serializable{
            
            String nameWithTrim = name.trim();
            
-           if (inputs.length < 1){
+           if (nameWithTrim.length() < 1){
                System.out.println("You must enter a non-blank value");
                continue;
            }
