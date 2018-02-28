@@ -22,7 +22,7 @@ class GameMenuView {
                 String[] inputs = this.getInputs();
                 String value = inputs[0].toUpperCase();
                 
-                if (inputs.length < 1 || value.equals('Q')){
+                if (inputs.length < 1 || value.equals("Q")){
                    return; 
                 }
                 endView = doAction(inputs);
@@ -85,6 +85,10 @@ class GameMenuView {
            case "S" : saveGame();
            break;
            case "H" : getHelp();
+           break;
+           case "X" : explaoreLocation();
+           break;
+           case "E" : return true;
            default : System.out.println("Invalid menu item"); 
            
 
@@ -94,32 +98,36 @@ class GameMenuView {
 
     private void viewMap() {
         
-        System.out.println("viewMap called");
+        System.out.println("*** viewMap called ***");
     }
 
     private void seeInventory() {
-        System.out.println("seeInventory called");
+        System.out.println("*** seeInventory called ***");
     }
 
     private void seeTools() {
-        System.out.println("seeTools called");
+        System.out.println("*** seeTools called ***");
     }
     
      private void movePlayer() {
-        System.out.println("movePlayer called");
+        System.out.println("*** movePlayer called ***");
     }
 
     private void quitGame() {
-           System.out.println("quitGame called");
+           System.out.println("*** quitGame called ***");
     }
 
 
     private void saveGame() {
-         System.out.println("saveGame called");
+         System.out.println("*** saveGame called ***");
     }
 
     private void getHelp() {
-        System.out.println("getHekp called");
+        System.out.println("*** getHelp called ***");
+    }
+
+    private void explaoreLocation() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
    
