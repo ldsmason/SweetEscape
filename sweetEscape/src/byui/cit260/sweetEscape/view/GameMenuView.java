@@ -99,7 +99,8 @@ class GameMenuView {
     }
 
     private void seeTools() {
-        System.out.println("seeTools called");
+        ToolMenuView toolMenuView = new ToolMenuView();
+        toolMenuView.displayToolMenuView();
     }
 
 
