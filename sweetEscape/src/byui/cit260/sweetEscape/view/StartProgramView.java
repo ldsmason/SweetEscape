@@ -92,7 +92,8 @@ public class StartProgramView implements Serializable{
     
        System.out.println("================================================="
                         + "\nWelcome to the game " + playersName
-                        + "\nWe hope you have a lot of fun !"
+                        + "\nWe hope you have a lot of fun !  "
+                        + "\nBut not really."
                         + "\n=================================================");
        MainMenuView mainMenuView = new MainMenuView();
        mainMenuView.displayMainMenuView();
