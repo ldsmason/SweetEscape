@@ -5,14 +5,13 @@
  */
 package byui.cit260.sweetEscape.control;
 import byui.cit260.sweetEscape.model.*;
-import java.io.Serializable;
 import sweetescape.SweetEscape;
 
 /**
  *
  * @author nathanielmason
  */
-public class GameControl implements Serializable {
+public class GameControl  {
     
     public static Player savePlayer(String name) {
         Player player = new Player();
