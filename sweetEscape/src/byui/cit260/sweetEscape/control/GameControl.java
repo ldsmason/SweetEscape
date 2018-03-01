@@ -19,7 +19,7 @@ public class GameControl implements Serializable {
         player.setName(name);
         SweetEscape.setPlayer(player);
         
-        if (name == null) {
+        if (name == null || name.length() < 1) {
             return null;
         }
         
