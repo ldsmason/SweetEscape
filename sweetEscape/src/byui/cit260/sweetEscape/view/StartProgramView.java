@@ -71,7 +71,7 @@ public class StartProgramView implements Serializable{
            
            else {
                 inputs[0] = nameWithTrim;
-           valid = true;
+                valid = true;
            }
        }
        

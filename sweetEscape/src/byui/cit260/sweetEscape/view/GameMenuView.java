@@ -106,11 +106,8 @@ class GameMenuView {
     }
 
     private void seeTools() {
-        System.out.println("*** seeTools called ***");
-    }
-    
-     private void movePlayer() {
-        System.out.println("*** movePlayer called ***");
+        ToolMenuView toolMenuView = new ToolMenuView();
+        toolMenuView.displayToolMenuView();
     }
 
     private void quitGame() {
@@ -128,6 +125,10 @@ class GameMenuView {
 
     private void explaoreLocation() {
         System.out.println("*** exploreLocation called ***");
+    }
+
+    private void movePlayer() {
+        System.out.println("*** movePlayer called ***");
     }
 
    
