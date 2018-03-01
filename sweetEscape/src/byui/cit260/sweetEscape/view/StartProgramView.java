@@ -5,7 +5,7 @@
  */
 package byui.cit260.sweetEscape.view;
 import byui.cit260.sweetEscape.model.*;
-import byui.cit260.sweetEscape.control.*;
+import byui.cit260.sweetEscape.control.GameControl;
 import java.io.Serializable;
 //import java.util.ArrayList;
 import java.util.Scanner;

@@ -12,7 +12,7 @@ import sweetescape.SweetEscape;
  *
  * @author nathanielmason
  */
-public class GameControl implements Serializable {
+public class GameControl  {
     
     public static Player savePlayer(String name) {
         Player player = new Player();
