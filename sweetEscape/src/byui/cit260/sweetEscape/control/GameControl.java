@@ -5,7 +5,6 @@
  */
 package byui.cit260.sweetEscape.control;
 import byui.cit260.sweetEscape.model.*;
-import java.io.Serializable;
 import sweetescape.SweetEscape;
 
 /**
