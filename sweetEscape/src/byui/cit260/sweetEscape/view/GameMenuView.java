@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package byui.cit260.sweetEscape.view;
+import byui.cit260.sweetEscape.model.Doors;
+import  byui.cit260.sweetEscape.control.DoorControl;
 
 import java.util.Scanner;
 
@@ -42,6 +44,7 @@ class GameMenuView {
                               "I - View Inventory\n" +
                               "T - View list of tools\n" +
                               "P - Move the player\n" +
+                              "O - opens the door\n" +
                               "E - Exit game menus\n" +
                               "S - Save Game\n" +
                               "H - Help\n" +
@@ -80,6 +83,8 @@ class GameMenuView {
            break;
            case "P" : movePlayer();
            break;
+           case "O" : openDoor();
+           break;
            case "Q" : quitGame();
            break;
            case "S" : saveGame();
@@ -109,6 +114,19 @@ class GameMenuView {
         ToolMenuView toolMenuView = new ToolMenuView();
         toolMenuView.displayToolMenuView();
     }
+    
+     private void movePlayer() {
+        System.out.println("*** movePlayer called ***");
+    }
+    
+    private void openDoor() {
+      Doors doors = new Doors();
+        
+      OpenDoorView openDoorView = new OpenDoorView();
+      
+      openDoorView.displayOpenDoorView();
+      System.out.println("*** openDoor called ***");
+    }
 
     private void quitGame() {
            System.out.println("*** quitGame called ***");
@@ -127,9 +145,9 @@ class GameMenuView {
         System.out.println("*** exploreLocation called ***");
     }
 
-    private void movePlayer() {
-        System.out.println("*** movePlayer called ***");
-    }
+   
+
+    
 
    
 

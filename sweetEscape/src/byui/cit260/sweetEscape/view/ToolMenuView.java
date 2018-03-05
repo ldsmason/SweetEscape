@@ -37,7 +37,7 @@ class ToolMenuView {
                               "P - Drift pin\n" +
                               "L - Lock pick\n" +
                               "T - Two Liter Bottle\n" +
-                              "W - Sand\n" +
+                              "S - Sand\n" +
                               "Q - Quit ");
            
            Scanner nameInput;
