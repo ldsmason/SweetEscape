@@ -12,8 +12,9 @@ package byui.cit260.sweetEscape.control;
  */
 public class DoorControl {
     
-   public static long calcKeypad (double num, double answer) {
-     System.out.println("Please enter a number");
+   public static long calcKeypad (double num) {
+     double answer;
+     //System.out.println("Please enter a number");
      if (num < 0)
          return -1;
      
