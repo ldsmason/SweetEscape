@@ -40,13 +40,17 @@ public class OpenDoorTwoView {
         boolean valid = false;
         while (valid==false) {
             System.out.println("Please enter the number of times needed to fill"
-                    + "\n bottle with sand.");
+                             + "\n bottle with sand.");
             Scanner nameInput;
            nameInput = new Scanner(System.in);
            
            String name = nameInput.nextLine();
            
            String nameWithTrim = name.trim();
+           
+           if (inputs.length < 1) {
+               System.out.println("You must enter a value");
+               continue;
         }
         
     }
@@ -56,7 +60,10 @@ public class OpenDoorTwoView {
     }
 
     private boolean doAction(String[] inputs) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       String menuItem = inputs[0];
+       menuItem = inputs[0].toUpperCase();
+       
+       switch ()
     }
     
     

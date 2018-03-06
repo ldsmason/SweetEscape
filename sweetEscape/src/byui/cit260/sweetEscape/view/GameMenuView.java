@@ -127,6 +127,15 @@ class GameMenuView {
       openDoorView.displayOpenDoorView();
       System.out.println("*** openDoor called ***");
     }
+    
+    private void openDoorTwo() {
+      Doors doors = new Doors();
+        
+      OpenDoorView openDoorView = new OpenDoorView();
+      
+      openDoorView.displayOpenDoorView();
+      System.out.println("*** openDoorTwo called ***");
+    }
 
     private void quitGame() {
            System.out.println("*** quitGame called ***");
