@@ -56,8 +56,8 @@ class ToolMenuView {
                inputs[0] = nameWithTrim;
            valid = true;
            }
-       }
-      return inputs;
+        }
+        return inputs;
 
     }
 
@@ -80,7 +80,7 @@ class ToolMenuView {
            default : System.out.println("Invalid menu item"); 
            
 
-    }
+        }
        return false;
     }
 

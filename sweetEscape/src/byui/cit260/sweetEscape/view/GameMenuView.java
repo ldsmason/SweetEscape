@@ -6,6 +6,7 @@
 package byui.cit260.sweetEscape.view;
 import byui.cit260.sweetEscape.model.Doors;
 import  byui.cit260.sweetEscape.control.DoorControl;
+import  byui.cit260.sweetEscape.control.inventoryControl;
 
 import java.util.Scanner;
 
@@ -45,6 +46,7 @@ class GameMenuView {
                               "T - View list of tools\n" +
                               "P - Move the player\n" +
                               "O - opens the door\n" +
+                              "C - opens Door Two\n" +
                               "E - Exit game menus\n" +
                               "S - Save Game\n" +
                               "H - Help\n" +
@@ -84,6 +86,8 @@ class GameMenuView {
            case "P" : movePlayer();
            break;
            case "O" : openDoor();
+           break;
+           case "C" : openDoorTwo();
            break;
            case "Q" : quitGame();
            break;
@@ -131,9 +135,9 @@ class GameMenuView {
     private void openDoorTwo() {
       Doors doors = new Doors();
         
-      OpenDoorView openDoorView = new OpenDoorView();
+      OpenDoorTwoView openDoorTwoView = new OpenDoorTwoView();
       
-      openDoorView.displayOpenDoorView();
+      openDoorTwoView.displayOpenDoorTwoView();
       System.out.println("*** openDoorTwo called ***");
     }
 
