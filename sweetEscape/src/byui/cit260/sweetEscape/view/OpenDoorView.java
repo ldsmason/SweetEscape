@@ -6,6 +6,7 @@
 package byui.cit260.sweetEscape.view;
 
 import byui.cit260.sweetEscape.control.DoorControl;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -16,61 +17,64 @@ class OpenDoorView {
     public void displayOpenDoorView(){
         boolean endView = false;
         do {
-                String[] inputs = this.getInputs();
-                String value = inputs[0].toUpperCase();
+               boolean inputs = getInputs();
                 
-                if (inputs.length < 1 || value.equals("Q")){
-                   return; 
+                if (inputs != true) {
+                    return;
                 }
-                endView = doAction(inputs);
+                endView = doAction();
                 
                 }
         while (endView != true);
         
     }
 
-    private String[] getInputs() {
-       //Scanner keyboard = new Scanner(System.in);
-      
-       //System.out.println("Please enter the Pin");
-       //Scanner inFile;
-       //inFile = new Scanner(System.in);
-       
-       String[] inputs = new String[1];
+    private boolean getInputs() {
        boolean valid = false;
+       
+       Random rand = new Random();
+       double num = rand.nextDouble();
+     
+       //System.out.println("You see written all over the wall the number " + num);
+       
        while (valid == false) {
-           System.out.println("Please enter the Paswword\n"
-                             + "--------------\n"
+           System.out.println("--------------\n"
                              + "| 1 | 2 | 3 |\n"
                              + "| 4 | 5 | 6 |\n"
                              + "| 7 | 8 | 9 |\n"
-                             +     "| 0 |\n"
+                             + "    | 0 |    \n"
                              + "-------------");
            
-           Scanner nameInput;
-           nameInput = new Scanner(System.in);
+           System.out.println("=================================================");
+           System.out.println("Enter a code");
+           Scanner input;
+           input = new Scanner(System.in);
+           double answer = input.nextDouble();
+           System.out.println("=================================================");
            
-           String name = nameInput.nextLine();
+           double length = String.valueOf(answer).length();
            
-           String nameWithTrim = name.trim();
-           
-           if (inputs.length < 1) {
-               System.out.println("You must enter a value");
+           if (length != 4) {
+               System.out.println("try again the number was too high");
+               System.out.println("=================================================");
                continue;
            }
-           
-           else {
-               inputs[0] = nameWithTrim;
-           valid = true;
+           else  {
+               long code = DoorControl.calcKeypad(num);
+               if (code < 10000){
+                   break;
+               }
+             if (code > 10000) {
+                 System.out.println("try again");
+             }
            }
        }
-      return inputs;
+      return true;
     }
 
-    private boolean doAction(String[] inputs) {
-      //double num = 1    ;
+    private boolean doAction() {
       
-       System.out.println("Please enter a number");
+       System.out.println("the door opens");
       // DoorControl.calcKeypad();
        //System.out.print("Your number" + num);
        
