@@ -14,74 +14,83 @@ import java.util.Scanner;
  * @author nathanielmason
  */
 class OpenDoorView {
-    public void displayOpenDoorView(){
+
+    int num = 0;
+
+    public void displayOpenDoorView() {
         boolean endView = false;
         do {
-               boolean inputs = getInputs();
-                
-                if (inputs != true) {
-                    return;
-                }
-                endView = doAction();
-                
-                }
-        while (endView != true);
+            String[] inputs = getInputs();
+
+            if (inputs[0].equals("Q")) {
+                return;
+            }
+            endView = doAction(inputs);
+
+        } while (endView != true);
+
+    }
+
+    private String[] getInputs() {
+        String[] inputs = new String[1];
+
+        boolean valid = false;
+        int max = 135;
+        Random rand = new Random();
+        //double num = rand.nextDouble();
+        int num = rand.nextInt(max + 1);
+
+        System.out.println("You see written all over the wall the number " + num);
+
+        Scanner input;
+        input = new Scanner(System.in);
+        while (valid == false) {
+            System.out.println("--------------\n"
+                    + "| 1 | 2 | 3 |\n"
+                    + "| 4 | 5 | 6 |\n"
+                    + "| 7 | 8 | 9 |\n"
+                    + "    | 0 |    \n"
+                    + "-------------"
+                    + "=================================================\n"
+                    + "\nEnter a number");
+
+            String answer = input.nextLine();
+            answer = answer.trim();
+            if (answer.length() < 1) {
+                System.out.println("You must enter a value.");
+                continue;
+            }
+            inputs[0] = answer;
+            System.out.println("=================================================");
+            valid = true;
+        }
+        return inputs;
+    }
+
+    private boolean doAction(String[] inputs) {
+
+        int guess = Integer.parseInt(inputs[0]);
         
-    }
 
-    private boolean getInputs() {
-       boolean valid = false;
-       
-       Random rand = new Random();
-       double num = rand.nextDouble();
-     
-       //System.out.println("You see written all over the wall the number " + num);
-       
-       while (valid == false) {
-           System.out.println("--------------\n"
-                             + "| 1 | 2 | 3 |\n"
-                             + "| 4 | 5 | 6 |\n"
-                             + "| 7 | 8 | 9 |\n"
-                             + "    | 0 |    \n"
-                             + "-------------");
-           
-           System.out.println("=================================================");
-           System.out.println("Enter a code");
-           Scanner input;
-           input = new Scanner(System.in);
-           double answer = input.nextDouble();
-           System.out.println("=================================================");
-           
-           double length = String.valueOf(answer).length();
-           
-           if (length != 4) {
-               System.out.println("try again the number was too high");
-               System.out.println("=================================================");
-               continue;
-           }
-           else  {
-               long code = DoorControl.calcKeypad(num);
-               if (code < 10000){
-                   break;
-               }
-             if (code > 10000) {
-                 System.out.println("try again");
-             }
-           }
-       }
-      return true;
-    }
+        if (guess > 9999) {
+            System.out.println("try again the number was too high");
+            System.out.println("=================================================");
+            return false;
+        }
+        long code = DoorControl.calcKeypad(this.num);
 
-    private boolean doAction() {
-      
-       System.out.println("the door opens");
-      // DoorControl.calcKeypad();
-       //System.out.print("Your number" + num);
-       
-       return true;
-       
-       
+        if (code != this.num) {
+            System.out.println("try again" +
+            "\n=================================================");
+            return false;
+        }
 
+        System.out.println(
+                "=========================================="
+                + "\nYou just opened the door!"
+                + "\n==========================================");
+        
+        return true;
     }
-       //return false;
-  }
+}
+
