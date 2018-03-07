@@ -7,6 +7,7 @@ package byui.cit260.sweetEscape.view;
 import byui.cit260.sweetEscape.control.inventoryControl;
 import java.util.Scanner;
 import java.util.Random;
+import java.util.ArrayList;
 
 /**
  *
@@ -37,6 +38,11 @@ public class OpenDoorTwoView {
         boolean valid = false;
         while (valid == false){
             
+            /*User will be told value on wall, will need to enter 
+             *amount of times must fill 2-liter bottle in order to 
+             *open door
+             */
+            
             System.out.println("There is a number on the wall which reads " + lbs + " lbs. "
                 + "\n You also see a scale and can see that buy placing a weight that"
                 + "\n matches the number on the wall, you can open the door.  Using"
@@ -48,7 +54,7 @@ public class OpenDoorTwoView {
             Scanner inFile = new Scanner(System.in);
             double guess = inFile.nextDouble();
             if (inputs.length < 1) {
-                System.out.println("You must enter a value");      
+                System.out.println("You must enter a value");
             }
             else {
                 inputs[0] = Double.toString(guess);
@@ -61,17 +67,21 @@ public class OpenDoorTwoView {
     }
 
     private boolean doAction(String[] inputs) {
+       int guess = Integer.parseInt(inputs[0]);
+       long code = inventoryControl.calcLiters(this.num);
+               if (guess >= 50 || guess <=1) {
+                   System.out.println("Try again, the number is too high!");
+               }
+               else if (guess <=1) {
+                   System.out.println("Try again, the number is too low!");
+               }
+               else {
+                   String numberAsString = Integer.toString(num);
+                   return guess;
+               }
+                
        String menuItem = inputs[0];
        menuItem = inputs[0].toUpperCase();
-           /*
-          double liters = inventoryControl.calcLiters(guess, answer);
-               if (liters >= 1 || liters <= 50) {
-                   break;
-               }
-               if (liters >= 50 || liters <=1) {
-                   System.out.println("try again");
-               }
-           } */ 
        switch (menuItem) {
            case "Enter" : calcLiters();
            break;
