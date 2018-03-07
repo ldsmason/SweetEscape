@@ -38,9 +38,10 @@ class OpenDoorView {
         int max = 135;
         Random rand = new Random();
         //double num = rand.nextDouble();
-        int num = rand.nextInt(max + 1);
+        this.num = rand.nextInt(max + 1);
 
-        System.out.println("You see written all over the wall the number " + num);
+        System.out.println("You see written all over the wall the number " + num
+                         + "\nYou also see the equation answer = num/2 + 32, code = answer*answer");
 
         Scanner input;
         input = new Scanner(System.in);
@@ -52,7 +53,7 @@ class OpenDoorView {
                     + "    | 0 |    \n"
                     + "-------------"
                     + "=================================================\n"
-                    + "\nEnter a number");
+                    + "\nEnter the four digit code");
 
             String answer = input.nextLine();
             answer = answer.trim();
@@ -73,13 +74,13 @@ class OpenDoorView {
         
 
         if (guess > 9999) {
-            System.out.println("try again the number was too high");
+            System.out.println("try again the number was too high or decimal point was included.");
             System.out.println("=================================================");
             return false;
         }
         long code = DoorControl.calcKeypad(this.num);
 
-        if (code != this.num) {
+        if (code != guess) {
             System.out.println("try again" +
             "\n=================================================");
             return false;
