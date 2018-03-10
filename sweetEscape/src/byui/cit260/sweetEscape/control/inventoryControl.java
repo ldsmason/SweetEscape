@@ -44,12 +44,9 @@ public static double calcLiters(double lbs, double guess){
     
     double fillBottle = liters/2;
     
-    
+    double corGuess = fillBottle;
     
     guess = fillBottle;
-    
- 
-    double corGuess = fillBottle;
     
     if (guess != corGuess){
         return -2;
