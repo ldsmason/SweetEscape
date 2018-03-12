@@ -14,13 +14,17 @@ import java.util.ArrayList;
  * @author chadh
  */
 public class OpenDoorTwoView { 
+    
+    int num = 0;
+    Random rand = new Random();
+    int lbs = (int) (rand.nextDouble() * 10);
+    
     public void displayOpenDoorTwoView(){
         boolean endView = false;
         do {
-                String[] inputs = this.getInputs();
-                String value = inputs[0].toUpperCase();
-                
-                if (inputs.length < 1 || value.equals("Q")){
+                String[] inputs = getInputs();
+       
+                if (inputs[0].equals("Q")){
                    return; 
                 }
                 endView = doAction(inputs);
@@ -30,11 +34,8 @@ public class OpenDoorTwoView {
     }
         
         
-        
     private String[] getInputs() {
         String[] inputs = new String[1];
-        Random rand = new Random();
-        int lbs = (int) (rand.nextDouble() * 10);
         boolean valid = false;
         while (valid == false){
             
@@ -49,46 +50,47 @@ public class OpenDoorTwoView {
                 + "\n the 2-liter bottle and the sand in your inventory,  determine"
                 + "\n the number of times needed to fill the bottle in order to open"
                 + "\n the door.  The ratio is 2.2 L/lb. \n\n Please enter the number of times needed to fill"
-                + "\n bottle with sand. ");
+                + "\n bottle with sand. "
+                    + "\n\n Remember that there are two liters in the bottle and \n"
+                    + "take this into account when finding the answer.");
        
             Scanner inFile = new Scanner(System.in);
-            double guess = inFile.nextDouble();
+            String guess = inFile.nextLine();
+            guess = guess.trim();
             if (inputs.length < 1) {
                 System.out.println("You must enter a value");
+                continue;
             }
-            else {
-                inputs[0] = Double.toString(guess);
-                inputs[1] = Double.toString(lbs);
+                inputs[0] = guess;
                 valid = true;
-            }           
+                
+         
         }
         
         return inputs;
     }
 
     private boolean doAction(String[] inputs) {
-       int guess = Integer.parseInt(inputs[0]);
-       long code = inventoryControl.calcLiters(this.num);
-               if (guess >= 50 || guess <=1) {
-                   System.out.println("Try again, the number is too high!");
+        
+        boolean valid = false;
+        int guess = Integer.parseInt(inputs[0]);
+        
+        double code = inventoryControl.calcLiters(lbs, guess);
+               if (code == -1) {
+                   System.out.println("Try again, lbs is invalid!");
                }
-               else if (guess <=1) {
-                   System.out.println("Try again, the number is too low!");
+               
+               else if (code == -2) {
+                   System.out.println("Try again, your guess is incorrect!");
                }
                else {
-                   String numberAsString = Integer.toString(num);
-                   return guess;
+                   System.out.println("Way to go!  The door is now opened!");
+                   valid = true;
                }
                 
-       String menuItem = inputs[0];
-       menuItem = inputs[0].toUpperCase();
-       switch (menuItem) {
-           case "Enter" : calcLiters();
-           break;
-           case "Q" : return true;
-           default : System.out.println("Invalid menu item");
-       }
-       return false;
+       
+       
+       return valid;
     }
     
     private void calcLiters() {
