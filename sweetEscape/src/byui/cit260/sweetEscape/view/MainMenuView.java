@@ -14,60 +14,29 @@ import sweetescape.SweetEscape;
  *
  * @author nathanielmason
  */
-public class MainMenuView {
+public class MainMenuView extends View {
 
     public MainMenuView() {
     }
     
     
-    public void displayMainMenuView() {
-        boolean endView = false;
-        do {
-                String[] inputs = this.getInputs();
-                String value = inputs[0].toUpperCase();
-                
-                if (inputs.length < 1 || value.equals("Q")){
-                   return; 
-                }
-                endView = doAction(inputs);
-                
-          
-                }
-        while (endView != true);
-        
-    }
+  
 
-    private String[] getInputs() {
+    public String[] getInputs() {
        String[] inputs = new String[1];
        
-       boolean valid = false;
-       while (valid == false) {
-           System.out.println("N - Start new game \n" +
+       
+           String menuItem = this.getInput("N - Start new game \n" +
                               "R - Restart saved game\n" +
                               "H - Get help on how to play the game\n" +
                               "E - Exit  ");
            
-           Scanner nameInput;
-           nameInput = new Scanner(System.in);
+           inputs[0] = menuItem;
+           return inputs;
            
-           String name = nameInput.nextLine();
-           
-           String nameWithTrim = name.trim();
-           
-           if (inputs.length < 1) {
-               System.out.println("You must enter a non-blank value");
-               continue;
-           }
-           
-           else {
-               inputs[0] = nameWithTrim;
-           valid = true;
-           }
-       }
-      return inputs;
     }
 
-    private boolean doAction(String[] inputs) {
+    public boolean doAction(String[] inputs) {
        String menuItem = inputs[0];
        menuItem = inputs[0].toUpperCase();
        
@@ -104,7 +73,7 @@ public class MainMenuView {
 
     private void getHelp() {
          HelpMenuView helpMenuView = new HelpMenuView();
-         helpMenuView.displayHelpMenuView();
+         helpMenuView.display();
     }
 }
 
