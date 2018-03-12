@@ -11,57 +11,27 @@ import java.util.Scanner;
  *
  * @author nathanielmason
  */
-class HelpMenuView {
+class HelpMenuView extends View {
 
-    void displayHelpMenuView() {
-         boolean endView = false;
-        do {
-                String[] inputs = this.getInputs();
-                String value = inputs[0].toUpperCase();
-                
-                if (inputs.length < 1 || value.equals("Q")){
-                   return; 
-                }
-                endView = doAction(inputs);
-                
-          
-                }
-        while (endView != true);
-    }
+    
 
-    private String[] getInputs() {
+    public String[] getInputs() {
       String[] inputs = new String[1];
        
-       boolean valid = false;
-       while (valid == false) {
-           System.out.println("G - What is the goal of the game?\n" +
+      
+           String menuItem = this.getInput("G - What is the goal of the game?\n" +
                               "M - How to move\n" +
                               "D -  Doors open \n" +
                               "T - Tools\n" +
                               "Q - Quit ");
+           inputs[0] = menuItem;
            
-           Scanner nameInput;
-           nameInput = new Scanner(System.in);
-           
-           String name = nameInput.nextLine();
-           
-           String nameWithTrim = name.trim();
-           
-           if (inputs.length < 1) {
-               System.out.println("You must enter a non-blank value");
-               continue;
-           }
-           
-           else {
-               inputs[0] = nameWithTrim;
-           valid = true;
-           }
-       }
+          
       return inputs;
 
     }
 
-    private boolean doAction(String[] inputs) {
+    public boolean doAction(String[] inputs) {
       String menuItem = inputs[0];
        menuItem = inputs[0].toUpperCase();
        

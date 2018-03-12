@@ -5,8 +5,8 @@
  */
 package byui.cit260.sweetEscape.view;
 import byui.cit260.sweetEscape.model.Doors;
-import  byui.cit260.sweetEscape.control.DoorControl;
-import  byui.cit260.sweetEscape.control.inventoryControl;
+//import  byui.cit260.sweetEscape.control.DoorControl;
+//import  byui.cit260.sweetEscape.control.inventoryControl;
 
 import java.util.Scanner;
 

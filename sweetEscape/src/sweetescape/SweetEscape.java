@@ -70,8 +70,7 @@ public class SweetEscape implements Serializable{
        System.out.println("The answer is " + theAnswer);*/
        
       StartProgramView startProgramView = new StartProgramView();
-      startProgramView.displayPublicStartView();
-       
+      startProgramView.display();
       
        
     }
