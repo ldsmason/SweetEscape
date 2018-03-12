@@ -28,9 +28,9 @@ public class StartProgramView extends View{
        
         //Display the welcome banner
         System.out.println("This adventure takes place in an abandoned warehouse in the middle "
-                + "of Central America.  User wakes up in a dark room, dazed, confused, and unaware"
-                + " how they got there.  The objective is to search the area and find a way to GET OUT."
-                + "  The user will need to locate objects and other victims in order to escape.  "
+                + "of North Korea.  You wake up in a dark room, dazed, confused, and unaware"
+                + " how you got there.  The objective is to search the area and find a way to make a SWEET ESCAPE."
+                + "  You will need to locate objects and other victims in order to escape.  "
                 + "Each victim has strengths and weaknesses that will be needed to overcome specific challenges. \n" +
                   "Along the way there will be a variety of obstacles including (but not limited to) locked doors, puzzles.  "
                 + "In order to defeat your enemies and overcome the obstacles, the user will need to invite others to join their "

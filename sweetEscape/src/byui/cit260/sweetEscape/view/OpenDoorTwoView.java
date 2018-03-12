@@ -17,6 +17,10 @@ public class OpenDoorTwoView {
     
     int num = 0;
     Random rand = new Random();
+    
+        if (rand == 0) {
+            rand = new Random();
+        }
     int lbs = (int) (rand.nextDouble() * 10);
     
     public void displayOpenDoorTwoView(){
@@ -73,11 +77,11 @@ public class OpenDoorTwoView {
     private boolean doAction(String[] inputs) {
         
         boolean valid = false;
-        int guess = Integer.parseInt(inputs[0]);
+        double guess = Double.parseDouble(inputs[0]);
         
         double code = inventoryControl.calcLiters(lbs, guess);
                if (code == -1) {
-                   System.out.println("Try again, lbs is invalid!");
+                   System.out.println("Try again, your guess is incorrect!");
                }
                
                else if (code == -2) {
