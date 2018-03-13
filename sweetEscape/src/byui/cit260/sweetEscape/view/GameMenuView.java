@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.sweetEscape.view;
-import byui.cit260.sweetEscape.model.Doors;
+import byui.cit260.sweetEscape.model.Door;
 //import  byui.cit260.sweetEscape.control.DoorControl;
 //import  byui.cit260.sweetEscape.control.inventoryControl;
 
@@ -47,6 +47,7 @@ class GameMenuView {
                               "P - Move the player\n" +
                               "O - opens the door\n" +
                               "C - opens Door Two\n" +
+                              "F - open the final door\n" +
                               "E - Exit game menus\n" +
                               "S - Save Game\n" +
                               "H - Help\n" +
@@ -89,6 +90,8 @@ class GameMenuView {
            break;
            case "C" : openDoorTwo();
            break;
+           case "F" : openFinalDoor();
+           break;
            case "Q" : quitGame();
            break;
            case "S" : saveGame();
@@ -124,7 +127,7 @@ class GameMenuView {
     }
     
     private void openDoor() {
-      Doors doors = new Doors();
+      Door doors = new Door();
         
       OpenDoorView openDoorView = new OpenDoorView();
       
@@ -133,7 +136,7 @@ class GameMenuView {
     }
     
     private void openDoorTwo() {
-      Doors doors = new Doors();
+      Door doors = new Door();
         
       OpenDoorTwoView openDoorTwoView = new OpenDoorTwoView();
       
@@ -156,6 +159,13 @@ class GameMenuView {
 
     private void explaoreLocation() {
         System.out.println("*** exploreLocation called ***");
+    }
+
+    private void openFinalDoor() {
+      FinalDoorView finalDoorView = new FinalDoorView();
+      
+      finalDoorView.display();
+      System.out.println("*** openFinalDoor called ***");
     }
 
    

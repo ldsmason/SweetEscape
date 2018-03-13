@@ -6,6 +6,8 @@
 package byui.cit260.sweetEscape.view;
 
 import byui.cit260.sweetEscape.control.DoorControl;
+import byui.cit260.sweetEscape.control.GameControl;
+import byui.cit260.sweetEscape.model.Door;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -45,15 +47,10 @@ class OpenDoorView {
 
         Scanner input;
         input = new Scanner(System.in);
+        
+        Door currentDoor = GameControl.getCurrentDoor();
         while (valid == false) {
-            System.out.println("--------------\n"
-                    + "| 1 | 2 | 3 |\n"
-                    + "| 4 | 5 | 6 |\n"
-                    + "| 7 | 8 | 9 |\n"
-                    + "    | 0 |    \n"
-                    + "-------------"
-                    + "=================================================\n"
-                    + "\nEnter the four digit code");
+            System.out.println(currentDoor.getDescription());
 
             String answer = input.nextLine();
             answer = answer.trim();

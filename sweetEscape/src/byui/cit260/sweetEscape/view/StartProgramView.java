@@ -34,7 +34,7 @@ public class StartProgramView extends View{
                 + "Each victim has strengths and weaknesses that will be needed to overcome specific challenges. \n" +
                   "Along the way there will be a variety of obstacles including (but not limited to) locked doors, puzzles.  "
                 + "In order to defeat your enemies and overcome the obstacles, the user will need to invite others to join their "
-                + "party and these people will be crucial to their survival.  ");
+                + "party and these people will be crucial to their survival.\n  ");
         
         String playersName = this.getInput("Enter player's name ");
         inputs[0] = playersName;
