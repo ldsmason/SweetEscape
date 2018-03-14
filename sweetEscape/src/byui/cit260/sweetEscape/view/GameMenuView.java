@@ -14,34 +14,18 @@ import java.util.Scanner;
  *
  * @author nathanielmason   
  */
-class GameMenuView {
+class GameMenuView extends View{
 
     public GameMenuView() {
     }
     
-    public void displayGameMenuView() {
-        boolean endView = false;
-        do {
-                String[] inputs = this.getInputs();
-                String value = inputs[0].toUpperCase();
-                
-                if (inputs.length < 1 || value.equals("Q")){
-                   return; 
-                }
-                endView = doAction(inputs);
-                
-          
-                }
-        while (endView != true);
-        
-    }
 
-    private String[] getInputs() {
+
+    public String[] getInputs() {
        String[] inputs = new String[1];
        
-       boolean valid = false;
-       while (valid == false) {
-           System.out.println("M - View Map\n" +
+      
+           String menuItem = this.getInput("M - View Map\n" +
                               "I - View Inventory\n" +
                               "T - View list of tools\n" +
                               "P - Move the player\n" +
@@ -53,27 +37,15 @@ class GameMenuView {
                               "H - Help\n" +
                               "Q - Quit ");
            
-           Scanner nameInput;
-           nameInput = new Scanner(System.in);
+         
+           inputs[0] = menuItem;
+           return inputs;
            
-           String name = nameInput.nextLine();
-           
-           String nameWithTrim = name.trim();
-           
-           if (inputs.length < 1) {
-               System.out.println("You must enter a non-blank value");
-               continue;
-           }
-           
-           else {
-               inputs[0] = nameWithTrim;
-           valid = true;
-           }
-       }
-      return inputs;
+      
     }
 
-    private boolean doAction(String[] inputs) {
+    @Override
+    public boolean doAction(String[] inputs) {
        String menuItem = inputs[0];
        menuItem = inputs[0].toUpperCase();
        
@@ -119,7 +91,7 @@ class GameMenuView {
 
     private void seeTools() {
         ToolMenuView toolMenuView = new ToolMenuView();
-        toolMenuView.displayToolMenuView();
+        toolMenuView.display();
     }
     
      private void movePlayer() {
@@ -131,7 +103,7 @@ class GameMenuView {
         
       OpenDoorView openDoorView = new OpenDoorView();
       
-      openDoorView.displayOpenDoorView();
+      openDoorView.display();
       System.out.println("*** openDoor called ***");
     }
     

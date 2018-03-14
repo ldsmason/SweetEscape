@@ -11,57 +11,32 @@ import java.util.Scanner;
  *
  * @author chadh
  */
-class ToolMenuView {
-    void displayToolMenuView() {
-         boolean endView = false;
-        do {
-                String[] inputs = this.getInputs();
-                String value = inputs[0].toUpperCase();
-                
-                if (inputs.length < 1 || value.equals("Q")){
-                   return; 
-                }
-                endView = doAction(inputs);
-                
-          
-                }
-        while (endView != true);
-    }
+class ToolMenuView  extends View{
 
-    private String[] getInputs() {
+    public ToolMenuView() {
+    }
+    
+
+    @Override
+    public String[] getInputs() {
       String[] inputs = new String[1];
        
-       boolean valid = false;
-       while (valid == false) {
-           System.out.println("H - Hammer\n" +
+      
+           String menuItem = this.getInput("H - Hammer\n" +
                               "P - Drift pin\n" +
                               "L - Lock pick\n" +
                               "T - Two Liter Bottle\n" +
                               "S - Sand\n" +
                               "Q - Quit ");
            
-           Scanner nameInput;
-           nameInput = new Scanner(System.in);
-           
-           String name = nameInput.nextLine();
-           
-           String nameWithTrim = name.trim();
-           
-           if (inputs.length < 1) {
-               System.out.println("You must enter a non-blank value");
-               continue;
-           }
-           
-           else {
-               inputs[0] = nameWithTrim;
-           valid = true;
-           }
-        }
+          
+        
         return inputs;
 
     }
 
-    private boolean doAction(String[] inputs) {
+    @Override
+    public boolean doAction(String[] inputs) {
       String menuItem = inputs[0];
        menuItem = inputs[0].toUpperCase();
        

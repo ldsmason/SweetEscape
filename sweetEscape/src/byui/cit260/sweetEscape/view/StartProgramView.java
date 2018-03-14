@@ -23,6 +23,7 @@ public class StartProgramView extends View{
   
     
 
+    @Override
     public String[] getInputs() {
        String[] inputs = new String[1];
        
@@ -44,6 +45,7 @@ public class StartProgramView extends View{
        
       
 
+    @Override
     public boolean doAction(String[] inputs) {
        String playersName = inputs[0];
        Player player = GameControl.savePlayer(playersName);

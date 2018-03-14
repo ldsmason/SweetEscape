@@ -15,6 +15,7 @@ class HelpMenuView extends View {
 
     
 
+    @Override
     public String[] getInputs() {
       String[] inputs = new String[1];
        
@@ -31,6 +32,7 @@ class HelpMenuView extends View {
 
     }
 
+    @Override
     public boolean doAction(String[] inputs) {
       String menuItem = inputs[0];
        menuItem = inputs[0].toUpperCase();
