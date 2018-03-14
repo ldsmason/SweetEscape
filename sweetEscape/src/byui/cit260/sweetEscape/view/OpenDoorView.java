@@ -44,6 +44,8 @@ class OpenDoorView extends View {
         
         String value = this.getInput(currentDoor.getDescription());
         inputs[0] = value;
+        
+        
 
         return inputs;
     }
