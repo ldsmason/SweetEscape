@@ -19,6 +19,7 @@ class OpenDoorView extends View {
 
     int num = 0;
 
+    
     public OpenDoorView() {
     }
 
