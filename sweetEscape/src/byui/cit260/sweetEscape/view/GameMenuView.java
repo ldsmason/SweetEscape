@@ -136,8 +136,6 @@ class GameMenuView extends View{
     }
 
     private void openDoorThree() {
-        Doors doors = new Doors();
-        
         OpenDoorThreeView openDoorThreeView = new OpenDoorThreeView();
       
         openDoorThreeView.display();
