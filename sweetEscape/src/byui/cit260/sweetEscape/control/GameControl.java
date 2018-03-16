@@ -27,8 +27,16 @@ public class GameControl  {
        return player;     
     }
     
-    public static void createNewGame(Player player) {
-    System.out.println("createNewGame is called");
+    public static int createNewGame(Player player) {
+    //System.out.println("createNewGame is called");
+    if (player == null){
+        return -1;
+    }
+        
+    Game game = new Game();
+    game.setPlayer(player);
+    
+    return 1;
     
 }
     

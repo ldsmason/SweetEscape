@@ -17,6 +17,7 @@ public class Game implements Serializable {
     // class instance variables
     private double totalTime;
     private Player player;
+   
 
     public Game() {
     }
