@@ -22,6 +22,7 @@ public class MainMenuView extends View {
     
   
 
+    @Override
     public String[] getInputs() {
        String[] inputs = new String[1];
        
@@ -36,6 +37,7 @@ public class MainMenuView extends View {
            
     }
 
+    @Override
     public boolean doAction(String[] inputs) {
        String menuItem = inputs[0];
        menuItem = inputs[0].toUpperCase();
@@ -61,7 +63,7 @@ public class MainMenuView extends View {
       GameControl.createNewGame(SweetEscape.getPlayer());
 
       GameMenuView gameMenuView = new GameMenuView();
-      gameMenuView.displayGameMenuView();
+      gameMenuView.display();
        
        
     }

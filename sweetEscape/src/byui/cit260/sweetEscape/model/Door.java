@@ -10,15 +10,17 @@ import java.io.Serializable;
  *
  * @author nathanielmason
  */
-public class Doors implements Serializable {
+public class Door implements Serializable {
     
     private double openDoor;
     private double unableToOpen;
     private int doorNumber;
     double price = 40;
+    String description;
+    String promptmessage;
    
 
-    public Doors() {
+    public Door() {
     }
 
     public double getOpenDoor() {
@@ -45,6 +47,30 @@ public class Doors implements Serializable {
         this.doorNumber = doorNumber;
     }
 
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getPromptmessage() {
+        return promptmessage;
+    }
+
+    public void setPromptmessage(String promptmessage) {
+        this.promptmessage = promptmessage;
+    }
+
     @Override
     public int hashCode() {
         int hash = 5;
@@ -65,7 +91,7 @@ public class Doors implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Doors other = (Doors) obj;
+        final Door other = (Door) obj;
         if (Double.doubleToLongBits(this.openDoor) != Double.doubleToLongBits(other.openDoor)) {
             return false;
         }

@@ -31,4 +31,20 @@ public class GameControl  {
     System.out.println("createNewGame is called");
     
 }
+    
+   public static Door getCurrentDoor(){
+       // Dummy code for doors to be implemented later
+       Door door = new Door();
+       door.setDescription("--------------\n"
+                    + "| 1 | 2 | 3 |\n"
+                    + "| 4 | 5 | 6 |\n"
+                    + "| 7 | 8 | 9 |\n"
+                    + "    | 0 |    \n"
+                    + "-------------"
+                    + "=================================================\n"
+               + "\nEnter the four digit code");
+ 
+       
+       return door;
+   }
 }

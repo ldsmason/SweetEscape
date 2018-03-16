@@ -6,6 +6,8 @@
 package byui.cit260.sweetEscape.view;
 
 import byui.cit260.sweetEscape.control.DoorControl;
+import byui.cit260.sweetEscape.control.GameControl;
+import byui.cit260.sweetEscape.model.Door;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -13,25 +15,18 @@ import java.util.Scanner;
  *
  * @author nathanielmason
  */
-class OpenDoorView {
+class OpenDoorView extends View {
 
     int num = 0;
 
-    public void displayOpenDoorView() {
-        boolean endView = false;
-        do {
-            String[] inputs = getInputs();
-
-            if (inputs[0].equals("Q")) {
-                return;
-            }
-            endView = doAction(inputs);
-
-        } while (endView != true);
-
+    
+    public OpenDoorView() {
     }
 
-    private String[] getInputs() {
+    
+
+    @Override
+    public String[] getInputs() {
         String[] inputs = new String[1];
 
         boolean valid = false;
@@ -40,35 +35,26 @@ class OpenDoorView {
         //double num = rand.nextDouble();
         this.num = rand.nextInt(max + 1);
 
-        System.out.println("You see written all over the wall the number " + num
-                         + "\nYou also see the equation answer = num/2 + 32, code = answer*answer");
+       this.getInput("You see written all over the wall the number " + num
+                         + "\nYou also see the equation answer = num/2 + 32, code = answer*answer\n"
+                         + "If ready to proceed type anything and hit enter");
+                   
 
         Scanner input;
         input = new Scanner(System.in);
-        while (valid == false) {
-            System.out.println("--------------\n"
-                    + "| 1 | 2 | 3 |\n"
-                    + "| 4 | 5 | 6 |\n"
-                    + "| 7 | 8 | 9 |\n"
-                    + "    | 0 |    \n"
-                    + "-------------"
-                    + "=================================================\n"
-                    + "\nEnter the four digit code");
+        
+        Door currentDoor = GameControl.getCurrentDoor();
+        
+        String value = this.getInput(currentDoor.getDescription());
+        inputs[0] = value;
+        
+        
 
-            String answer = input.nextLine();
-            answer = answer.trim();
-            if (answer.length() < 1) {
-                System.out.println("You must enter a value.");
-                continue;
-            }
-            inputs[0] = answer;
-            System.out.println("=================================================");
-            valid = true;
-        }
         return inputs;
     }
 
-    private boolean doAction(String[] inputs) {
+    @Override
+    public boolean doAction(String[] inputs) {
 
         int guess = Integer.parseInt(inputs[0]);
         
