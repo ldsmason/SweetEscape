@@ -7,48 +7,29 @@ package byui.cit260.sweetEscape.view;
 import byui.cit260.sweetEscape.control.inventoryControl;
 import java.util.Scanner;
 import java.util.Random;
-import java.util.ArrayList;
 
 /**
  *
  * @author chadh
  */
-public class OpenDoorTwoView { 
+public class OpenDoorTwoView extends View { 
     
     int num = 0;
     Random rand = new Random();
     
-        if (rand == 0) {
-            rand = new Random();
-        }
+        
     int lbs = (int) (rand.nextDouble() * 10);
-    
-    public void displayOpenDoorTwoView(){
-        boolean endView = false;
-        do {
-                String[] inputs = getInputs();
-       
-                if (inputs[0].equals("Q")){
-                   return; 
-                }
-                endView = doAction(inputs);
-                
-                }
-        while (endView != true);
-    }
         
-        
-    private String[] getInputs() {
+    @Override
+    public String[] getInputs() {
         String[] inputs = new String[1];
-        boolean valid = false;
-        while (valid == false){
             
             /*User will be told value on wall, will need to enter 
              *amount of times must fill 2-liter bottle in order to 
              *open door
              */
             
-            System.out.println("There is a number on the wall which reads " + lbs + " lbs. "
+            String guess = this.getInput("There is a number on the wall which reads " + lbs + " lbs. "
                 + "\n You also see a scale and can see that buy placing a weight that"
                 + "\n matches the number on the wall, you can open the door.  Using"
                 + "\n the 2-liter bottle and the sand in your inventory,  determine"
@@ -56,25 +37,22 @@ public class OpenDoorTwoView {
                 + "\n the door.  The ratio is 2.2 L/lb. \n\n Please enter the number of times needed to fill"
                 + "\n bottle with sand. "
                     + "\n\n Remember that there are two liters in the bottle and \n"
-                    + "take this into account when finding the answer.");
+                    + "take this into account when finding the answer.  Round to \n"
+                    + "two decimals.");
        
-            Scanner inFile = new Scanner(System.in);
+            /*Scanner inFile = new Scanner(System.in);
             String guess = inFile.nextLine();
-            guess = guess.trim();
-            if (inputs.length < 1) {
-                System.out.println("You must enter a value");
-                continue;
-            }
+            guess = guess.trim();*/
+            
                 inputs[0] = guess;
-                valid = true;
                 
-         
-        }
         
-        return inputs;
+
+                return inputs;
     }
 
-    private boolean doAction(String[] inputs) {
+    @Override
+    public boolean doAction(String[] inputs) {
         
         boolean valid = false;
         double guess = Double.parseDouble(inputs[0]);
@@ -88,7 +66,7 @@ public class OpenDoorTwoView {
                    System.out.println("Try again, your guess is incorrect!");
                }
                else {
-                   System.out.println("Way to go!  The door is now opened!");
+                   System.out.println("Way to go!  The door's open!  Let's go!");
                    valid = true;
                }
                 

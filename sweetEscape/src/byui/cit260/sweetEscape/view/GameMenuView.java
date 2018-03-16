@@ -47,6 +47,7 @@ class GameMenuView {
                               "P - Move the player\n" +
                               "O - opens the door\n" +
                               "C - opens Door Two\n" +
+                              "D - opens Door Three\n" +
                               "E - Exit game menus\n" +
                               "S - Save Game\n" +
                               "H - Help\n" +
@@ -88,6 +89,8 @@ class GameMenuView {
            case "O" : openDoor();
            break;
            case "C" : openDoorTwo();
+           break;
+           case "D" : openDoorThree();
            break;
            case "Q" : quitGame();
            break;
@@ -137,7 +140,7 @@ class GameMenuView {
         
       OpenDoorTwoView openDoorTwoView = new OpenDoorTwoView();
       
-      openDoorTwoView.displayOpenDoorTwoView();
+      openDoorTwoView.display();
       System.out.println("*** openDoorTwo called ***");
     }
 
@@ -156,6 +159,14 @@ class GameMenuView {
 
     private void explaoreLocation() {
         System.out.println("*** exploreLocation called ***");
+    }
+
+    private void openDoorThree() {
+        Doors doors = new Doors();
+        
+        OpenDoorThreeView openDoorThreeView = new OpenDoorThreeView();
+      
+        openDoorThreeView.display();
     }
 
    

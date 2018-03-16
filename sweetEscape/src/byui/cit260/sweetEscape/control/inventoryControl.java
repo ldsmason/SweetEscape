@@ -12,24 +12,44 @@ import java.io.Serializable;
  */
 public class inventoryControl implements Serializable{
     
-public static double kickDoor(double mass, double accel, double accel2){
+public static double pickLock(double mass, double force, double guessAccel){
     
-    if (accel < 450 || accel > 650){
+    double accel = force / mass;
+    if (guessAccel == accel){
+       
+        return 0;
+    
+    }
+    
+    else {
+        return -1;
+    }
+  
+}
+
+public static double checkMass(double guessMass2, double mass2) {
+    
+    if (guessMass2 == mass2){
+        return 0;
+    }
+    
+    else {
+        return -1;
+    } 
+}
+
+public static double kickDoor(double mass2, double accel2, double force2){
+    
+    if (accel2 < 2000 || accel2 > 5000){
        
         return -1;
     
     }
     
-    double force2 = mass * accel2;
-    
-    if (accel > 450 && accel < 650){
+    if (accel2 > 2000 && accel2 < 5000){
        
-        if (accel2 < 2000 || accel2 >= 5000){
-        
         return 0;
-        
-        }
-        
+   
       }
      
   return force2;
@@ -42,13 +62,12 @@ public static double calcLiters(double lbs, double guess){
     
     double liters = lbs/2.2;
     
-    double fillBottle = liters/2;
+    double fillBottle = Math.round((liters/2)*100);
     
-    double corGuess = fillBottle;
+    fillBottle/= 100;
+            
     
-    guess = fillBottle;
-    
-    if (guess != corGuess){
+    if (guess != fillBottle){
         return -2;
     }
     
