@@ -38,7 +38,7 @@ public class GameControl  {
     Game game = new Game();
     game.setPlayer(player);
     SweetEscape.setCurrentGame(game);
-       ;
+       
     
     //Actor actor;
     //actor = Actor.Jinseob;

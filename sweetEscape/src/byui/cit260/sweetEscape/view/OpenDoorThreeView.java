@@ -48,27 +48,6 @@ public class OpenDoorThreeView extends View {
         //guessAccel
         inputs[0] = value;
         
-        return inputs;
-    }
-    
-    public boolean doAction(String[] inputs) {
-
-        boolean valid = false;
-        int guess = Integer.parseInt(inputs[0]);
-        
-        double code = InventoryControl.pickLock(mass, force, guessAccel);
-        if (code == 0) {
-            System.out.println("Way to go! You broke the lock!");
-        } 
-        else {
-            System.out.println("Your guess is incorrect! 너 망했어!");
-            valid = true;
-        }
-        return valid;
-    }
-        
-    public String[] getInputs2() {
-    
         String value = this.getInput(
                 "The padlock is broken, but there is still " + force2 + " \n" 
               + "newtons of force needed to open the door.  Determine how much \n"
@@ -93,13 +72,24 @@ public class OpenDoorThreeView extends View {
         
         //guessMass2
         inputs[3] = value;
-         
+        
         return inputs;
-
     }
+    
+    public boolean doAction(String[] inputs) {
 
-    public boolean doAction2(String[] inputs) {
-
+        boolean valid = false;
+        int guess = Integer.parseInt(inputs[0]);
+        
+        double code = inventoryControl.pickLock(mass, force, guessAccel);
+        if (code == 0) {
+            System.out.println("Way to go! You broke the lock!");
+        } 
+        else {
+            System.out.println("Your guess is incorrect! 너 망했어!");
+            valid = true;
+        }
+        
         boolean valid = false;
         int guess = Integer.parseInt(inputs[0]);
         
@@ -114,6 +104,9 @@ public class OpenDoorThreeView extends View {
         }
         return valid;
     }
+        
+
+        
 
     /*boolean valid = false;
         double code = InventoryControl.kickDoor(mass, accel2);
