@@ -37,31 +37,43 @@ public class MapControl {
         
         
         assignQuestionsToScenes(questions, scenes); 
-        assignItemsToScenes(/*items,*/ scenes);
+        assignItemsToScenes(scenes);
         assignScenesToLocations(scenes, locations);
         
         return map;
     }
     
     private static Location[][] createLocations(int rows, int columns) {
-       System.out.println("*** createLocations() called ***\n");
-       return null;
+       /*System.out.println("*** createLocations() called ***\n");
+       return null;*/
        
-       /*if (rows < 1 || columns < 1) {
+     
+     
+        if (rows < 1 || columns < 1) {
         return null;
     }
        Location[][] locations = new Location[rows][columns];
-       
-      for (int i = 0; i < rows.length; i++) {
-          for (int j = 0; j < columns.length; j++) {
-              
+     
+         long total = 0;
+     for (int i = 0; i < locations.length; i++) {
+          for (int j = 0; j < locations[i].length; j++) {
+              //locations[i][j];
           }
-      }*/
+
+      }
+     return locations;
     }
     
     private static Scene[] createScenes() {
         System.out.println("*** createScenes() called ***\n");
         return null;
+        
+       // Scene[] scenes = new Scene[5];
+        
+        //Scene[] scene1 = new Scene[0];
+        
+       
+      
     }
     
     private static Question[] createQuestions() {
@@ -73,7 +85,7 @@ public class MapControl {
         System.out.println("*** assignQuestionsToScenes() called ***\n");
        
     }
-    private static void assignItemsToScenes(/*InventoryItem[] items,*/ Scene[] scenes) {
+    private static void assignItemsToScenes(Scene[] scenes) {
         System.out.println("*** assignItemsToScenes() called ***\n");
     }
     private static void assignScenesToLocations(Scene[] scenes, Location[][] locations){
