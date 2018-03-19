@@ -10,7 +10,7 @@ import java.io.Serializable;
  *
  * @author nathanielmason
  */
-public class inventoryControl implements Serializable{
+public class InventoryControl implements Serializable{
     
 public static double pickLock(double mass, double force, double guessAccel){
     

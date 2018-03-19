@@ -5,7 +5,7 @@
  */
 package byui.cit260.sweetEscape.view;
 
-import byui.cit260.sweetEscape.control.inventoryControl;
+import byui.cit260.sweetEscape.control.InventoryControl;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -56,7 +56,7 @@ public class OpenDoorThreeView extends View {
         boolean valid = false;
         int guess = Integer.parseInt(inputs[0]);
         
-        double code = inventoryControl.pickLock(mass, force, guessAccel);
+        double code = InventoryControl.pickLock(mass, force, guessAccel);
         if (code == 0) {
             System.out.println("Way to go! You broke the lock!");
         } 
@@ -103,7 +103,7 @@ public class OpenDoorThreeView extends View {
         boolean valid = false;
         int guess = Integer.parseInt(inputs[0]);
         
-        double code = inventoryControl.checkMass(guessMass2, mass2);
+        double code = InventoryControl.checkMass(guessMass2, mass2);
         if (code == 0) {
             System.out.println("That is correct your mass is " + mass2 + "kg");
         } 
@@ -116,7 +116,7 @@ public class OpenDoorThreeView extends View {
     }
 
     /*boolean valid = false;
-        double code = inventoryControl.kickDoor(mass, accel2);
+        double code = InventoryControl.kickDoor(mass, accel2);
                if (code == -1) {
                    System.out.println("Try again, your guess is incorrect!");
                }

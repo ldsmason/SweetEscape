@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.sweetEscape.view;
-import byui.cit260.sweetEscape.control.inventoryControl;
+import byui.cit260.sweetEscape.control.InventoryControl;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -57,7 +57,7 @@ public class OpenDoorTwoView extends View {
         boolean valid = false;
         double guess = Double.parseDouble(inputs[0]);
         
-        double code = inventoryControl.calcLiters(lbs, guess);
+        double code = InventoryControl.calcLiters(lbs, guess);
                if (code == -1) {
                    System.out.println("Try again, your guess is incorrect!");
                }
