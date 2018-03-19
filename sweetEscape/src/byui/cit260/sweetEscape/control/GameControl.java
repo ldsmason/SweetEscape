@@ -5,7 +5,9 @@
  */
 package byui.cit260.sweetEscape.control;
 import byui.cit260.sweetEscape.model.*;
+//import byui.cit260.sweetEscape.control.*;
 import sweetescape.SweetEscape;
+
 
 /**
  *
@@ -35,10 +37,27 @@ public class GameControl  {
         
     Game game = new Game();
     game.setPlayer(player);
+    SweetEscape.setCurrentGame(game);
+       
+    
+    //Actor actor;
+    //actor = Actor.Jinseob;
+    // Actor jinseob = new Actor();
+    
+    //Inventory[] inventory;
+    
+    Map map = MapControl.createMap(12, 12);//(row, column) where to intialize or put row variables
+    if(map == null) {
+        return -1;
+    } 
+      
+   
+    game.setMap(map);
     
     return 1;
+  }
     
-}
+
     
    public static Door getCurrentDoor(){
        // Dummy code for doors to be implemented later

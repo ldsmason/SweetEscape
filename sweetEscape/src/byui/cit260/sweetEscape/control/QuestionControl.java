@@ -9,6 +9,6 @@ package byui.cit260.sweetEscape.control;
  *
  * @author nathanielmason
  */
-public class questionControl {
+public class QuestionControl {
     
 }

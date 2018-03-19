@@ -28,7 +28,7 @@ public class inventoryControlTest {
     }
 
     /**
-     * Test of calcLiters method, of class inventoryControl.
+     * Test of calcLiters method, of class InventoryControl.
      */
     @Test
     public void testCalcLiters() {
@@ -39,7 +39,7 @@ public class inventoryControlTest {
         double lbs = 10.0;
         double guess = 2.272727;
         double expResult = 0.0;
-        double result = inventoryControl.calcLiters(lbs, guess);
+        double result = InventoryControl.calcLiters(lbs, guess);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         
@@ -48,7 +48,7 @@ public class inventoryControlTest {
         lbs = -5.0;
         guess = 2.272727;
         expResult = -1.0;
-        result = inventoryControl.calcLiters(lbs, guess);
+        result = InventoryControl.calcLiters(lbs, guess);
         assertEquals(expResult, result, 0.0);
         
           // Test Case 3
@@ -56,7 +56,7 @@ public class inventoryControlTest {
         lbs = 10.0;
         guess = 7.0;
         expResult = 0.0;
-        result = inventoryControl.calcLiters(lbs, guess);
+        result = InventoryControl.calcLiters(lbs, guess);
         assertEquals(expResult, result, 0.0);
         
         // Test Case 4
@@ -64,7 +64,7 @@ public class inventoryControlTest {
         lbs = 1.0;
         guess = 0.0227273;
         expResult = 0.0;
-        result = inventoryControl.calcLiters(lbs, guess);
+        result = InventoryControl.calcLiters(lbs, guess);
         assertEquals(expResult, result, 0.0);
         
         // Test Case 5
@@ -72,14 +72,14 @@ public class inventoryControlTest {
         lbs = 50.0;
         guess = 11.36364;
         expResult = 0.0;
-        result = inventoryControl.calcLiters(lbs, guess);
+        result = InventoryControl.calcLiters(lbs, guess);
         assertEquals(expResult, result, 0.0);
         
       
     }
 
     /**
-     * Test of kickDoor method, of class inventoryControl.
+     * Test of kickDoor method, of class InventoryControl.
      */
     @Test
     public void testKickDoor() {
@@ -91,7 +91,7 @@ public class inventoryControlTest {
         double accel = 550.0;
         double accel2 = 2500.0;
         double expResult = 100000.0;
-        double result = inventoryControl.kickDoor(mass, accel, accel2);
+        double result = InventoryControl.kickDoor(mass, accel, accel2);
         assertEquals(expResult, result, 0.0);
        
         //Test Case 2
@@ -100,7 +100,7 @@ public class inventoryControlTest {
         accel = 300.0;
         accel2 = 2500;
         expResult = -1;
-        result = inventoryControl.kickDoor(mass, accel, accel2);
+        result = InventoryControl.kickDoor(mass, accel, accel2);
         assertEquals(expResult, result, 0.0);
        
         //Test Case 3
@@ -109,7 +109,7 @@ public class inventoryControlTest {
         accel = 700;
         accel2 = 2500.0;
         expResult = -1;
-        result = inventoryControl.kickDoor(mass, accel, accel2);
+        result = InventoryControl.kickDoor(mass, accel, accel2);
         assertEquals(expResult, result, 0.0);
        
         //Test Case 4
@@ -118,7 +118,7 @@ public class inventoryControlTest {
         accel = 550.0;
         accel2 = 1500.0;
         expResult = 0;
-        result = inventoryControl.kickDoor(mass, accel, accel2);
+        result = InventoryControl.kickDoor(mass, accel, accel2);
         assertEquals(expResult, result, 0.0);
        
         //Test Case 5
@@ -127,7 +127,7 @@ public class inventoryControlTest {
         accel = 550.0;
         accel2 = 1500.0;
         expResult = 0;
-        result = inventoryControl.kickDoor(mass, accel, accel2);
+        result = InventoryControl.kickDoor(mass, accel, accel2);
         assertEquals(expResult, result, 0.0);
         
         //Test Case 6
@@ -136,7 +136,7 @@ public class inventoryControlTest {
         accel = 550.0;
         accel2 = 2500.0;
         expResult = 100000.0;
-        result = inventoryControl.kickDoor(mass, accel, accel2);
+        result = InventoryControl.kickDoor(mass, accel, accel2);
         assertEquals(expResult, result, 0.0);
        
         //Test Case 7
@@ -145,7 +145,7 @@ public class inventoryControlTest {
         accel = 550.0;
         accel2 = 2500.0;
         expResult = 100000.0;
-        result = inventoryControl.kickDoor(mass, accel, accel2);
+        result = InventoryControl.kickDoor(mass, accel, accel2);
         assertEquals(expResult, result, 0.0);
         
         //Test Case 8
@@ -154,7 +154,7 @@ public class inventoryControlTest {
         accel = 550.0;
         accel2 = 2000.0;
         expResult = 80000.0;
-        result = inventoryControl.kickDoor(mass, accel, accel2);
+        result = InventoryControl.kickDoor(mass, accel, accel2);
         assertEquals(expResult, result, 0.0);
         
         //Test Case 9
@@ -163,7 +163,7 @@ public class inventoryControlTest {
         accel = 450.0;
         accel2 = 5000.0;
         expResult = 200000.0;
-        result = inventoryControl.kickDoor(mass, accel, accel2);
+        result = InventoryControl.kickDoor(mass, accel, accel2);
         assertEquals(expResult, result, 0.0);
     }
     

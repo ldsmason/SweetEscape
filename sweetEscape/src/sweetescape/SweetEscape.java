@@ -81,6 +81,7 @@ public class SweetEscape implements Serializable{
 
     public static void setCurrentGame(Game currentGame) {
         SweetEscape.currentGame = currentGame;
+        
     }
 
     public static Player getPlayer() {
