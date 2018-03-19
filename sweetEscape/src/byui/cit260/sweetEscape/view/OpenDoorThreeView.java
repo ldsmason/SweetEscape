@@ -21,18 +21,10 @@ public class OpenDoorThreeView extends View {
     double force = Math.round(rand.nextDouble() * 1000);
     double force2 = Math.round(rand.nextDouble() * 10000);
     String[] inputs = new String[4];
-    double guessAccel;
-    double lbs; 
-    double guessMass2;
-    double guessAccel2;
-    double mass2 = lbs/2.2;
-
-    public OpenDoorThreeView() {
-        this.guessAccel = Double.parseDouble(inputs[0]);
-        this.lbs = Double.parseDouble(inputs[1]);
-        this.guessMass2  = Double.parseDouble(inputs[2]);
-        this.guessAccel2  = Double.parseDouble(inputs[3]);
-    }
+    /*double lbs = Double.parseDouble(inputs[1]); 
+    double guessMass2 = Double.parseDouble(inputs[2]);
+    double guessAccel2 = Double.parseDouble(inputs[3]);
+    double mass2 = lbs/2.2;*/
 
     public String[] getInputs() {
         
@@ -48,20 +40,21 @@ public class OpenDoorThreeView extends View {
         //guessAccel
         inputs[0] = value;
         
-        String value = this.getInput(
+        value = this.getInput(
                 "The padlock is broken, but there is still " + force2 + " \n" 
               + "newtons of force needed to open the door.  Determine how much \n"
               + "acceleration is needed to kick open the door based on the mass\n"
               + "of your body and the amount of force needed to open the door.\n\n"
               + "First enter your weight in pounds:\n");
         
+        //lbs
         inputs[1] = value;
         
         value = this.getInput (
                 "Enter the mass of your body in kilograms. \n\n"
                +"The ratio of lbs to kg is 1 kg = 2.22 lbs\n");
         
-        //lbs
+        //mass
         inputs[2] = value;
         
         
@@ -75,6 +68,8 @@ public class OpenDoorThreeView extends View {
         
         return inputs;
     }
+    
+    double guessAccel = Double.parseDouble(inputs[0]);
     
     public boolean doAction(String[] inputs) {
 
@@ -90,7 +85,7 @@ public class OpenDoorThreeView extends View {
             valid = true;
         }
         
-        boolean valid = false;
+       /* boolean valid = false;
         int guess = Integer.parseInt(inputs[0]);
         
         double code = inventoryControl.checkMass(guessMass2, mass2);
@@ -101,7 +96,7 @@ public class OpenDoorThreeView extends View {
             System.out.println("Your guess is incorrect! 너 망했어!  Check "
                     + "your math and try again!");
             valid = true;
-        }
+        }*/
         return valid;
     }
         
