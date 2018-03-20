@@ -10,7 +10,7 @@ import java.io.Serializable;
  *
  * @author nathanielmason
  */
-public class QuestionScene implements Serializable {
+public class QuestionScene extends RegularSceneType {
 
     public QuestionScene() {
     }

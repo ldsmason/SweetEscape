@@ -40,7 +40,7 @@ public class OpenDoorThreeView extends View {
         //guessAccel
         inputs[0] = value;
         
-        value = this.getInput(
+        /*value = this.getInput(
                 "The padlock is broken, but there is still " + force2 + " \n" 
               + "newtons of force needed to open the door.  Determine how much \n"
               + "acceleration is needed to kick open the door based on the mass\n"
@@ -64,7 +64,7 @@ public class OpenDoorThreeView extends View {
               + "find the acceleration needed to kick the door open.\n");
         
         //guessMass2
-        inputs[3] = value;
+        inputs[3] = value;*/
         
         return inputs;
     }
@@ -102,10 +102,11 @@ public class OpenDoorThreeView extends View {
                     + "your math and try again!");
             valid = true;
         }*/
+ 
         return valid;
+  
+    
     }
-        
-
         
 
     /*boolean valid = false;

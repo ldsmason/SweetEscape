@@ -70,15 +70,6 @@ public class MapControl {
         
         Scene[] scenes = new Scene[9];
         
-        Scene[] start = new Scene[0];
-        Scene[] roomOne = new Scene[1]; 
-        Scene[] roomTwo = new Scene[2];
-        Scene[] roomThree = new Scene[3];
-        Scene[] roomFour = new Scene[4];
-        Scene[] hallway = new Scene[5];
-        Scene[] question = new Scene[6];
-        Scene[] instructions = new Scene[7];
-        Scene[] finish = new Scene[8];
         
         return scenes;
       
