@@ -13,7 +13,7 @@ import java.util.Random;
  *
  * @author chadh
  */
-/*public class OpenDoorThreeView extends View {
+public class OpenDoorThreeView extends View {
 
     int num = 0;
     Random rand = new Random();
@@ -103,7 +103,7 @@ import java.util.Random;
             valid = true;
         }*/
         return valid;
-    }*/
+    }
         
 
         
