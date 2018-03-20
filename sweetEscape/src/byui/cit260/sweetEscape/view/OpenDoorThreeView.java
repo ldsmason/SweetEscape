@@ -69,14 +69,19 @@ import java.util.Random;
         return inputs;
     }
     
-    double guessAccel = Double.parseDouble(inputs[0]);
+    
     
     public boolean doAction(String[] inputs) {
 
         boolean valid = false;
         int guess = Integer.parseInt(inputs[0]);
+        double guessAccel = Double.parseDouble(inputs[0]);
+        /*double lbs = Double.parseDouble(inputs[1]); 
+        double guessMass2 = Double.parseDouble(inputs[2]);
+        double guessAccel2 = Double.parseDouble(inputs[3]);
+        double mass2 = lbs/2.2;*/
         
-        double code = inventoryControl.pickLock(mass, force, guessAccel);
+        double code = InventoryControl.pickLock(mass, force, guessAccel);
         if (code == 0) {
             System.out.println("Way to go! You broke the lock!");
         } 
