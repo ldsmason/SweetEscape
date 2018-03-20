@@ -7,7 +7,9 @@ package byui.cit260.sweetEscape.control;
 import byui.cit260.sweetEscape.model.Location;
 import byui.cit260.sweetEscape.model.Map;
 import byui.cit260.sweetEscape.model.Question;
+import byui.cit260.sweetEscape.model.QuestionSceneType;
 import byui.cit260.sweetEscape.model.RegularSceneType;
+import byui.cit260.sweetEscape.model.SceneType;
 /**
  *
  * @author nathanielmason
@@ -76,6 +78,12 @@ public class MapControl {
         RegularSceneType[] scenes = new RegularSceneType[9];
         
         scenes[0] = new RegularSceneType();
+        scenes[1] = new QuestionSceneType();
+        
+        scenes[SceneType.start.ordinal()] = start;
+        scenes[SceneType.question.ordinal()] = question;
+        scenes[SceneType.instructions.ordinal()] = instructions;
+        scenes[SceneType.finish.ordinal()] = finish;
         
         return scenes;
       
