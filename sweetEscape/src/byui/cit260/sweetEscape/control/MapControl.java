@@ -4,8 +4,10 @@
  * and open the template in the editor.
  */
 package byui.cit260.sweetEscape.control;
-import byui.cit260.sweetEscape.model.*;
-import javafx.scene.Scene;
+import byui.cit260.sweetEscape.model.Location;
+import byui.cit260.sweetEscape.model.Map;
+import byui.cit260.sweetEscape.model.Question;
+import byui.cit260.sweetEscape.model.RegularSceneType;
 /**
  *
  * @author nathanielmason
@@ -32,7 +34,7 @@ public class MapControl {
        
        
         Location[][] locations = createLocations(noOfRows, noOfColumns);
-        Scene[] scenes = createScenes();
+        RegularSceneType[] scenes = createScenes();
         Question[] questions = createQuestions();
         
         
@@ -54,7 +56,6 @@ public class MapControl {
     }
        Location[][] locations = new Location[rows][columns];
      
-         long total = 0;
      for (int i = 0; i < locations.length; i++) {
           for (int j = 0; j < locations[i].length; j++) {
            locations = new Location[i][j];
@@ -68,21 +69,13 @@ public class MapControl {
      return locations;
     }
     
-    private static Scene[] createScenes() {
+    private static RegularSceneType[] createScenes() {
         System.out.println("*** createScenes() called ***\n");
         //return null;
         
-        Scene[] scenes = new Scene[9];
+        RegularSceneType[] scenes = new RegularSceneType[9];
         
-        Scene[] start = new Scene[0];
-        Scene[] roomOne = new Scene[1]; 
-        Scene[] roomTwo = new Scene[2];
-        Scene[] roomThree = new Scene[3];
-        Scene[] roomFour = new Scene[4];
-        Scene[] hallway = new Scene[5];
-        Scene[] question = new Scene[6];
-        Scene[] instructions = new Scene[7];
-        Scene[] finish = new Scene[8];
+        scenes[0] = new RegularSceneType();
         
         return scenes;
       
@@ -93,14 +86,14 @@ public class MapControl {
         return null;
     }
     
-    private static void assignQuestionsToScenes(Question[] questions, Scene[] scenes) {
+    private static void assignQuestionsToScenes(Question[] questions, RegularSceneType[] scenes) {
         System.out.println("*** assignQuestionsToScenes() called ***\n");
        
     }
-    private static void assignItemsToScenes(Scene[] scenes) {
+    private static void assignItemsToScenes(RegularSceneType[] scenes) {
         System.out.println("*** assignItemsToScenes() called ***\n");
     }
-    private static void assignScenesToLocations(Scene[] scenes, Location[][] locations){
+    private static void assignScenesToLocations(RegularSceneType[] scenes, Location[][] locations){
         System.out.println("*** assignScenesToLocations() called ***\n");
     }
     
