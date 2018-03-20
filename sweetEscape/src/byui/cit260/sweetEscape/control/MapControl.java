@@ -57,7 +57,11 @@ public class MapControl {
          long total = 0;
      for (int i = 0; i < locations.length; i++) {
           for (int j = 0; j < locations[i].length; j++) {
-              //locations[i][j];
+           locations = new Location[i][j];
+           Map.visited = false;
+           locations[rows] = locations[i];
+           locations[columns] = locations[j];
+         
           }
 
       }
