@@ -11,13 +11,9 @@ package byui.cit260.sweetEscape.model;
  */
 public enum SceneType {
     start,
-    roomOne,
-    roomTwo,
-    roomThree,
-    roomFour,
-    hallway,
     question,
+    blank,
     instructions,
-    finish,
+    finish;
 }
 
