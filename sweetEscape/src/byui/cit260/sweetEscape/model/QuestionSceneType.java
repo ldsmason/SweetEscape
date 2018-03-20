@@ -9,6 +9,10 @@ package byui.cit260.sweetEscape.model;
  *
  * @author nathanielmason
  */
-public enum QuestionSceneType {
+public class QuestionSceneType extends RegularSceneType {
+
+    public QuestionSceneType() {
+        
+    }
     
 }
