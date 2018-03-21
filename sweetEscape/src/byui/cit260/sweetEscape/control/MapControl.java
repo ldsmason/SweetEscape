@@ -4,11 +4,13 @@
  * and open the template in the editor.
  */
 package byui.cit260.sweetEscape.control;
+import byui.cit260.sweetEscape.model.Inventory;
 import byui.cit260.sweetEscape.model.Location;
 import byui.cit260.sweetEscape.model.Map;
 import byui.cit260.sweetEscape.model.Question;
 import byui.cit260.sweetEscape.model.QuestionSceneType;
 import byui.cit260.sweetEscape.model.RegularSceneType;
+import byui.cit260.sweetEscape.model.RoomScene;
 import byui.cit260.sweetEscape.model.SceneType;
 /**
  *
@@ -77,11 +79,13 @@ public class MapControl {
         
         scenes[0] = new RegularSceneType();
         scenes[1] = new QuestionSceneType();
+        scenes[2] = new RoomScene();
 
         
         RegularSceneType start = new RegularSceneType("This is the starting point", 0, 0, " s ");
         QuestionSceneType door = new QuestionSceneType(Question.OpenDoor, "You've arrived at a door!  Congrats!", 23, 0, "[D]");
         QuestionSceneType room = new QuestionSceneType(Question.GrabItem, "You've entered the room and see an item.", 35, 0, ":R:");
+        
         RegularSceneType instructions = new RegularSceneType();
         RegularSceneType finish = new RegularSceneType("Congratualtions! You have escaped and won the game", 0, 0, " f ");
         RegularSceneType blank = new RegularSceneType();
@@ -97,8 +101,8 @@ public class MapControl {
       
     }
 
-    private static void assignItemsToScenes(RegularSceneType[] scenes) {
-        System.out.println("*** assignItemsToScenes() called ***\n");
+    private static void assignItemsToScenes(Inventory[] items, RegularSceneType[] scenes) {
+        
     }
     private static void assignScenesToLocations(RegularSceneType[] scenes, Location[][] locations){
         System.out.println("*** assignScenesToLocations() called ***\n");
