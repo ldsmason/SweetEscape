@@ -4,11 +4,13 @@
  * and open the template in the editor.
  */
 package byui.cit260.sweetEscape.control;
+import byui.cit260.sweetEscape.model.Inventory;
 import byui.cit260.sweetEscape.model.Location;
 import byui.cit260.sweetEscape.model.Map;
 import byui.cit260.sweetEscape.model.Question;
 import byui.cit260.sweetEscape.model.QuestionSceneType;
 import byui.cit260.sweetEscape.model.RegularSceneType;
+import byui.cit260.sweetEscape.model.RoomScene;
 import byui.cit260.sweetEscape.model.SceneType;
 /**
  *
@@ -60,10 +62,8 @@ public class MapControl {
      
      for (int i = 0; i < locations.length; i++) {
           for (int j = 0; j < locations[i].length; j++) {
-           locations = new Location[i][j];
-           Map.visited = false;
-           locations[rows] = locations[i];
-           locations[columns] = locations[j];
+           Location location = new Location(i,j);
+           locations[i][j] = location;
          
           }
 
@@ -79,16 +79,20 @@ public class MapControl {
         
         scenes[0] = new RegularSceneType();
         scenes[1] = new QuestionSceneType();
+        scenes[2] = new RoomScene();
 
         
         RegularSceneType start = new RegularSceneType("This is the starting point", 0, 0, " s ");
-        RegularSceneType question = new RegularSceneType();
+        QuestionSceneType door = new QuestionSceneType(Question.OpenDoor, "You've arrived at a door!  Congrats!", 23, 0, "[D]");
+        QuestionSceneType room = new QuestionSceneType(Question.GrabItem, "You've entered the room and see an item.", 35, 0, ":R:");
+        
         RegularSceneType instructions = new RegularSceneType();
         RegularSceneType finish = new RegularSceneType("Congratualtions! You have escaped and won the game", 0, 0, " f ");
         RegularSceneType blank = new RegularSceneType();
         
         scenes[SceneType.start.ordinal()] = start;
-        scenes[SceneType.question.ordinal()] = question;
+        scenes[SceneType.door.ordinal()] = door;
+        scenes[SceneType.room.ordinal()] = room;
         scenes[SceneType.instructions.ordinal()] = instructions;
         scenes[SceneType.finish.ordinal()] = finish;
         scenes[SceneType.blank.ordinal()] = blank;
@@ -96,18 +100,9 @@ public class MapControl {
         return scenes;
       
     }
-    
-    private static Question[] createQuestions() {
-        System.out.println("*** createQuestions() called ***\n");
-        return null;
-    }
-    
-    private static void assignQuestionsToScenes(Question[] questions, RegularSceneType[] scenes) {
-        System.out.println("*** assignQuestionsToScenes() called ***\n");
-       
-    }
-    private static void assignItemsToScenes(RegularSceneType[] scenes) {
-        System.out.println("*** assignItemsToScenes() called ***\n");
+
+    private static void assignItemsToScenes(Inventory[] items, RegularSceneType[] scenes) {
+        
     }
     private static void assignScenesToLocations(Map map, RegularSceneType[] scenes){
        System.out.println("*** assignItemsToScenes() called ***\n");

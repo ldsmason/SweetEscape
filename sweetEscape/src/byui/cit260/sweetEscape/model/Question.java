@@ -13,25 +13,28 @@ import java.io.Serializable;
  */
 public enum Question implements Serializable {
     
-    OpenDoor ("Would you like to open the door?"),
-    Movement ("Where would you like to go?"),
-    Inspect ("What area of the room would you like to inspect"),
-    GrabItem ("Would you like to grab the item?"),
-    UseItem ("What item would you like to use?");
+    OpenDoor ("Would you like to open the door?", "Yes", "No"),
+    GrabItem ("Would you like to grab the item?", "Yes", "No");
     
     private String question;
     private String answer;
-    private String noToAnswer;
-    private String yesToAnswer;
     private String invalidResponse;
-
-    private Question() {
-    }
     
-    Question (String question) {
+    private Question(String question, String answer, String invalidResponse) {
         this.question = question;
+        this.answer = answer;
+        this.invalidResponse = invalidResponse;
     }
-    
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public String getInvalidResponse() {
+        return invalidResponse;
+    }
+
+
 
     
     
