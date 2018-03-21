@@ -11,8 +11,9 @@ package byui.cit260.sweetEscape.model;
  */
 public enum SceneType {
     start,
+    blank,
     question,
     instructions,
-    finish,
+    finish;
 }
 

@@ -82,10 +82,17 @@ public class MapControl {
         
                 
         
+        RegularSceneType start = new RegularSceneType();
+        RegularSceneType question = new RegularSceneType();
+        RegularSceneType instructions = new RegularSceneType();
+        RegularSceneType finish = new RegularSceneType();
+        RegularSceneType blank = new RegularSceneType();
+        
         scenes[SceneType.start.ordinal()] = start;
         scenes[SceneType.question.ordinal()] = question;
         scenes[SceneType.instructions.ordinal()] = instructions;
         scenes[SceneType.finish.ordinal()] = finish;
+        scenes[SceneType.blank.ordinal()] = blank;
         
         return scenes;
       
