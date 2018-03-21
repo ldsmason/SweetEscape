@@ -14,54 +14,49 @@ import java.util.Objects;
  */
 public class Location implements Serializable {
     
-    private String row;
-    private String column;
-    private ArrayList<Game> alreadyVisited = new ArrayList<Game>();
-    private ArrayList<Game> amountRemaining = new ArrayList<Game>();
+    private int row;
+    private int column;
+    private boolean alreadyVisited = false;
     
     public Location(){
         
     }
 
-    public String getRow() {
+    public Location(int row, int column) {
+        this.row = row;
+        this.column = column;
+    }
+    
+    public int getRow() {
         return row;
     }
 
-    public void setRow(String row) {
+    public void setRow(int row) {
         this.row = row;
     }
 
-    public String getColumn() {
+    public int getColumn() {
         return column;
     }
 
-    public void setColumn(String column) {
+    public void setColumn(int column) {
         this.column = column;
     }
 
-    public ArrayList<Game> getAlreadyVisited() {
+    public boolean isAlreadyVisited() {
         return alreadyVisited;
     }
 
-    public void setAlreadyVisited(ArrayList<Game> alreadyVisited) {
+    public void setAlreadyVisited(boolean alreadyVisited) {
         this.alreadyVisited = alreadyVisited;
-    }
-
-    public ArrayList<Game> getAmountRemaining() {
-        return amountRemaining;
-    }
-
-    public void setAmountRemaining(ArrayList<Game> amountRemaining) {
-        this.amountRemaining = amountRemaining;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 83 * hash + Objects.hashCode(this.row);
-        hash = 83 * hash + Objects.hashCode(this.column);
-        hash = 83 * hash + Objects.hashCode(this.alreadyVisited);
-        hash = 83 * hash + Objects.hashCode(this.amountRemaining);
+        int hash = 5;
+        hash = 37 * hash + this.row;
+        hash = 37 * hash + this.column;
+        hash = 37 * hash + (this.alreadyVisited ? 1 : 0);
         return hash;
     }
 
@@ -77,16 +72,13 @@ public class Location implements Serializable {
             return false;
         }
         final Location other = (Location) obj;
-        if (!Objects.equals(this.row, other.row)) {
+        if (this.row != other.row) {
             return false;
         }
-        if (!Objects.equals(this.column, other.column)) {
+        if (this.column != other.column) {
             return false;
         }
-        if (!Objects.equals(this.alreadyVisited, other.alreadyVisited)) {
-            return false;
-        }
-        if (!Objects.equals(this.amountRemaining, other.amountRemaining)) {
+        if (this.alreadyVisited != other.alreadyVisited) {
             return false;
         }
         return true;
@@ -94,8 +86,13 @@ public class Location implements Serializable {
 
     @Override
     public String toString() {
-        return "Location{" + "row=" + row + ", column=" + column + ", alreadyVisited=" + alreadyVisited + ", amountRemaining=" + amountRemaining + '}';
+        return "Location{" + "row=" + row + ", column=" + column + ", alreadyVisited=" + alreadyVisited + '}';
     }
+
+    
+
+
+
     
     
     

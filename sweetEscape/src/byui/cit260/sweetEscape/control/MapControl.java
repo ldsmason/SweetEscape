@@ -60,10 +60,8 @@ public class MapControl {
      
      for (int i = 0; i < locations.length; i++) {
           for (int j = 0; j < locations[i].length; j++) {
-           locations = new Location[i][j];
-           Map.visited = false;
-           locations[rows] = locations[i];
-           locations[columns] = locations[j];
+           Location location = new Location(i,j);
+           locations[i][j] = location;
          
           }
 
@@ -82,13 +80,15 @@ public class MapControl {
 
         
         RegularSceneType start = new RegularSceneType("This is the starting point", 0, 0, " s ");
-        RegularSceneType question = new RegularSceneType();
+        QuestionSceneType door = new QuestionSceneType(Question.OpenDoor, "You've arrived at a door!  Congrats!", 23, 0, "[D]");
+        QuestionSceneType room = new QuestionSceneType(Question.GrabItem, "You've entered the room and see an item.", 35, 0, ":R:");
         RegularSceneType instructions = new RegularSceneType();
         RegularSceneType finish = new RegularSceneType();
         RegularSceneType blank = new RegularSceneType();
         
         scenes[SceneType.start.ordinal()] = start;
-        scenes[SceneType.question.ordinal()] = question;
+        scenes[SceneType.door.ordinal()] = door;
+        scenes[SceneType.room.ordinal()] = room;
         scenes[SceneType.instructions.ordinal()] = instructions;
         scenes[SceneType.finish.ordinal()] = finish;
         scenes[SceneType.blank.ordinal()] = blank;
@@ -96,16 +96,7 @@ public class MapControl {
         return scenes;
       
     }
-    
-    private static Question[] createQuestions() {
-        System.out.println("*** createQuestions() called ***\n");
-        return null;
-    }
-    
-    private static void assignQuestionsToScenes(Question[] questions, RegularSceneType[] scenes) {
-        System.out.println("*** assignQuestionsToScenes() called ***\n");
-       
-    }
+
     private static void assignItemsToScenes(RegularSceneType[] scenes) {
         System.out.println("*** assignItemsToScenes() called ***\n");
     }
