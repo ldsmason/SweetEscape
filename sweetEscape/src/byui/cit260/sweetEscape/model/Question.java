@@ -6,14 +6,18 @@
 package byui.cit260.sweetEscape.model;
 import java.io.Serializable;
 
+
 /**
  *
  * @author nathanielmason
  */
-public class Question implements Serializable {
+public enum Question implements Serializable {
     
-    
-    
+    OpenDoor ("Would you like to open the door?"),
+    Movement ("Where would you like to go?"),
+    Inspect ("What area of the room would you like to inspect"),
+    GrabItem ("Would you like to grab the item?"),
+    UseItem ("What item would you like to use?");
     
     private String question;
     private String answer;
@@ -21,49 +25,15 @@ public class Question implements Serializable {
     private String yesToAnswer;
     private String invalidResponse;
 
-    public Question() {
+    private Question() {
+    }
+    
+    Question (String question) {
+        this.question = question;
     }
     
 
-    public String getQuestion() {
-        return question;
-    }
-
-    public void setQuestion(String question) {
-        this.question = question;
-    }
-
-    public String getAnswer() {
-        return answer;
-    }
-
-    public void setAnswer(String answer) {
-        this.answer = answer;
-    }
-
-    public String getNoToAnswer() {
-        return noToAnswer;
-    }
-
-    public void setNoToAnswer(String noToAnswer) {
-        this.noToAnswer = noToAnswer;
-    }
-
-    public String getYesToAnswer() {
-        return yesToAnswer;
-    }
-
-    public void setYesToAnswer(String yesToAnswer) {
-        this.yesToAnswer = yesToAnswer;
-    }
-
-    public String getInvalidResponse() {
-        return invalidResponse;
-    }
-
-    public void setInvalidResponse(String invalidResponse) {
-        this.invalidResponse = invalidResponse;
-    }
+    
     
     
 }
