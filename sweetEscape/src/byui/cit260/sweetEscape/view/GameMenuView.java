@@ -21,6 +21,7 @@ class GameMenuView extends View{
     
 
 
+    @Override
     public String[] getInputs() {
        String[] inputs = new String[1];
        
@@ -28,6 +29,7 @@ class GameMenuView extends View{
            String menuItem = this.getInput("M - View Map\n" +
                               "I - View Inventory\n" +
                               "T - View list of tools\n" +
+                              "V - Display Map" +
                               "P - Move the player\n" +
                               "O - opens the door\n" +
                               "C - opens Door Two\n" +
@@ -57,6 +59,7 @@ class GameMenuView extends View{
            break;
            case "T" : seeTools();
            break;
+           case "V" : this.displayMap();
            case "P" : movePlayer();
            break;
            case "O" : openDoor();
@@ -146,6 +149,10 @@ private void openFinalDoor() {
       
       finalDoorView.display();
       System.out.println("*** openFinalDoor called ***");
+    }
+
+    private void displayMap() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
    
