@@ -18,7 +18,10 @@ public enum Inventory implements Serializable {
     DriftPin ("Drift Pin", "Drift Pin", new Point(2,0)),
     LockPick ("Lock Pick", "Lock Pick", new Point(3,0)),
     TwoLiterBottle ("Two-Liter Bottle","Two-Liter Bottle", new Point(4,0)),
-    Sand ("Sand","Sand", new Point(5,0));
+    Sand ("Sand","Sand", new Point(5,0)),
+    RedKey("Red Key", "Red Key", new Point(6,0)),
+    BlueKey("Blue Key", "Blue Key", new Point(7,0)),
+    GreenKey("Green Key", "Green Key", new Point(8,0));
     
     private String itemName;
     private String itemDescription;

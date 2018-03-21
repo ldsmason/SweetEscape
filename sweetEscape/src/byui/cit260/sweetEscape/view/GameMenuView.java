@@ -5,10 +5,13 @@
  */
 package byui.cit260.sweetEscape.view;
 import byui.cit260.sweetEscape.model.Door;
+import byui.cit260.sweetEscape.model.Game;
+import byui.cit260.sweetEscape.model.Location;
 //import  byui.cit260.sweetEscape.control.DoorControl;
 //import  byui.cit260.sweetEscape.control.inventoryControl;
 
 import java.util.Scanner;
+import sweetescape.SweetEscape;
 
 /**
  *
@@ -152,7 +155,9 @@ private void openFinalDoor() {
     }
 
     private void displayMap() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     Game game = SweetEscape.getCurrentGame();
+
+     System.out.println("Sweet Escape Map");
     }
 
    

@@ -83,7 +83,7 @@ public class MapControl {
         QuestionSceneType door = new QuestionSceneType(Question.OpenDoor, "You've arrived at a door!  Congrats!", 23, 0, "[D]");
         QuestionSceneType room = new QuestionSceneType(Question.GrabItem, "You've entered the room and see an item.", 35, 0, ":R:");
         RegularSceneType instructions = new RegularSceneType();
-        RegularSceneType finish = new RegularSceneType();
+        RegularSceneType finish = new RegularSceneType("Congratualtions! You have escaped and won the game", 0, 0, " f ");
         RegularSceneType blank = new RegularSceneType();
         
         scenes[SceneType.start.ordinal()] = start;
