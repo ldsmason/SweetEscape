@@ -42,7 +42,7 @@ public class MapControl {
         
         assignQuestionsToScenes(questions, scenes); 
         assignItemsToScenes(scenes);
-        assignScenesToLocations(scenes, locations);
+        assignScenesToLocations(map, scenes);
         
         return map;
     }
@@ -109,8 +109,13 @@ public class MapControl {
     private static void assignItemsToScenes(RegularSceneType[] scenes) {
         System.out.println("*** assignItemsToScenes() called ***\n");
     }
-    private static void assignScenesToLocations(RegularSceneType[] scenes, Location[][] locations){
-        System.out.println("*** assignScenesToLocations() called ***\n");
+    private static void assignScenesToLocations(Map map, RegularSceneType[] scenes){
+       System.out.println("*** assignItemsToScenes() called ***\n");
+        /* Location[][] locations = map.getLocation();
+        
+        locations[0][0].setRegularSceneType[scenes[SceneType.start.ordinal()]];
+        
+        locations[12][12].setRegularSceneType[scenes[SceneType.finish.ordinal()]];*/
     }
     
 }

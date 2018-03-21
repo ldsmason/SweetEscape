@@ -28,7 +28,7 @@ public class Map implements Serializable {
         this.point = point;
         this.row = row;
         this.column = column;
-        this.visited = visited;
+        Map.visited = visited;
         this.amountRemaining = amountRemaining;
         this.playerLoc = playerLoc;
     }
@@ -130,6 +130,7 @@ public class Map implements Serializable {
     public String toString() {
         return "Map{" + "point=" + point + ", row=" + row + ", column=" + column + ", visited=" + visited + ", amountRemaining=" + amountRemaining + ", playerLoc=" + playerLoc + '}';
     }
+
     
     
 
