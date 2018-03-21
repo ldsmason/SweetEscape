@@ -85,7 +85,7 @@ public class MapControl {
         RegularSceneType start = new RegularSceneType("This is the starting point", 0, 0, " s ");
         RegularSceneType question = new RegularSceneType();
         RegularSceneType instructions = new RegularSceneType();
-        RegularSceneType finish = new RegularSceneType();
+        RegularSceneType finish = new RegularSceneType("Congratualtions! You have escaped and won the game", 0, 0, " f ");
         RegularSceneType blank = new RegularSceneType();
         
         scenes[SceneType.start.ordinal()] = start;
