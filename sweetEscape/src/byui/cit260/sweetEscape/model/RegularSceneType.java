@@ -16,11 +16,20 @@ public class RegularSceneType implements Serializable {
         private String description;
         private int inspectItem;
         private int invalidLocation;
-        private int mapSymbol;
+        private String mapSymbol;
 
     public RegularSceneType() {
         
     }
+
+    public RegularSceneType(String description, int inspectItem, int invalidLocation, String mapSymbol) {
+        this.description = description;
+        this.inspectItem = inspectItem;
+        this.invalidLocation = invalidLocation;
+        this.mapSymbol = mapSymbol;
+    }
+    
+    
 
     public String getDescription() {
         return description;
@@ -46,21 +55,21 @@ public class RegularSceneType implements Serializable {
         this.invalidLocation = invalidLocation;
     }
 
-    public int getMapSymbol() {
+    public String getMapSymbol() {
         return mapSymbol;
     }
 
-    public void setMapSymbol(int mapSymbol) {
+    public void setMapSymbol(String mapSymbol) {
         this.mapSymbol = mapSymbol;
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 13 * hash + Objects.hashCode(this.description);
-        hash = 13 * hash + this.inspectItem;
-        hash = 13 * hash + this.invalidLocation;
-        hash = 13 * hash + this.mapSymbol;
+        int hash = 7;
+        hash = 23 * hash + Objects.hashCode(this.description);
+        hash = 23 * hash + this.inspectItem;
+        hash = 23 * hash + this.invalidLocation;
+        hash = 23 * hash + Objects.hashCode(this.mapSymbol);
         return hash;
     }
 
@@ -82,14 +91,16 @@ public class RegularSceneType implements Serializable {
         if (this.invalidLocation != other.invalidLocation) {
             return false;
         }
-        if (this.mapSymbol != other.mapSymbol) {
+        if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (!Objects.equals(this.description, other.description)) {
+        if (!Objects.equals(this.mapSymbol, other.mapSymbol)) {
             return false;
         }
         return true;
     }
+
+
 
     @Override
     public String toString() {

@@ -11,6 +11,10 @@ import java.io.Serializable;
  * @author nathanielmason
  */
 public class Question implements Serializable {
+    
+    
+    
+    
     private String question;
     private String answer;
     private String noToAnswer;
