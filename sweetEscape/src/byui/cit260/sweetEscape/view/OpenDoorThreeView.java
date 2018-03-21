@@ -105,8 +105,8 @@ public class OpenDoorThreeView extends View {
  
         return valid;
   
-    
     }
+    
         
 
     /*boolean valid = false;
