@@ -78,7 +78,9 @@ public class MapControl {
         RegularSceneType[] scenes = new RegularSceneType[9];
         
         scenes[0] = new RegularSceneType();
-        scenes[1] = new QuestionSceneType();
+        scenes[1] = new QuestionSceneType
+        
+                
         
         RegularSceneType start = new RegularSceneType("This is the starting point", 0, 0, " s ");
         RegularSceneType question = new RegularSceneType();
