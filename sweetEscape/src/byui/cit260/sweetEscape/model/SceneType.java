@@ -14,6 +14,7 @@ public enum SceneType {
     blank,
     door,
     room,
+    wall,
     instructions,
     finish;
 }

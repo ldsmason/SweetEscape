@@ -32,7 +32,7 @@ class GameMenuView extends View{
            String menuItem = this.getInput("M - View Map\n" +
                               "I - View Inventory\n" +
                               "T - View list of tools\n" +
-                              "V - Display Map" +
+                              "V - Display Map\n" +
                               "P - Move the player\n" +
                               "O - opens the door\n" +
                               "C - opens Door Two\n" +
@@ -63,6 +63,7 @@ class GameMenuView extends View{
            case "T" : seeTools();
            break;
            case "V" : this.displayMap();
+           break;
            case "P" : movePlayer();
            break;
            case "O" : openDoor();
@@ -157,7 +158,24 @@ private void openFinalDoor() {
     private void displayMap() {
      Game game = SweetEscape.getCurrentGame();
 
-     System.out.println("Sweet Escape Map");
+     System.out.println("Sweet Escape Map\n");
+     System.out.println("1  2  3  4  5  6  7  8  9  10  11  12\n" +
+                        "---------------------------------------");
+     
+      Location[][] locations = new Location[12][12];
+     int num = 1;
+     for (int i = 0; i < locations.length; i++) {
+       
+         System.out.println(num++ + "|");
+         
+          for (int j = 0; j < locations[i].length; j++) {
+          // System.out.println("|");
+          // Location location = locations[12][12];
+           //locations[i][j] = location;
+         
+          }
+
+      }
     }
 
    
