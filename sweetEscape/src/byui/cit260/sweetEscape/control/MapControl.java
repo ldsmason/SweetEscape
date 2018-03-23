@@ -19,12 +19,11 @@ import java.util.ArrayList;
  */
 public class MapControl {
 
-    public static ArrayList<Inventory> items = new ArrayList<>();
 
     public MapControl() {
     }
     
-    public static Map createMap( int noOfRows,int noOfColumns, Inventory[] items) {
+    public static Map createMap( int noOfRows,int noOfColumns) {
         
         if (noOfRows < 0 || noOfColumns < 0) {
             return null;
@@ -41,7 +40,7 @@ public class MapControl {
         Location[][] locations = createLocations(noOfRows, noOfColumns);
         RegularSceneType[] scenes = createScenes();
         
-        assignItemsToScenes(items, scenes);
+        assignItemsToScenes(scenes);
         assignScenesToLocations(scenes, map);
 
         return map;
@@ -105,32 +104,32 @@ public class MapControl {
       
     }
 
-    private static void assignItemsToScenes(Inventory[] items, RegularSceneType[] scenes) {
+    private static void assignItemsToScenes(RegularSceneType[] scenes) {
         
         RoomScene roomScene1 = new RoomScene();
         ArrayList<Inventory> resources = new ArrayList<>();
-        Inventory.add(items[3]);
-        Inventory.add(items[4]);
+        resources.add(Inventory.Sand);
+        resources.add(Inventory.TwoLiterBottle);
         
         RoomScene roomScene2 = new RoomScene();
-        ArrayList<Inventory> resources2 = new ArrayList<>();
-        Inventory.add(items[6]);
-        Inventory.add(items[0]);
-        
-        RoomScene roomScene3 = new RoomScene();
-        ArrayList<Inventory> resources3 = new ArrayList<>();
-        Inventory.add(items[5]);
-        Inventory.add(items[1]);
-        Inventory.add(items[2]);
-        
-        RoomScene roomScene4 = new RoomScene();
-        ArrayList<Inventory> resources4 = new ArrayList<>();
-        Inventory.add(items[7]);
-        
-        roomScene1 = (RoomScene) scenes[SceneType.roomOne.ordinal()];
-        roomScene2 = (RoomScene) scenes[SceneType.roomTwo.ordinal()];
-        roomScene3 = (RoomScene) scenes[SceneType.roomThree.ordinal()];
-        roomScene4 = (RoomScene) scenes[SceneType.roomFour.ordinal()];
+//        ArrayList<Inventory> resources2 = new ArrayList<>();
+//        Inventory.add(items[6]);
+//        Inventory.add(items[0]);
+//        
+//        RoomScene roomScene3 = new RoomScene();
+//        ArrayList<Inventory> resources3 = new ArrayList<>();
+//        Inventory.add(items[5]);
+//        Inventory.add(items[1]);
+//        Inventory.add(items[2]);
+//        
+//        RoomScene roomScene4 = new RoomScene();
+//        ArrayList<Inventory> resources4 = new ArrayList<>();
+//        Inventory.add(items[7]);
+//        
+//        roomScene1 = (RoomScene) scenes[SceneType.roomOne.ordinal()];
+//        roomScene2 = (RoomScene) scenes[SceneType.roomTwo.ordinal()];
+//        roomScene3 = (RoomScene) scenes[SceneType.roomThree.ordinal()];
+//        roomScene4 = (RoomScene) scenes[SceneType.roomFour.ordinal()];
 
     }
     private static void assignScenesToLocations(RegularSceneType[] scenes, Map map) {

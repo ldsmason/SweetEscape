@@ -162,20 +162,27 @@ private void openFinalDoor() {
      System.out.println("   1  2  3  4  5  6  7  8  9  10  11  12\n" +
                         "-----------------------------------------");
      
-      Location[][] locations = new Location[12][12];
+     Location[][] locations = game.getMap().getLocations();
      int num = 1;
      for (int i = 0; i < locations.length; i++) {
        
          System.out.println(num++ + "|");
          
           for (int j = 0; j < locations[i].length; j++) {
-          // System.out.println("|");
-          // Location location = locations[12][12];
-           //locations[i][j] = location;
+              Location location = locations[i][j];
+              if(location.isAlreadyVisited()) {
+                  String mapSymbol = location.getScene().getMapSymbol();
+                  System.out.print(mapSymbol);
+              }
+              else {
+                  System.out.print("??");
+              }
+              System.out.print("|");
          
           }
 
       }
+     System.out.println("-----------------------------------------");
     }
 
    
