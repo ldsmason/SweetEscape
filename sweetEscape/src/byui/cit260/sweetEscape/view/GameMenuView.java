@@ -7,6 +7,7 @@ package byui.cit260.sweetEscape.view;
 import byui.cit260.sweetEscape.model.Door;
 import byui.cit260.sweetEscape.model.Game;
 import byui.cit260.sweetEscape.model.Location;
+import byui.cit260.sweetEscape.model.Map;
 //import  byui.cit260.sweetEscape.control.DoorControl;
 //import  byui.cit260.sweetEscape.control.inventoryControl;
 
@@ -29,7 +30,11 @@ class GameMenuView extends View{
        String[] inputs = new String[1];
        
       
-           String menuItem = this.getInput("M - View Map\n" +
+           String menuItem = this.getInput(
+                              "-----------------------\n" +
+                              "Game Menu             |\n" +
+                              "-----------------------\n" +        
+                              "M - View Map\n" +
                               "I - View Inventory\n" +
                               "T - View list of tools\n" +
                               "V - Display Map\n" +
@@ -157,21 +162,24 @@ private void openFinalDoor() {
 
     private void displayMap() {
      Game game = SweetEscape.getCurrentGame();
-
+    // Location[][] locations = new Location[12][12];   
+  
      System.out.println("Sweet Escape Map\n");
      System.out.println("   1  2  3  4  5  6  7  8  9  10  11  12\n" +
                         "-----------------------------------------");
      
-      Location[][] locations = new Location[12][12];
+     
+     
      int num = 1;
      for (int i = 0; i < locations.length; i++) {
        
          System.out.println(num++ + "|");
          
           for (int j = 0; j < locations[i].length; j++) {
-          // System.out.println("|");
-          // Location location = locations[12][12];
-           //locations[i][j] = location;
+          System.out.println("|");
+          Location location = locations[12][12];
+         
+          //locations[i][j] = location;
          
           }
 

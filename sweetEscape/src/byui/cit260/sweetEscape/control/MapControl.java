@@ -108,7 +108,7 @@ public class MapControl {
         
     }
     private static void assignScenesToLocations(RegularSceneType[] scenes, Map map) {
-       Location[][] locations = map.getLocations();
+        Location[][] locations = map.getLocations();
         
         locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
         locations[0][1].setScene(scenes[SceneType.blank.ordinal()]);
