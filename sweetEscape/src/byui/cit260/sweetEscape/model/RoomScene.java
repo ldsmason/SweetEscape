@@ -23,29 +23,6 @@ public class RoomScene extends QuestionSceneType {
         
     }
     
-    private static void assignItemsToScenes(Inventory[] items, RegularSceneType[] scenes){
-        
-        RoomScene roomScene1 = new RoomScene();
-        ArrayList<Inventory> resources = new ArrayList<>();
-        Inventory.add(items[3]);
-        Inventory.add(items[4]);
-        
-        RoomScene roomScene2 = new RoomScene();
-        ArrayList<Inventory> resources2 = new ArrayList<>();
-        Inventory.add(items[6]);
-        Inventory.add(items[0]);
-        
-        RoomScene roomScene3 = new RoomScene();
-        ArrayList<Inventory> resources3 = new ArrayList<>();
-        Inventory.add(items[5]);
-        Inventory.add(items[1]);
-        Inventory.add(items[2]);
-        
-        RoomScene roomScene4 = new RoomScene();
-        ArrayList<Inventory> resources4 = new ArrayList<>();
-        Inventory.add(items[7]);
-        
-    }
 
     public RoomScene(String item, String area) {
         this.item = item;

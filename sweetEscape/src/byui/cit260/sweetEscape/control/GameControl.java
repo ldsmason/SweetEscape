@@ -46,7 +46,7 @@ public class GameControl  {
     
     //Inventory[] inventory;
     
-    Map map = MapControl.createMap(12, 12);//(row, column) where to intialize or put row variables
+    Map map = MapControl.createMap(12, 12,Inventory[]);//(row, column) where to intialize or put row variables
     if(map == null) {
         return -1;
     } 
