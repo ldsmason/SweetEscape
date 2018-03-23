@@ -13,10 +13,12 @@ public enum SceneType {
     start,
     blank,
     door,
+    room,
     roomOne,
     roomTwo,
     roomThree,
     roomFour,
+    wall,
     instructions,
     finish;
 }
