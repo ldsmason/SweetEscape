@@ -17,6 +17,7 @@ public class Location implements Serializable {
     private int row;
     private int column;
     private boolean alreadyVisited = false;
+    private RegularSceneType scene;
     
     public Location(){
         
@@ -50,6 +51,16 @@ public class Location implements Serializable {
     public void setAlreadyVisited(boolean alreadyVisited) {
         this.alreadyVisited = alreadyVisited;
     }
+
+    public RegularSceneType getScene() {
+        return scene;
+    }
+
+    public void setScene(RegularSceneType scene) {
+        this.scene = scene;
+    }
+    
+    
 
     @Override
     public int hashCode() {

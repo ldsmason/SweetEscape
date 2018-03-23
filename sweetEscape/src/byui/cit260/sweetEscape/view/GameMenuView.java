@@ -159,8 +159,8 @@ private void openFinalDoor() {
      Game game = SweetEscape.getCurrentGame();
 
      System.out.println("Sweet Escape Map\n");
-     System.out.println("1  2  3  4  5  6  7  8  9  10  11  12\n" +
-                        "---------------------------------------");
+     System.out.println("   1  2  3  4  5  6  7  8  9  10  11  12\n" +
+                        "-----------------------------------------");
      
       Location[][] locations = new Location[12][12];
      int num = 1;

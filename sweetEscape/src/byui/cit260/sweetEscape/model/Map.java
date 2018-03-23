@@ -20,6 +20,7 @@ public class Map implements Serializable {
     public static boolean visited;
     private double amountRemaining;
     Location playerLoc;
+    Location[][] locations;
 
     public Map() {
     }
@@ -81,6 +82,15 @@ public class Map implements Serializable {
         this.playerLoc = playerLoc;
     }
 
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+
+    
     @Override
     public int hashCode() {
         int hash = 7;
