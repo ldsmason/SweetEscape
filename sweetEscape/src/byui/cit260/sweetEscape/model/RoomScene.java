@@ -7,6 +7,7 @@ package byui.cit260.sweetEscape.model;
 
 import java.util.ArrayList;
 import java.util.Objects;
+import byui.cit260.sweetEscape.control.MapControl;
 
 /**
  *
@@ -16,9 +17,33 @@ public class RoomScene extends QuestionSceneType {
     
     private String item;
     private String area;
-    private ArrayList<Inventory> items = new ArrayList<>();
+    public static ArrayList<Inventory> items = new ArrayList<>();
     
     public RoomScene() {
+        
+    }
+    
+    private static void assignItemsToScenes(Inventory[] items, RegularSceneType[] scenes){
+        
+        RoomScene roomScene1 = new RoomScene();
+        ArrayList<Inventory> resources = new ArrayList<>();
+        Inventory.add(items[3]);
+        Inventory.add(items[4]);
+        
+        RoomScene roomScene2 = new RoomScene();
+        ArrayList<Inventory> resources2 = new ArrayList<>();
+        Inventory.add(items[6]);
+        Inventory.add(items[0]);
+        
+        RoomScene roomScene3 = new RoomScene();
+        ArrayList<Inventory> resources3 = new ArrayList<>();
+        Inventory.add(items[5]);
+        Inventory.add(items[1]);
+        Inventory.add(items[2]);
+        
+        RoomScene roomScene4 = new RoomScene();
+        ArrayList<Inventory> resources4 = new ArrayList<>();
+        Inventory.add(items[7]);
         
     }
 

@@ -106,6 +106,7 @@ public class OpenDoorThreeView extends View {
         return valid;
   
     }
+}
     
         
 
