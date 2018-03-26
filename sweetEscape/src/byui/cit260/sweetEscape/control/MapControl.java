@@ -12,13 +12,13 @@ import byui.cit260.sweetEscape.model.QuestionSceneType;
 import byui.cit260.sweetEscape.model.RegularSceneType;
 import byui.cit260.sweetEscape.model.RoomScene;
 import byui.cit260.sweetEscape.model.SceneType;
+import java.util.ArrayList;
 /**
  *
  * @author nathanielmason
  */
 public class MapControl {
 
-   
 
     public MapControl() {
     }
@@ -38,14 +38,12 @@ public class MapControl {
        
        
         Location[][] locations = createLocations(noOfRows, noOfColumns);
+        map.setLocations(locations);
         RegularSceneType[] scenes = createScenes();
-       
         
-        
-        
-        assignItemsToScenes(/*items,*/ scenes);
+        assignItemsToScenes(scenes);
         assignScenesToLocations(scenes, map);
-        
+
         return map;
     }
     
@@ -75,11 +73,11 @@ public class MapControl {
         System.out.println("*** createScenes() called ***\n");
         //return null;
         
-        RegularSceneType[] scenes = new RegularSceneType[9];
+        RegularSceneType[] scenes = new RegularSceneType[11];
         
-        scenes[0] = new RegularSceneType();
-        scenes[1] = new QuestionSceneType();
-        scenes[2] = new RoomScene();
+        //scenes[0] = new RegularSceneType();
+        //scenes[1] = new QuestionSceneType();
+        //scenes[2] = new RoomScene();
 
         
         RegularSceneType start = new RegularSceneType("This is the starting point", 0, 0, " S ");
@@ -94,7 +92,10 @@ public class MapControl {
         
         scenes[SceneType.start.ordinal()] = start;
         scenes[SceneType.door.ordinal()] = door;
-        scenes[SceneType.room.ordinal()] = room;
+        scenes[SceneType.roomOne.ordinal()] = room;
+        scenes[SceneType.roomTwo.ordinal()] = room;
+        scenes[SceneType.roomThree.ordinal()] = room;
+        scenes[SceneType.roomFour.ordinal()] = room;
         scenes[SceneType.instructions.ordinal()] = instructions;
         scenes[SceneType.finish.ordinal()] = finish;
         scenes[SceneType.blank.ordinal()] = blank;
@@ -104,8 +105,33 @@ public class MapControl {
       
     }
 
-    private static void assignItemsToScenes(/*Inventory[] items,*/ RegularSceneType[] scenes) {
+    private static void assignItemsToScenes(RegularSceneType[] scenes) {
         
+        RoomScene roomScene1 = new RoomScene();
+        ArrayList<Inventory> resources = new ArrayList<>();
+        resources.add(Inventory.Sand);
+        resources.add(Inventory.TwoLiterBottle);
+        
+        RoomScene roomScene2 = new RoomScene();
+//        ArrayList<Inventory> resources2 = new ArrayList<>();
+//        Inventory.add(items[6]);
+//        Inventory.add(items[0]);
+//        
+//        RoomScene roomScene3 = new RoomScene();
+//        ArrayList<Inventory> resources3 = new ArrayList<>();
+//        Inventory.add(items[5]);
+//        Inventory.add(items[1]);
+//        Inventory.add(items[2]);
+//        
+//        RoomScene roomScene4 = new RoomScene();
+//        ArrayList<Inventory> resources4 = new ArrayList<>();
+//        Inventory.add(items[7]);
+//        
+//        roomScene1 = (RoomScene) scenes[SceneType.roomOne.ordinal()];
+//        roomScene2 = (RoomScene) scenes[SceneType.roomTwo.ordinal()];
+//        roomScene3 = (RoomScene) scenes[SceneType.roomThree.ordinal()];
+//        roomScene4 = (RoomScene) scenes[SceneType.roomFour.ordinal()];
+
     }
     private static void assignScenesToLocations(RegularSceneType[] scenes, Map map) {
         Location[][] locations = map.getLocations();

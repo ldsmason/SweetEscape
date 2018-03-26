@@ -32,7 +32,7 @@ class GameMenuView extends View{
       
            String menuItem = this.getInput(
                               "-----------------------\n" +
-                              "Game Menu             |\n" +
+                              "       Game Menu       |\n" +
                               "-----------------------\n" +        
                               "M - View Map\n" +
                               "I - View Inventory\n" +
@@ -76,6 +76,7 @@ class GameMenuView extends View{
            case "C" : openDoorTwo();
            break;
            case "D" : openDoorThree();
+           break;
            case "F" : openFinalDoor();
            break;
            case "Q" : quitGame();
@@ -168,22 +169,29 @@ private void openFinalDoor() {
      System.out.println("   1  2  3  4  5  6  7  8  9  10  11  12\n" +
                         "-----------------------------------------");
      
-     
-     
+     Location[][] locations = game.getMap().getLocations();
      int num = 1;
      for (int i = 0; i < locations.length; i++) {
-       
-         System.out.println(num++ + "|");
+         System.out.println();
+         System.out.print(num++ + "|");
          
           for (int j = 0; j < locations[i].length; j++) {
-          System.out.println("|");
-          Location location = locations[12][12];
-         
-          //locations[i][j] = location;
+              Location location = locations[i][j];
+              if(location.isAlreadyVisited()) {
+                  String mapSymbol = location.getScene().getMapSymbol();
+                  System.out.print(mapSymbol);
+              }
+              else {
+                  System.out.print("??");
+              }
+              System.out.print("|");
+              
          
           }
-
+          
+          
       }
+     System.out.println("-----------------------------------------");
     }
 
    
