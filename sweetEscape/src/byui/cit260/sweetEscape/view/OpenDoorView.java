@@ -7,9 +7,12 @@ package byui.cit260.sweetEscape.view;
 
 import byui.cit260.sweetEscape.control.DoorControl;
 import byui.cit260.sweetEscape.control.GameControl;
+import byui.cit260.sweetEscape.exceptions.DoorControlException;
 import byui.cit260.sweetEscape.model.Door;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -21,6 +24,7 @@ class OpenDoorView extends View {
 
     
     public OpenDoorView() {
+    
     }
 
     
@@ -56,6 +60,7 @@ class OpenDoorView extends View {
     @Override
     public boolean doAction(String[] inputs) {
 
+        
         int guess = Integer.parseInt(inputs[0]);
         
 
@@ -64,7 +69,12 @@ class OpenDoorView extends View {
             System.out.println("=================================================");
             return false;
         }
-        long code = DoorControl.calcKeypad(this.num);
+        long code = -1;
+        try {
+            code = DoorControl.calcKeypad(this.num);
+        } catch (DoorControlException ex) {
+            Logger.getLogger(OpenDoorView.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         if (code != guess) {
             System.out.println("try again" +

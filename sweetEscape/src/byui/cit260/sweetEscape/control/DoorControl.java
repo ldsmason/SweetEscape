@@ -15,21 +15,21 @@ import byui.cit260.sweetEscape.exceptions.DoorControlException;
 public class DoorControl  {
    
     
-   public static long calcKeypad (double num) {
+   public static long calcKeypad (double num) throws DoorControlException {
      double answer;
      //System.out.println("Please enter a number");
      
-     throws DoorControlException {
+      
      if (num < 0) {
          throw new DoorControlException("The number cannot be negative");
          
      }
      
      if (num > 135) {
-        throw new DoorControlException("The number cannot be greate");
+        throw new DoorControlException("The number cannot be greater than 135");
      }
      
-   }
+   
      
      answer = num/2 + 32;
      
