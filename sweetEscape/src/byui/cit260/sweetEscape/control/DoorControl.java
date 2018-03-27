@@ -5,21 +5,31 @@
  */
 package byui.cit260.sweetEscape.control;
 
+import byui.cit260.sweetEscape.exceptions.DoorControlException;
+
 
 /**
  *
  * @author nathanielmason
  */
-public class DoorControl {
+public class DoorControl  {
+   
     
    public static long calcKeypad (double num) {
      double answer;
      //System.out.println("Please enter a number");
-     if (num < 0)
-         return -1;
      
-     if (num > 135)
-         return -2;
+     throws DoorControlException {
+     if (num < 0) {
+         throw new DoorControlException("The number cannot be negative");
+         
+     }
+     
+     if (num > 135) {
+        throw new DoorControlException("The number cannot be greate");
+     }
+     
+   }
      
      answer = num/2 + 32;
      

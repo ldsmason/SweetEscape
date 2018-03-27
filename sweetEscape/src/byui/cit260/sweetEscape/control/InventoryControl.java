@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.sweetEscape.control;
+import byui.cit260.sweetEscape.model.Inventory;
 import java.io.Serializable;
 
 /**
@@ -76,5 +77,13 @@ public static double calcLiters(double lbs, double guess){
   
     
 }
+
+ public class searchInventory {
+     Inventory[] items = Inventory.values();
+     
+     /*for (Inventory item : items) {
+     System.out.println(item.ordinal() + ": " + item);
+ }*/
+ }
    
 }
