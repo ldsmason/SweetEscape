@@ -38,6 +38,7 @@ public class MapControl {
        
        
         Location[][] locations = createLocations(noOfRows, noOfColumns);
+        map.setLocations(locations);
         RegularSceneType[] scenes = createScenes();
         
         assignItemsToScenes(scenes);
@@ -72,11 +73,11 @@ public class MapControl {
         System.out.println("*** createScenes() called ***\n");
         //return null;
         
-        RegularSceneType[] scenes = new RegularSceneType[9];
+        RegularSceneType[] scenes = new RegularSceneType[11];
         
-        scenes[0] = new RegularSceneType();
-        scenes[1] = new QuestionSceneType();
-        scenes[2] = new RoomScene();
+        //scenes[0] = new RegularSceneType();
+        //scenes[1] = new QuestionSceneType();
+        //scenes[2] = new RoomScene();
 
         
         RegularSceneType start = new RegularSceneType("This is the starting point", 0, 0, " S ");
@@ -133,7 +134,7 @@ public class MapControl {
 
     }
     private static void assignScenesToLocations(RegularSceneType[] scenes, Map map) {
-       Location[][] locations = map.getLocations();
+        Location[][] locations = map.getLocations();
         
         locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
         locations[0][1].setScene(scenes[SceneType.blank.ordinal()]);
