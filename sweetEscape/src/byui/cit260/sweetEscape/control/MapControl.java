@@ -113,24 +113,24 @@ public class MapControl {
         resources.add(Inventory.TwoLiterBottle);
         
         RoomScene roomScene2 = new RoomScene();
-//        ArrayList<Inventory> resources2 = new ArrayList<>();
-//        Inventory.add(items[6]);
-//        Inventory.add(items[0]);
-//        
-//        RoomScene roomScene3 = new RoomScene();
-//        ArrayList<Inventory> resources3 = new ArrayList<>();
-//        Inventory.add(items[5]);
-//        Inventory.add(items[1]);
-//        Inventory.add(items[2]);
-//        
-//        RoomScene roomScene4 = new RoomScene();
-//        ArrayList<Inventory> resources4 = new ArrayList<>();
-//        Inventory.add(items[7]);
-//        
-//        roomScene1 = (RoomScene) scenes[SceneType.roomOne.ordinal()];
-//        roomScene2 = (RoomScene) scenes[SceneType.roomTwo.ordinal()];
-//        roomScene3 = (RoomScene) scenes[SceneType.roomThree.ordinal()];
-//        roomScene4 = (RoomScene) scenes[SceneType.roomFour.ordinal()];
+        ArrayList<Inventory> resources2 = new ArrayList<>();
+        resources2.add(Inventory.BlueKey);
+        resources2.add(Inventory.Hammer);
+        
+        RoomScene roomScene3 = new RoomScene();
+        ArrayList<Inventory> resources3 = new ArrayList<>();
+        resources3.add(Inventory.RedKey);
+        resources3.add(Inventory.DriftPin);
+        resources3.add(Inventory.LockPick);
+        
+        RoomScene roomScene4 = new RoomScene();
+        ArrayList<Inventory> resources4 = new ArrayList<>();
+        resources4.add(Inventory.GreenKey);
+        
+        roomScene1 = (RoomScene) scenes[SceneType.roomOne.ordinal()];
+        roomScene2 = (RoomScene) scenes[SceneType.roomTwo.ordinal()];
+        roomScene3 = (RoomScene) scenes[SceneType.roomThree.ordinal()];
+        roomScene4 = (RoomScene) scenes[SceneType.roomFour.ordinal()];
 
     }
     private static void assignScenesToLocations(RegularSceneType[] scenes, Map map) {
