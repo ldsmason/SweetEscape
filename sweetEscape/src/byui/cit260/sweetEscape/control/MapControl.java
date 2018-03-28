@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.sweetEscape.control;
+import byui.cit260.sweetEscape.model.Game;
 import byui.cit260.sweetEscape.model.Inventory;
 import byui.cit260.sweetEscape.model.Location;
 import byui.cit260.sweetEscape.model.Map;
@@ -13,6 +14,7 @@ import byui.cit260.sweetEscape.model.RegularSceneType;
 import byui.cit260.sweetEscape.model.RoomScene;
 import byui.cit260.sweetEscape.model.SceneType;
 import java.util.ArrayList;
+import sweetescape.SweetEscape;
 /**
  *
  * @author nathanielmason
@@ -105,7 +107,7 @@ public class MapControl {
       
     }
 
-    private static void assignItemsToScenes(RegularSceneType[] scenes) {
+   private static void assignItemsToScenes(RegularSceneType[] scenes) {
         
         RoomScene roomScene1 = new RoomScene();
         ArrayList<Inventory> resources = new ArrayList<>();
@@ -127,10 +129,15 @@ public class MapControl {
         ArrayList<Inventory> resources4 = new ArrayList<>();
         resources4.add(Inventory.GreenKey);
         
-        roomScene1 = (RoomScene) scenes[SceneType.roomOne.ordinal()];
+        /*roomScene1 = (RoomScene) scenes[SceneType.roomOne.ordinal()];
         roomScene2 = (RoomScene) scenes[SceneType.roomTwo.ordinal()];
         roomScene3 = (RoomScene) scenes[SceneType.roomThree.ordinal()];
-        roomScene4 = (RoomScene) scenes[SceneType.roomFour.ordinal()];
+        roomScene4 = (RoomScene) scenes[SceneType.roomFour.ordinal()];*/
+        scenes[SceneType.roomOne.ordinal()] = roomScene1;
+        scenes[SceneType.roomTwo.ordinal()] = roomScene2;
+        scenes[SceneType.roomThree.ordinal()] = roomScene3;
+        scenes[SceneType.roomFour.ordinal()] = roomScene4;
+        
 
     }
     private static void assignScenesToLocations(RegularSceneType[] scenes, Map map) {
@@ -292,5 +299,14 @@ public class MapControl {
         locations[11][10].setScene(scenes[SceneType.blank.ordinal()]);
         locations[11][11].setScene(scenes[SceneType.wall.ordinal()]);
     }
+    
+    /*public static Location movePlayer(int newRow, int newColumn) {
+       Game game = SweetEscape.getCurrentGame();
+       Map map = game.getMap();
+       Location[][] locations = map.getLocations();
+       
+       
+       if (newRow < 1 || newRow > noOfRows)
+    }*/
     
 }

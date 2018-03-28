@@ -7,7 +7,7 @@ package byui.cit260.sweetEscape.model;
 
 import java.util.ArrayList;
 import java.util.Objects;
-import byui.cit260.sweetEscape.control.MapControl;
+//import byui.cit260.sweetEscape.control.MapControl;
 
 /**
  *
