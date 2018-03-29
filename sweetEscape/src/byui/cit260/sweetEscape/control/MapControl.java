@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package byui.cit260.sweetEscape.control;
+import byui.cit260.sweetEscape.exceptions.MapControlException;
+import byui.cit260.sweetEscape.model.Actor;
 import byui.cit260.sweetEscape.model.Game;
 import byui.cit260.sweetEscape.model.Inventory;
 import byui.cit260.sweetEscape.model.Location;
@@ -296,13 +298,22 @@ public class MapControl {
         locations[11][11].setScene(scenes[SceneType.wall.ordinal()]);
     }
     
-    /*public static Location movePlayer(int newRow, int newColumn) {
+    public static Location movePlayer(Actor actor,int newRow, int newColumn) throws MapControlException{
+       if (actor == null) {
+           throw new MapControlException("Actor must have name");
+       }
+        
        Game game = SweetEscape.getCurrentGame();
        Map map = game.getMap();
        Location[][] locations = map.getLocations();
        
        
-       if (newRow < 1 || newRow > noOfRows)
-    }*/
+       if (newRow < 1 || newRow > map.getRows() ||
+               newColumn < 1 || newColumn > map.getColumns()) {
+           throw new MapControlException("Row or column cannot be less then one and must be on the map");
+       }
+       
+       int currentRow = actor.getCoordinates();
+    }
     
 }

@@ -15,8 +15,8 @@ import java.util.Objects;
 public class Map implements Serializable {
     
     Point point;
-    private String row;
-    private String column;
+    private int rows;
+    private int columns;
     public static boolean visited;
     private double amountRemaining;
     Location playerLoc;
@@ -25,10 +25,10 @@ public class Map implements Serializable {
     public Map() {
     }
 
-    public Map(Point point, String row, String column, boolean visited, double amountRemaining, Location playerLoc) {
+    public Map(Point point, int rows, int columns, boolean visited, double amountRemaining, Location playerLoc) {
         this.point = point;
-        this.row = row;
-        this.column = column;
+        this.rows = rows;
+        this.columns = columns;
         Map.visited = visited;
         this.amountRemaining = amountRemaining;
         this.playerLoc = playerLoc;
@@ -42,20 +42,20 @@ public class Map implements Serializable {
         this.point = point;
     }
 
-    public String getRow() {
-        return row;
+    public int getRows() {
+        return rows;
     }
 
-    public void setRow(String row) {
-        this.row = row;
+    public void setRows(int rows) {
+        this.rows = rows;
     }
 
-    public String getColumn() {
-        return column;
+    public int getColumns() {
+        return columns;
     }
 
-    public void setColumn(String column) {
-        this.column = column;
+    public void setColumns(int columns) {
+        this.columns = columns;
     }
 
     public boolean getVisited() {
@@ -95,8 +95,8 @@ public class Map implements Serializable {
     public int hashCode() {
         int hash = 7;
         hash = 71 * hash + Objects.hashCode(this.point);
-        hash = 71 * hash + Objects.hashCode(this.row);
-        hash = 71 * hash + Objects.hashCode(this.column);
+        hash = 71 * hash + Objects.hashCode(this.rows);
+        hash = 71 * hash + Objects.hashCode(this.columns);
         hash = 71 * hash + (this.visited ? 1 : 0);
         hash = 71 * hash + (int) (Double.doubleToLongBits(this.amountRemaining) ^ (Double.doubleToLongBits(this.amountRemaining) >>> 32));
         hash = 71 * hash + Objects.hashCode(this.playerLoc);
@@ -121,10 +121,10 @@ public class Map implements Serializable {
         if (Double.doubleToLongBits(this.amountRemaining) != Double.doubleToLongBits(other.amountRemaining)) {
             return false;
         }
-        if (!Objects.equals(this.row, other.row)) {
+        if (!Objects.equals(this.rows, other.rows)) {
             return false;
         }
-        if (!Objects.equals(this.column, other.column)) {
+        if (!Objects.equals(this.columns, other.columns)) {
             return false;
         }
         if (!Objects.equals(this.point, other.point)) {
@@ -138,7 +138,7 @@ public class Map implements Serializable {
 
     @Override
     public String toString() {
-        return "Map{" + "point=" + point + ", row=" + row + ", column=" + column + ", visited=" + visited + ", amountRemaining=" + amountRemaining + ", playerLoc=" + playerLoc + '}';
+        return "Map{" + "point=" + point + ", row=" + rows + ", column=" + columns + ", visited=" + visited + ", amountRemaining=" + amountRemaining + ", playerLoc=" + playerLoc + '}';
     }
 
     
