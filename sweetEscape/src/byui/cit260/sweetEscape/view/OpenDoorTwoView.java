@@ -5,7 +5,7 @@
  */
 package byui.cit260.sweetEscape.view;
 import byui.cit260.sweetEscape.control.InventoryControl;
-import java.util.Scanner;
+import byui.cit260.sweetEscape.exceptions.InventoryControlException;
 import java.util.Random;
 
 /**
@@ -54,25 +54,18 @@ public class OpenDoorTwoView extends View {
     @Override
     public boolean doAction(String[] inputs) {
         
-        boolean valid = false;
         double guess = Double.parseDouble(inputs[0]);
         
-        double code = InventoryControl.calcLiters(lbs, guess);
-               if (code == -1) {
-                   System.out.println("Try again, your guess is incorrect!");
-               }
-               
-               else if (code == -2) {
-                   System.out.println("Try again, your guess is incorrect!");
-               }
-               else {
-                   System.out.println("Way to go!  The door's open!  Let's go!");
-                   valid = true;
-               }
-                
-       
-       
-       return valid;
+        try {
+            InventoryControl.calcLiters(lbs, guess);
+            System.out.println("The door's open!  Let's go!");
+            return true;
+            
+        } catch (InventoryControlException ex) {
+            System.out.println(ex.getMessage());
+            return false;
+        }
+        
     }
     
     private void calcLiters() {

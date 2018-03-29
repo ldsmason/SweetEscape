@@ -6,8 +6,11 @@
 package byui.cit260.sweetEscape.view;
 
 import byui.cit260.sweetEscape.control.InventoryControl;
+import byui.cit260.sweetEscape.exceptions.InventoryControlException;
 import java.util.Scanner;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -72,23 +75,22 @@ public class OpenDoorThreeView extends View {
     
     
     public boolean doAction(String[] inputs) {
-
-        boolean valid = false;
+        
         int guess = Integer.parseInt(inputs[0]);
         double guessAccel = Double.parseDouble(inputs[0]);
         /*double lbs = Double.parseDouble(inputs[1]); 
         double guessMass2 = Double.parseDouble(inputs[2]);
         double guessAccel2 = Double.parseDouble(inputs[3]);
         double mass2 = lbs/2.2;*/
-        
-        double code = InventoryControl.pickLock(mass, force, guessAccel);
-        if (code == 0) {
-            System.out.println("Way to go! You broke the lock!");
-        } 
-        else {
-            System.out.println("Your guess is incorrect! 너 망했어!");
-            valid = true;
+        try {
+            InventoryControl.pickLock(mass, force, guessAccel); 
+            System.out.println("Way to go you broke the lock!");
+            return true;
+        } catch (InventoryControlException ex) {
+            System.out.println(ex.getMessage());
+            return false;
         }
+        
         
        /* boolean valid = false;
         int guess = Integer.parseInt(inputs[0]);
@@ -102,8 +104,6 @@ public class OpenDoorThreeView extends View {
                     + "your math and try again!");
             valid = true;
         }*/
- 
-        return valid;
   
     }
 }
