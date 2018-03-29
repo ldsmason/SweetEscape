@@ -6,6 +6,7 @@
 package byui.cit260.sweetEscape.control;
 
 import byui.cit260.sweetEscape.model.Inventory;
+import byui.cit260.sweetEscape.exceptions.InventoryControlException;
 import java.io.Serializable;
 
 /**
@@ -14,15 +15,15 @@ import java.io.Serializable;
  */
 public class InventoryControl implements Serializable {
 
-    public static double pickLock(double mass, double force, double guessAccel) {
+    public static void pickLock(double mass, double force, double guessAccel) 
+            throws InventoryControlException {
 
         double accel = force / mass;
-        if (guessAccel == accel) {
-
-            return 0;
+        if (guessAccel != accel) {
+            throw new InventoryControlException("Your guess for acceleration is incorrect!");
 
         } else {
-            return -1;
+            return;
         }
 
     }
@@ -53,9 +54,9 @@ public class InventoryControl implements Serializable {
         return force2;
     }
 
-    public static double calcLiters(double lbs, double guess) {
+    public static void calcLiters(double lbs, double guess) throws InventoryControlException {
         if (lbs < 1 || lbs > 50) {
-            return -1;
+            throw new InventoryControlException("The value must be >= 1 or <= 50.");
         }
 
         double liters = lbs / 2.2;
@@ -65,10 +66,10 @@ public class InventoryControl implements Serializable {
         fillBottle /= 100;
 
         if (guess != fillBottle) {
-            return -2;
+            throw new InventoryControlException("Your guess is incorrect.  Try again!");
         }
 
-        return 0;
+        
 
     }
 
