@@ -128,11 +128,7 @@ public class MapControl {
         RoomScene roomScene4 = new RoomScene();
         ArrayList<Inventory> resources4 = new ArrayList<>();
         resources4.add(Inventory.GreenKey);
-        
-        /*roomScene1 = (RoomScene) scenes[SceneType.roomOne.ordinal()];
-        roomScene2 = (RoomScene) scenes[SceneType.roomTwo.ordinal()];
-        roomScene3 = (RoomScene) scenes[SceneType.roomThree.ordinal()];
-        roomScene4 = (RoomScene) scenes[SceneType.roomFour.ordinal()];*/
+       
         scenes[SceneType.roomOne.ordinal()] = roomScene1;
         scenes[SceneType.roomTwo.ordinal()] = roomScene2;
         scenes[SceneType.roomThree.ordinal()] = roomScene3;

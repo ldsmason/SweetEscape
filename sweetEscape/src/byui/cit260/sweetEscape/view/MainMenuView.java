@@ -7,6 +7,7 @@ package byui.cit260.sweetEscape.view;
 
 import byui.cit260.sweetEscape.model.Game;
 import byui.cit260.sweetEscape.control.*;
+import byui.cit260.sweetEscape.exceptions.MapControlException;
 import java.util.Scanner;
 import sweetescape.SweetEscape;
 
@@ -57,10 +58,21 @@ public class MainMenuView extends View {
        return false;
   }
 
-    private void startNewGame() {
+    private void startNewGame() /*throws MapControlException*/ {
       Game game = new Game();
       
+      try {
       GameControl.createNewGame(SweetEscape.getPlayer());
+      }
+      /*catch (MapControlException mce) {
+          System.out.println(mce.getMessage());
+          return;
+       } */
+      catch (Throwable te) {
+           System.out.println(te.getMessage());
+           te.printStackTrace();
+           return;
+       }
 
       GameMenuView gameMenuView = new GameMenuView();
       gameMenuView.display();
