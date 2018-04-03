@@ -38,8 +38,8 @@ public class MapControl {
        // RETURN null
        
        Map map = new Map();
-       map.getRow();
-       map.getColumn();
+       map.getRows();
+       map.getColumns();
        
        
         Location[][] locations = createLocations(noOfRows, noOfColumns);

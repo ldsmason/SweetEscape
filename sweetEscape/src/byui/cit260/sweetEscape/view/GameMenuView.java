@@ -143,7 +143,9 @@ class GameMenuView extends View{
     }
 
     private void getHelp() {
-        System.out.println("*** getHelp called ***");
+      HelpMenuView helpMenuView = new HelpMenuView();
+      
+      helpMenuView.display();
     }
 
     private void explaoreLocation() {

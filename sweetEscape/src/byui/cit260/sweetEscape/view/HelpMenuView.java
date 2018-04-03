@@ -20,7 +20,10 @@ class HelpMenuView extends View {
       String[] inputs = new String[1];
        
       
-           String menuItem = this.getInput("G - What is the goal of the game?\n" +
+           String menuItem = this.getInput("-----------------------\n" +
+                              "       Help Menu       |\n" +
+                              "-----------------------\n" +    
+                              "G - What is the goal of the game?\n" +
                               "M - How to move\n" +
                               "D -  Doors open \n" +
                               "T - Tools\n" +
