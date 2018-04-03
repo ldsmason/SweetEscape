@@ -15,6 +15,7 @@ import byui.cit260.sweetEscape.model.QuestionSceneType;
 import byui.cit260.sweetEscape.model.RegularSceneType;
 import byui.cit260.sweetEscape.model.RoomScene;
 import byui.cit260.sweetEscape.model.SceneType;
+import java.awt.Point;
 import java.util.ArrayList;
 import sweetescape.SweetEscape;
 /**
@@ -313,7 +314,41 @@ public class MapControl {
            throw new MapControlException("Row or column cannot be less then one and must be on the map");
        }
        
-       int currentRow = actor.getCoordinates();
+        double currentRow = actor.getCoordinates().getX();
+        double currentColumn = actor.getCoordinates().getY();
+        
+
+      Point startingLocation = actor.getCoordinates();
+      Point endingLocation = new Point(newRow, newColumn);
+      if (MapControl.validMove(startingLocation, endingLocation) == null) {
+          throw new MapControlException("Your path was blocked by a wall");
+      }
+      
+      
+      
+      Location newLocation = locations[endingLocation.x][endingLocation.y];
+      Location oldLocation = locations[startingLocation.x][startingLocation.y];
+      
+      actor.setCoordinates(startingLocation);
+      oldLocation = null;
+      actor.setCoordinates(endingLocation);
+      
+      oldLocation.setActor(null);
+      newLocation.setActor(actor);
+      
+ 
+      
+     //newRow = actor.setCoordinates(oldLocation);
+     newRow = (int) actor.getCoordinates().getX();
+     newColumn = (int) actor.getCoordinates().getY();
+     //newColumn = actor.setCoordinates(oldLocation);
+     
+     return newLocation;
+    }
+    
+    public static Point validMove(Point startingLocation, Point endingLocation) {
+        //For loop to check the ending loction to make sure it is not a wall
+        for()
     }
     
 }

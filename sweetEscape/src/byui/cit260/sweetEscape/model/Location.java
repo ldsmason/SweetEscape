@@ -18,6 +18,7 @@ public class Location implements Serializable {
     private int column;
     private boolean alreadyVisited = false;
     private RegularSceneType scene;
+    private Actor actor;
     
     public Location(){
         
@@ -59,7 +60,16 @@ public class Location implements Serializable {
     public void setScene(RegularSceneType scene) {
         this.scene = scene;
     }
-    
+
+    public Actor getActor() {
+        return actor;
+    }
+
+    public void setActor(Actor actor) {
+        this.actor = actor;
+    }
+
+ 
     
 
     @Override

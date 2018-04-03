@@ -21,6 +21,7 @@ public enum Actor implements Serializable {
     private Point coordinates;
 
     private Actor() {
+        
     }
     
   

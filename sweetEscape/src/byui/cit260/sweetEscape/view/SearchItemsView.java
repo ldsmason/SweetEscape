@@ -15,6 +15,7 @@ import java.util.Scanner;
  */
 class SearchItemsView extends View {
 
+    //Inventory itemName;
     public SearchItemsView() {
     }
     
