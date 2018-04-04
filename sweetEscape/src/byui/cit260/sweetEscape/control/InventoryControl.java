@@ -85,5 +85,18 @@ public class InventoryControl implements Serializable {
         }
         return null;
     }
+    
+    private static int findTotal(int items) {
+        Inventory[] inventory = new Inventory[items];
+        int total = 8;
+        for (int i = 0; i<inventory.length; i++) {
+          if (inventory[i] == null) {
+              total -= 1;
+          }
+          
+        }
+        return total;
+    }
+
    
 }
