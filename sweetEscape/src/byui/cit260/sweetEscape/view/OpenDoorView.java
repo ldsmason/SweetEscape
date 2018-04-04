@@ -76,8 +76,8 @@ class OpenDoorView extends View {
         long code = -1;
         try {
             code = DoorControl.calcKeypad(this.num);
-        } catch (DoorControlException ex) {
-            Logger.getLogger(OpenDoorView.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (DoorControlException dce) {            
+            System.out.println(dce.getMessage());          
         }
 
         if (code != guess) {
