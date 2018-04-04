@@ -33,11 +33,10 @@ class GameMenuView extends View{
            String menuItem = this.getInput(
                               "-----------------------\n" +
                               "       Game Menu       |\n" +
-                              "-----------------------\n" +        
-                              "M - View Map\n" +
+                              "-----------------------\n" + 
+                              "M - Display Map\n" +
                               "I - View Inventory\n" +
                               "T - View list of tools\n" +
-                              "V - Display Map\n" +
                               "P - Move the player\n" +
                               "O - opens the door\n" +
                               "C - opens Door Two\n" +
@@ -61,13 +60,13 @@ class GameMenuView extends View{
        menuItem = inputs[0].toUpperCase();
        
        switch (menuItem) {
-           case "M" : viewMap();
+           case "M" : this.displayMap();
            break;
            case "I" : seeInventory();
            break;
            case "T" : seeTools();
            break;
-           case "V" : this.displayMap();
+           case "L" : searchInventory();
            break;
            case "P" : movePlayer();
            break;
@@ -95,10 +94,6 @@ class GameMenuView extends View{
        return false;
     }
 
-    private void viewMap() {
-        
-        System.out.println("*** viewMap called ***");
-    }
 
     private void seeInventory() {
         System.out.println("*** seeInventory called ***");
@@ -141,7 +136,9 @@ class GameMenuView extends View{
     }
 
     private void getHelp() {
-        System.out.println("*** getHelp called ***");
+      HelpMenuView helpMenuView = new HelpMenuView();
+      
+      helpMenuView.display();
     }
 
     private void explaoreLocation() {
@@ -191,7 +188,13 @@ private void openFinalDoor() {
           
           
       }
-     System.out.println("-----------------------------------------");
+     System.out.println("\nb-----------------------------------------");
+    }
+
+    private void searchInventory() {
+      SearchItemsView searchItemsView = new SearchItemsView();
+      
+      searchItemsView.display();
     }
 
    

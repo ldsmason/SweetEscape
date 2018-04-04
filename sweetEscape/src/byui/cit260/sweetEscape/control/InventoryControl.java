@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package byui.cit260.sweetEscape.control;
-
 import byui.cit260.sweetEscape.model.Inventory;
 import byui.cit260.sweetEscape.exceptions.InventoryControlException;
 import java.io.Serializable;
@@ -73,7 +72,9 @@ public class InventoryControl implements Serializable {
 
     }
 
-    public Inventory searchInventory(String itemName) {
+   
+
+    public static Inventory searchInventory(String itemName) {
 
         Inventory[] items = Inventory.values();
 

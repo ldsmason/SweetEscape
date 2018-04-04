@@ -59,9 +59,13 @@ class OpenDoorView extends View {
 
     @Override
     public boolean doAction(String[] inputs) {
-
-        
-        int guess = Integer.parseInt(inputs[0]);
+      int guess = 0;
+       try {
+         guess = Integer.parseInt(inputs[0]);
+       }
+       catch (NumberFormatException nfe) {
+           System.out.println("Please enter a number. You cannot enter text");
+       }
         
 
         if (guess > 9999) {
@@ -72,8 +76,8 @@ class OpenDoorView extends View {
         long code = -1;
         try {
             code = DoorControl.calcKeypad(this.num);
-        } catch (DoorControlException ex) {
-            Logger.getLogger(OpenDoorView.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (DoorControlException dce) {            
+            System.out.println(dce.getMessage());          
         }
 
         if (code != guess) {
