@@ -31,55 +31,46 @@ public class OpenDoorThreeView extends View {
 
     public String[] getInputs() {
         
-        double guessAccel = Double.parseDouble(inputs[0]);
-        String value = "";
-        while (Double.parseDouble(value) != force / mass){
-             value = this.getInput(
+        
+        String value = this.getInput(
                 "The door is locked with a padlock.  Using the driftpin \n"
-               + "and the hammer in your inventory, determine the amount \n"
-               + "of acceleration needed to break the lock pick if " + force + " \n"
-               + "newtons of force is needed.\n\n"
-                  + "The mass of the hammer is " + mass + " grams.\n\n"
-                 + "The equation to find force is: \n\n"
-                        + "force = mass * accleration\n");
-            
-            InventoryControl accel = new InventoryControl();
-            try {
-                accel.pickLock(force, mass, guessAccel);
-            } catch (InventoryControlException ex) {
-                Logger.getLogger(OpenDoorThreeView.class.getName()).log(Level.SEVERE, null, ex);
-            }
+              + "and the hammer in your inventory, determine the amount \n"
+              + "of acceleration needed to break the lock pick if " + force + " \n"
+              + "newtons of force is needed.\n\n"
+              + "The mass of the hammer is " + mass + " grams.\n\n"
+              + "The equation to find force is: \n\n"
+                    + "force = mass * accleration\n");
         
-            //guessAccel
-         inputs[0] = value;
-        }
+        //guessAccel
+        inputs[0] = value;
         
         
-        value = this.getInput(
-                "The padlock is broken, but there is still " + force2 + " \n" 
-              + "newtons of force needed to open the door.  Determine how much \n"
-              + "acceleration is needed to kick open the door based on the mass\n"
-              + "of your body and the amount of force needed to open the door.\n\n"
-              + "First enter your weight in pounds:\n");
         
-        //lbs
-        inputs[1] = value;
-        
-        value = this.getInput (
-                "Enter the mass of your body in kilograms. \n\n"
-               +"The ratio of lbs to kg is 1 kg = 2.22 lbs\n");
-        
-        //mass
-        inputs[2] = value;
-        
-        
-        value = this.getInput (
-                "Using the same formula used to break the lock \n"
-              + "(force = mass * accleration), and the mass of your body, now \n"
-              + "find the acceleration needed to kick the door open.\n");
-        
-        //guessMass2
-        inputs[3] = value;
+//        value = this.getInput(
+//                "The padlock is broken, but there is still " + force2 + " \n" 
+//              + "newtons of force needed to open the door.  Determine how much \n"
+//              + "acceleration is needed to kick open the door based on the mass\n"
+//              + "of your body and the amount of force needed to open the door.\n\n"
+//              + "First enter your weight in pounds:\n");
+//        
+//        //lbs
+//        inputs[1] = value;
+//        
+//        value = this.getInput (
+//                "Enter the mass of your body in kilograms. \n\n"
+//               +"The ratio of lbs to kg is 1 kg = 2.22 lbs\n");
+//        
+//        //mass
+//        inputs[2] = value;
+//        
+//        
+//        value = this.getInput (
+//                "Using the same formula used to break the lock \n"
+//              + "(force = mass * accleration), and the mass of your body, now \n"
+//              + "find the acceleration needed to kick the door open.\n");
+//        
+//        //guessMass2
+//        inputs[3] = value;
         
         return inputs;
     }
@@ -88,7 +79,7 @@ public class OpenDoorThreeView extends View {
     
     public boolean doAction(String[] inputs) {
         
-        
+        double guessAccel = Double.parseDouble(inputs[0]);
         double lbs = Double.parseDouble(inputs[1]); 
         /*double guessMass2 = Double.parseDouble(inputs[2]);
         double guessAccel2 = Double.parseDouble(inputs[3]);
