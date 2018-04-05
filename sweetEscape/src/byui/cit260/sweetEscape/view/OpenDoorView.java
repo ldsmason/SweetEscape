@@ -6,13 +6,12 @@
 package byui.cit260.sweetEscape.view;
 
 import byui.cit260.sweetEscape.control.DoorControl;
-import byui.cit260.sweetEscape.control.GameControl;
 import byui.cit260.sweetEscape.exceptions.DoorControlException;
-import byui.cit260.sweetEscape.model.Door;
+import byui.cit260.sweetEscape.model.DoorScene;
+import byui.cit260.sweetEscape.model.Location;
+import java.awt.Point;
 import java.util.Random;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import sweetescape.SweetEscape;
 
 /**
  *
@@ -22,12 +21,9 @@ class OpenDoorView extends View {
 
     int num = 0;
 
-    
     public OpenDoorView() {
-    
-    }
 
-    
+    }
 
     @Override
     public String[] getInputs() {
@@ -39,34 +35,27 @@ class OpenDoorView extends View {
         //double num = rand.nextDouble();
         this.num = rand.nextInt(max + 1);
 
-       this.getInput("You see written all over the wall the number " + num
-                         + "\nYou also see the equation answer = num/2 + 32, code = answer*answer\n"
-                         + "If ready to proceed type anything and hit enter");
-                   
+        this.getInput("You see written all over the wall the number " + num
+                + "\nYou also see the equation answer = num/2 + 32, code = answer*answer\n");
 
-        Scanner input;
-        input = new Scanner(System.in);
-        
-        Door currentDoor = GameControl.getCurrentDoor();
-        
-        String value = this.getInput(currentDoor.getDescription());
+        Point coordinates = SweetEscape.getPlayer().getActor().getCoordinates();
+        Location location = SweetEscape.getCurrentGame().getMap().getLocations()[coordinates.x][coordinates.y];
+        DoorScene scene = (DoorScene) location.getScene();
+        System.out.println(scene.getKeyPad());
+        String value = this.getInput("Enter the four digit code");
         inputs[0] = value;
-        
-        
 
         return inputs;
     }
 
     @Override
     public boolean doAction(String[] inputs) {
-      int guess = 0;
-       try {
-         guess = Integer.parseInt(inputs[0]);
-       }
-       catch (NumberFormatException nfe) {
-           System.out.println("Please enter a number. You cannot enter text");
-       }
-        
+        int guess = 0;
+        try {
+            guess = Integer.parseInt(inputs[0]);
+        } catch (NumberFormatException nfe) {
+            System.out.println("Please enter a number. You cannot enter text");
+        }
 
         if (guess > 9999) {
             System.out.println("try again the number was too high or decimal point was included.");
@@ -76,13 +65,13 @@ class OpenDoorView extends View {
         long code = -1;
         try {
             code = DoorControl.calcKeypad(this.num);
-        } catch (DoorControlException dce) {            
-            System.out.println(dce.getMessage());          
+        } catch (DoorControlException dce) {
+            System.out.println(dce.getMessage());
         }
 
         if (code != guess) {
-            System.out.println("try again" +
-            "\n=================================================");
+            System.out.println("try again"
+                    + "\n=================================================");
             return false;
         }
 
@@ -90,8 +79,7 @@ class OpenDoorView extends View {
                 "=========================================="
                 + "\nYou just opened the door!"
                 + "\n==========================================");
-        
+
         return true;
     }
 }
-

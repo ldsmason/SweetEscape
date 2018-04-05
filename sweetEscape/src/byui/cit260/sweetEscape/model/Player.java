@@ -19,6 +19,7 @@ public class Player implements Serializable {
         private String name;
         private double bestTime;
         private ArrayList<Game> games = new ArrayList<Game>();
+        private Actor actor;
 
 
 
@@ -48,9 +49,18 @@ public class Player implements Serializable {
     public void setGames(ArrayList<Game> games) {
         this.games = games;
     }
+
+    public Actor getActor() {
+        return actor;
+    }
+
+    public void setActor(Actor actor) {
+        this.actor = actor;
+    }
     
     
 
+    
     @Override
     public int hashCode() {
         int hash = 7;

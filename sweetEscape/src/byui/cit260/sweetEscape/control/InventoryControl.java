@@ -74,7 +74,7 @@ public class InventoryControl implements Serializable {
 
    
 
-    public static Inventory searchInventory(String itemName) {
+    public static Inventory searchInventory(String itemName) throws InventoryControlException {
 
         Inventory[] items = Inventory.values();
 
@@ -84,7 +84,7 @@ public class InventoryControl implements Serializable {
             }
 
         }
-        return null;
+        throw new InventoryControlException("Item not found");
     }
    
 }

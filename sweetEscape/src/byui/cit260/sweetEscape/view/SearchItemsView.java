@@ -6,8 +6,11 @@
 package byui.cit260.sweetEscape.view;
 
 import byui.cit260.sweetEscape.control.InventoryControl;
+import byui.cit260.sweetEscape.exceptions.InventoryControlException;
 import byui.cit260.sweetEscape.model.Inventory;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -26,7 +29,7 @@ class SearchItemsView extends View {
         boolean valid = false;
        
 
-       String item = this.getInput("Please enter the item you would to find in inventory");
+       String item = this.getInput("Please enter the item you would like to find in inventory");
                    
 
         Scanner input;
@@ -43,12 +46,16 @@ class SearchItemsView extends View {
     public boolean doAction(String[] inputs) {
       String item = inputs[0];
       
-      item = InventoryControl.searchInventory(itemName);
-
-        System.out.println(
-                "=========================================="
-                + "\nYou just opened the door!"
-                + "\n==========================================");
+        try {
+            Inventory inventoryItem = InventoryControl.searchInventory(item); 
+              System.out.println(inventoryItem.getItemDescription());
+        } catch (InventoryControlException ex) {
+            System.out.println(ex.getMessage());
+            return false;
+        }
+      
+      
+        
         
         return true;
     }

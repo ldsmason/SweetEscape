@@ -35,6 +35,7 @@ class GameMenuView extends View{
                               "       Game Menu       |\n" +
                               "-----------------------\n" + 
                               "M - Display Map\n" +
+                              "W - Move Player\n"   +     
                               "I - View Inventory\n" +
                               "T - View list of tools\n" +
                               "P - Move the player\n" +
@@ -61,6 +62,8 @@ class GameMenuView extends View{
        
        switch (menuItem) {
            case "M" : this.displayMap();
+           break;
+           case "W" : moveActor();
            break;
            case "I" : seeInventory();
            break;
@@ -195,6 +198,12 @@ private void openFinalDoor() {
       SearchItemsView searchItemsView = new SearchItemsView();
       
       searchItemsView.display();
+    }
+
+    private void moveActor() {
+        MoveActorView moveActorView = new MoveActorView();
+      
+        moveActorView.display(); 
     }
 
    

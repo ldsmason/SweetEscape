@@ -23,10 +23,10 @@ public class MoveActorView extends View{
         String[] inputs = new String[2];
         
         String instructions = this.getInput("To move the player enter in coordinates for row and column.");
-        String input1 = getInput("");
+        String input1 = getInput("Enter the row");
         inputs[0] = input1;
         
-        String input2 = getInput("");
+        String input2 = getInput("Enter the Column");
         inputs[1] = input2;
         
        
@@ -36,12 +36,12 @@ public class MoveActorView extends View{
 
     @Override
     public boolean doAction(String[] inputs) {
-        int row = inputs[0];
-        int column = inputs[1]; 
-        
+       
+        int newRow = 0;
+        int newColumn = 0;
         try {
-            row = Integer.parseInt(inputs[0]);
-            column = Integer.parseInt(inputs[1]);
+            newRow = Integer.parseInt(inputs[0]);
+            newColumn = Integer.parseInt(inputs[1]);
         }
         catch (NumberFormatException nfe) {
            System.out.println("The row and column must be a number");
@@ -49,8 +49,10 @@ public class MoveActorView extends View{
        }
         
         Player player = SweetEscape.getPlayer();
-        Actor actor;
+        Actor actor = Actor.valueOf(player.getName());
         SweetEscape.setPlayer(player);
+        
+       
         
         try {
           Location newLocation = MapControl.movePlayer(actor, newRow, newColumn);
@@ -59,6 +61,8 @@ public class MoveActorView extends View{
             System.out.println("You entered coordinates off the map");
             return false;
         }
+        
+        System.out.println();
         
         return true;
     }

@@ -7,6 +7,7 @@ package byui.cit260.sweetEscape.control;
 
 import byui.cit260.sweetEscape.exceptions.MapControlException;
 import byui.cit260.sweetEscape.model.Actor;
+import byui.cit260.sweetEscape.model.DoorScene;
 import byui.cit260.sweetEscape.model.Game;
 import byui.cit260.sweetEscape.model.Inventory;
 import byui.cit260.sweetEscape.model.Location;
@@ -92,6 +93,15 @@ public class MapControl {
         RegularSceneType finish = new RegularSceneType("Congratualtions! You have escaped and won the game", 0, 0, " F ");
         RegularSceneType blank = new RegularSceneType("This is the hallway", 0, 0, "|H|");
         RegularSceneType wall = new RegularSceneType("This a wall", 0, 1, "|W|");
+        
+        DoorScene door1 = new DoorScene("This is door number one", 0, 0, "|D|", 
+                      "--------------\n"
+                    + "| 1 | 2 | 3 |\n"
+                    + "| 4 | 5 | 6 |\n"
+                    + "| 7 | 8 | 9 |\n"
+                    + "    | 0 |    \n"
+                    + "-------------"
+                    + "=================================================\n");
 
         scenes[SceneType.start.ordinal()] = start;
         scenes[SceneType.door.ordinal()] = door;

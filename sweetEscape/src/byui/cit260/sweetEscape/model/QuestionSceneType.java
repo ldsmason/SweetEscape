@@ -11,6 +11,7 @@ package byui.cit260.sweetEscape.model;
  */
 public class QuestionSceneType extends RegularSceneType {
     Question question;
+    
     public QuestionSceneType() {
         
     }
