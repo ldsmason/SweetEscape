@@ -31,19 +31,31 @@ public class OpenDoorThreeView extends View {
 
     public String[] getInputs() {
         
-        String value = this.getInput(
+        double guessAccel = Double.parseDouble(inputs[0]);
+        String value = "";
+        while (Double.parseDouble(value) != force / mass){
+             value = this.getInput(
                 "The door is locked with a padlock.  Using the driftpin \n"
-              + "and the hammer in your inventory, determine the amount \n"
-              + "of acceleration needed to break the lock pick if " + force + " \n"
-              + "newtons of force is needed.\n\n"
-              + "The mass of the hammer is " + mass + " grams.\n\n"
-              + "The equation to find force is: \n\n"
-                    + "force = mass * accleration\n");
+               + "and the hammer in your inventory, determine the amount \n"
+               + "of acceleration needed to break the lock pick if " + force + " \n"
+               + "newtons of force is needed.\n\n"
+                  + "The mass of the hammer is " + mass + " grams.\n\n"
+                 + "The equation to find force is: \n\n"
+                        + "force = mass * accleration\n");
+            
+            InventoryControl accel = new InventoryControl();
+            try {
+                accel.pickLock(force, mass, guessAccel);
+            } catch (InventoryControlException ex) {
+                Logger.getLogger(OpenDoorThreeView.class.getName()).log(Level.SEVERE, null, ex);
+            }
         
-        //guessAccel
-        inputs[0] = value;
+            //guessAccel
+         inputs[0] = value;
+        }
         
-        /*value = this.getInput(
+        
+        value = this.getInput(
                 "The padlock is broken, but there is still " + force2 + " \n" 
               + "newtons of force needed to open the door.  Determine how much \n"
               + "acceleration is needed to kick open the door based on the mass\n"
@@ -67,7 +79,7 @@ public class OpenDoorThreeView extends View {
               + "find the acceleration needed to kick the door open.\n");
         
         //guessMass2
-        inputs[3] = value;*/
+        inputs[3] = value;
         
         return inputs;
     }
@@ -76,10 +88,9 @@ public class OpenDoorThreeView extends View {
     
     public boolean doAction(String[] inputs) {
         
-        int guess = Integer.parseInt(inputs[0]);
-        double guessAccel = Double.parseDouble(inputs[0]);
-        /*double lbs = Double.parseDouble(inputs[1]); 
-        double guessMass2 = Double.parseDouble(inputs[2]);
+        
+        double lbs = Double.parseDouble(inputs[1]); 
+        /*double guessMass2 = Double.parseDouble(inputs[2]);
         double guessAccel2 = Double.parseDouble(inputs[3]);
         double mass2 = lbs/2.2;*/
         try {

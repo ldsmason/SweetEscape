@@ -6,6 +6,7 @@
 package byui.cit260.sweetEscape.control;
 import byui.cit260.sweetEscape.model.Inventory;
 import byui.cit260.sweetEscape.exceptions.InventoryControlException;
+import byui.cit260.sweetEscape.model.Item;
 import java.io.Serializable;
 
 /**
@@ -87,12 +88,12 @@ public class InventoryControl implements Serializable {
         return null;
     }
     
-    private static int findTotal(int items) {
-        Inventory[] inventory = new Inventory[items];
-        int total = 8;
-        for (int i = 0; i<inventory.length; i++) {
-          if (inventory[i] == null) {
-              total -= 1;
+    public static int findTotal(Item[] items) {
+        
+        int total = 0;
+        for (int i = 0; i < items.length; i++) {
+          if (items[i] != null) {
+              total++;
           }
           
         }

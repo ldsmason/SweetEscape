@@ -5,7 +5,9 @@
  */
 package byui.cit260.sweetEscape.view;
 
+import byui.cit260.sweetEscape.control.InventoryControl;
 import java.util.Scanner;
+import sweetescape.SweetEscape;
 
 /**
  *
@@ -27,6 +29,7 @@ class ToolMenuView  extends View{
                               "L - Lock pick\n" +
                               "T - Two Liter Bottle\n" +
                               "S - Sand\n" +
+                              "F - Find total of all Items\n" +
                               "Q - Quit ");
            
           
@@ -50,6 +53,8 @@ class ToolMenuView  extends View{
            case "T" : twoLiterBottle();
            break;
            case "S" : sand();
+           break;
+           case "F" : findTotal();
            break;
            case "Q" : return true;
            default : System.out.println("Invalid menu item"); 
@@ -77,6 +82,12 @@ class ToolMenuView  extends View{
 
     private void sand() {
         System.out.println("It's just some sand!");
+    }
+    
+    private void findTotal() {
+        InventoryControl ic = new InventoryControl();
+        SweetEscape se = new SweetEscape();
+        System.out.println("The total is " + ic.findTotal( se.getCurrentGame().getInventory()));
     }
 
 }
