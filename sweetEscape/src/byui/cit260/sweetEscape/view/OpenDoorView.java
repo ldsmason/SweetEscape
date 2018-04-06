@@ -9,6 +9,7 @@ import byui.cit260.sweetEscape.control.DoorControl;
 import byui.cit260.sweetEscape.exceptions.DoorControlException;
 import byui.cit260.sweetEscape.model.DoorScene;
 import byui.cit260.sweetEscape.model.Location;
+import byui.cit260.sweetEscape.model.RegularSceneType;
 import java.awt.Point;
 import java.util.Random;
 import sweetescape.SweetEscape;
@@ -40,8 +41,12 @@ class OpenDoorView extends View {
 
         Point coordinates = SweetEscape.getPlayer().getActor().getCoordinates();
         Location location = SweetEscape.getCurrentGame().getMap().getLocations()[coordinates.x][coordinates.y];
-        DoorScene scene = (DoorScene) location.getScene();
-        System.out.println(scene.getKeyPad());
+        RegularSceneType scene = location.getScene();
+        if(scene instanceof DoorScene) {
+             DoorScene doorScene = (DoorScene) scene;
+             System.out.println(doorScene.getKeyPad());
+        }
+       
         String value = this.getInput("Enter the four digit code");
         inputs[0] = value;
 

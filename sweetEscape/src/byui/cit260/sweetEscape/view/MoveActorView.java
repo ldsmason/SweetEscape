@@ -8,8 +8,11 @@ package byui.cit260.sweetEscape.view;
 import byui.cit260.sweetEscape.control.MapControl;
 import byui.cit260.sweetEscape.exceptions.MapControlException;
 import byui.cit260.sweetEscape.model.Actor;
+import byui.cit260.sweetEscape.model.DoorScene;
 import byui.cit260.sweetEscape.model.Location;
 import byui.cit260.sweetEscape.model.Player;
+import byui.cit260.sweetEscape.model.RegularSceneType;
+import byui.cit260.sweetEscape.model.RoomScene;
 import sweetescape.SweetEscape;
 
 /**
@@ -50,19 +53,31 @@ public class MoveActorView extends View{
         
         Player player = SweetEscape.getPlayer();
         Actor actor = Actor.valueOf(player.getName());
+       // Actor actor;
+        //player.getActor();
         SweetEscape.setPlayer(player);
         
-       
+       Location newLocation = null;
         
         try {
-          Location newLocation = MapControl.movePlayer(actor, newRow, newColumn);
+           newLocation = MapControl.movePlayer(actor, newRow, newColumn);
         }
         catch (MapControlException mce) {
             System.out.println("You entered coordinates off the map");
             return false;
         }
+        RegularSceneType scene = newLocation.getScene();
+        if(scene instanceof DoorScene) {
+            OpenDoorView openDoorView = new OpenDoorView();
+            openDoorView.display();
+        }
+        else if(scene instanceof RoomScene) {
+            
+        }
+        else {
+            System.out.println(scene.getDescription());
+        }
         
-        System.out.println();
         
         return true;
     }

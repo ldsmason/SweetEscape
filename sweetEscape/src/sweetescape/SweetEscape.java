@@ -69,13 +69,13 @@ public class SweetEscape implements Serializable{
        
        System.out.println("The answer is " + theAnswer);*/
        
-      try {
+      //try {
       StartProgramView startProgramView = new StartProgramView();
       startProgramView.display();
-      }
-      catch (Throwable e) {
-          System.out.println("An error has occured");
-      }
+      //}
+     // catch (Throwable e) {
+          //System.out.println("An error has occured");
+      //}
       
        
     }

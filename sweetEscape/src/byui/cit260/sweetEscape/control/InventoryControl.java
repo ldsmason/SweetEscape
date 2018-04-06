@@ -67,7 +67,6 @@ public class InventoryControl implements Serializable {
         if (guess != fillBottle) {
             throw new InventoryControlException("Your guess is incorrect.  Try again!");
         }
-
         
 
     }

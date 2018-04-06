@@ -76,7 +76,7 @@ public class MapControl {
         System.out.println("*** createScenes() called ***\n");
         //return null;
 
-        RegularSceneType[] scenes = new RegularSceneType[11];
+        RegularSceneType[] scenes = new RegularSceneType[12];
 
         //scenes[0] = new RegularSceneType();
         //scenes[1] = new QuestionSceneType();
@@ -94,7 +94,7 @@ public class MapControl {
         RegularSceneType blank = new RegularSceneType("This is the hallway", 0, 0, "|H|");
         RegularSceneType wall = new RegularSceneType("This a wall", 0, 1, "|W|");
         
-        DoorScene door1 = new DoorScene("This is door number one", 0, 0, "|D|", 
+        DoorScene door2 = new DoorScene("This is door number one", 0, 0, "|D|", 
                       "--------------\n"
                     + "| 1 | 2 | 3 |\n"
                     + "| 4 | 5 | 6 |\n"
@@ -105,6 +105,7 @@ public class MapControl {
 
         scenes[SceneType.start.ordinal()] = start;
         scenes[SceneType.door.ordinal()] = door;
+        scenes[SceneType.door2.ordinal()] = door2;
         scenes[SceneType.roomOne.ordinal()] = room1;
         scenes[SceneType.roomTwo.ordinal()] = room2;
         scenes[SceneType.roomThree.ordinal()] = room3;
@@ -231,7 +232,7 @@ public class MapControl {
         locations[6][0].setScene(scenes[SceneType.wall.ordinal()]);
         locations[6][1].setScene(scenes[SceneType.wall.ordinal()]);
         locations[6][2].setScene(scenes[SceneType.wall.ordinal()]);
-        locations[6][3].setScene(scenes[SceneType.door.ordinal()]);
+        locations[6][3].setScene(scenes[SceneType.door2.ordinal()]);
         locations[6][4].setScene(scenes[SceneType.wall.ordinal()]);
         locations[6][5].setScene(scenes[SceneType.blank.ordinal()]);
         locations[6][6].setScene(scenes[SceneType.wall.ordinal()]);

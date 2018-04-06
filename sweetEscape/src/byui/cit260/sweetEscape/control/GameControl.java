@@ -30,21 +30,20 @@ public class GameControl  {
     }
     
     public static int createNewGame(Player player) {
-    //System.out.println("createNewGame is called");
+    
     if (player == null){
         return -1;
     }
         
     Game game = new Game();
     game.setPlayer(player);
+    game.getPlayer().setActor(Actor.Jinseob);
+    
     SweetEscape.setCurrentGame(game);
+    
        
     
-    //Actor actor;
-    //actor = Actor.Jinseob;
-    // Actor jinseob = new Actor();
-    
-    //Inventory[] inventory;
+   
     
     Map map = MapControl.createMap(12, 12);//(row, column) where to intialize or put row variables
     if(map == null) {
