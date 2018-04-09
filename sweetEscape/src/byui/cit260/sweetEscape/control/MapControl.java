@@ -94,13 +94,13 @@ public class MapControl {
         RegularSceneType blank = new RegularSceneType("This is the hallway", 0, 0, "|H|");
         RegularSceneType wall = new RegularSceneType("This a wall", 0, 1, "|W|");
         
-        DoorScene door2 = new DoorScene("This is door number one", 0, 0, "|D|", 
+        DoorScene door2 = new DoorScene("This is door number two", 0, 0, "|D|", 
                       "--------------\n"
                     + "| 1 | 2 | 3 |\n"
                     + "| 4 | 5 | 6 |\n"
                     + "| 7 | 8 | 9 |\n"
                     + "    | 0 |    \n"
-                    + "-------------"
+                    + "-------------\n"
                     + "=================================================\n");
 
         scenes[SceneType.start.ordinal()] = start;
