@@ -24,7 +24,10 @@ class ToolMenuView  extends View{
       String[] inputs = new String[1];
        
       
-           String menuItem = this.getInput("H - Hammer\n" +
+           String menuItem = this.getInput(
+                              "-----------------------\n" +
+                              "       Tool Menu       |\n" +
+                              "-----------------------\n" +"H - Hammer\n" +
                               "P - Drift pin\n" +
                               "L - Lock pick\n" +
                               "T - Two Liter Bottle\n" +
@@ -33,7 +36,7 @@ class ToolMenuView  extends View{
                               "Q - Quit ");
            
           
-        
+        inputs[0] = menuItem;
         return inputs;
 
     }
@@ -83,11 +86,11 @@ class ToolMenuView  extends View{
     private void sand() {
         System.out.println("It's just some sand!");
     }
-    
+   
     private void findTotal() {
-        InventoryControl ic = new InventoryControl();
-        SweetEscape se = new SweetEscape();
-        System.out.println("The total is " + ic.findTotal( se.getCurrentGame().getInventory()));
+        InventoryControl inventory = new InventoryControl();
+        SweetEscape game = new SweetEscape();
+        System.out.println("The total is " + inventory.findTotal( game.getCurrentGame().getInventory()));
     }
 
 }
