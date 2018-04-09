@@ -69,8 +69,8 @@ class GameMenuView extends View{
            break;
            case "T" : seeTools();
            break;
-           case "L" : searchInventory();
-           break;
+//           case "L" : searchInventory();
+//           break;
            case "P" : movePlayer();
            break;
            case "O" : openDoor();
@@ -196,11 +196,11 @@ private void openFinalDoor() {
      System.out.println("\nb-----------------------------------------");
     }
 
-    private void searchInventory() {
-      SearchItemsView searchItemsView = new SearchItemsView();
-      
-      searchItemsView.display();
-    }
+//    private void searchInventory() {
+//      SearchItemsView searchItemsView = new SearchItemsView();
+//      
+//      searchItemsView.display();
+//    }
 
     private void moveActor() {
         MoveActorView moveActorView = new MoveActorView();
