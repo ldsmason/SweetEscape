@@ -60,23 +60,23 @@ class ToolMenuView  extends View{
     }
 
     private void hammer() {
-        System.out.println("Hammer");
+        this.console.println("Hammer");
     }
 
     private void driftPin() {
-        System.out.println("Drift Pin");
+       this.console.println("Drift Pin");
     }
 
     private void lockPick() {
-        System.out.println("Lock Pick");
+        this.console.println("Lock Pick");
     }
 
     private void twoLiterBottle() {
-        System.out.println("Two-Liter Bottle");
+        this.console.println("Two-Liter Bottle");
     }
 
     private void sand() {
-        System.out.println("It's just some sand!");
+       this.console.println("It's just some sand!");
     }
 
 }

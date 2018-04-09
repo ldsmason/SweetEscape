@@ -56,7 +56,9 @@ public class GameControl  {
     return 1;
   }
     
-
+public static void saveGame(Game game, String filePath) {
+    System.out.println("saveGame() in GameControl class");
+}
     
    public static Door getCurrentDoor(){
        // Dummy code for doors to be implemented later

@@ -8,6 +8,12 @@ import byui.cit260.sweetEscape.model.*;
 import byui.cit260.sweetEscape.view.*;
 import java.io.Serializable;
 import java.awt.Point;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -22,6 +28,11 @@ public class SweetEscape implements Serializable{
     
     private static Game currentGame = null;
     private static Player player = null;
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
+    private static PrintWriter logFile = null;
+    private static BufferedReader input = null;
+    private static PrintWriter output = null;
     
     public static void main(String[] args) {
        /*Player playerOne = new Player();
@@ -69,14 +80,48 @@ public class SweetEscape implements Serializable{
        
        System.out.println("The answer is " + theAnswer);*/
        
-      //try {
+      try {
+      input = new BufferedReader(new InputStreamReader(System.in));
+      output = new PrintWriter(System.out, true);
+      logFile = new PrintWriter("logFile.txt");
+      SweetEscape.inFile = new BufferedReader(new InputStreamReader(System.in));
+      SweetEscape.outFile = new PrintWriter(System.out, true);
+          
       StartProgramView startProgramView = new StartProgramView();
       startProgramView.display();
-      //}
-     // catch (Throwable e) {
+      }
+      catch (Throwable e) {
           //System.out.println("An error has occured");
-      //}
-      
+          System.out.println("Exception " + e.toString() +
+                             "\nCause "   + e.getCause() +
+                             "\nMessage " + e.getMessage());
+          
+          e.getStackTrace();;
+      }
+      finally {
+          try {
+               if(SweetEscape.inFile != null)
+               SweetEscape.inFile.close();
+               if(SweetEscape.outFile != null)
+               SweetEscape.outFile.close();
+               
+                if(input != null) {
+                   input.close();
+               }
+               
+               if(output != null) {
+                   output.close();
+               }
+                   
+          } catch (IOException ex) {
+              System.out.println("Errpr closing the file");
+              return;
+          }
+             
+              
+          
+          
+      }
        
     }
 
@@ -96,5 +141,47 @@ public class SweetEscape implements Serializable{
     public static void setPlayer(Player player) {
         SweetEscape.player = player;
     }
+
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        SweetEscape.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        SweetEscape.inFile = inFile;
+    }
+
+    public static BufferedReader getInput() {
+        return input;
+    }
+
+    public static void setInput(BufferedReader input) {
+        SweetEscape.input = input;
+    }
+
+    public static PrintWriter getOutput() {
+        return output;
+    }
+
+    public static void setOutput(PrintWriter output) {
+        SweetEscape.output = output;
+    }
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        SweetEscape.logFile = logFile;
+    }
+    
+    
+    
     
 }

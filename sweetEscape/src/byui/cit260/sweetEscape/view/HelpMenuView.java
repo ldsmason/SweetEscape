@@ -57,7 +57,7 @@ class HelpMenuView extends View {
     }
 
     private void goalOfGame() {
-       System.out.println(
+       this.console.println(
                "\nYou have been kidnapped and taken to an abandoned warehouse in "
              + "\nthe middle of North Korea.  You wake up in a dark room, dazed,"
              + "\nconfused, and unaware of how you got there.  The objective "
@@ -67,7 +67,7 @@ class HelpMenuView extends View {
     }
 
     private void howToMove() {
-       System.out.println(
+       this.console.println(
                "Using the grid found on the map screen, enter coordinates to go "
                + "\nto your desired location.  There are some coordinates that "
                + "\nwill you will be unable to go to until those locations have "
@@ -75,7 +75,7 @@ class HelpMenuView extends View {
     }
 
     private void doorsOpen() {
-        System.out.println(
+        this.console.println(
                 "In order to make your SWEET ESCAPE, there are three keys "
               + "\ntrapped behind locked doors that are going to need to opened "
               + "\nvia a variety of puzzles and challengs.  You will be able to "
@@ -83,7 +83,7 @@ class HelpMenuView extends View {
     }
 
     private void tools() {
-        System.out.println(
+        this.console.println(
                 "As you make your daring SWEET ESCAPE, you will need several "
               + "\ntools and other objects to be used to unlock doors and obtain "
               + "\nother items.  You can access and view these tools in your "

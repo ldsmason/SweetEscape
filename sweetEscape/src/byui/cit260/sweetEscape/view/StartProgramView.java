@@ -28,7 +28,7 @@ public class StartProgramView extends View{
        String[] inputs = new String[1];
        
         //Display the welcome banner
-        System.out.println("This adventure takes place in an abandoned warehouse in the middle "
+        this.console.println("This adventure takes place in an abandoned warehouse in the middle "
                 + "of North Korea.  You wake up in a dark room, dazed, confused, and unaware"
                 + " how you got there.  The objective is to search the area and find a way to make a SWEET ESCAPE."
                 + "  You will need to locate objects and other victims in order to escape.  "

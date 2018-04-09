@@ -5,7 +5,10 @@
  */
 package byui.cit260.sweetEscape.view;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import sweetescape.SweetEscape;
 
 /**
  *
@@ -13,6 +16,8 @@ import java.util.Scanner;
  */
 public abstract class View implements ViewInterface {
 
+    protected final BufferedReader keyboard = SweetEscape.getInFile();
+    protected final PrintWriter console = SweetEscape.getOutFile();
     public View() {
     }
 
@@ -39,7 +44,7 @@ public abstract class View implements ViewInterface {
         
         while (valid == false) {
             //Display the prompt message
-            System.out.println(promptMessage);
+            this.console.println(promptMessage);
 
             Scanner nameInput;
             nameInput = new Scanner(System.in);

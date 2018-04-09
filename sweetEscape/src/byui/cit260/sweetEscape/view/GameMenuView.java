@@ -135,7 +135,9 @@ class GameMenuView extends View{
 
 
     private void saveGame() {
-         System.out.println("*** saveGame called ***");
+      SaveGameView saveGameView = new SaveGameView();
+      
+      saveGameView.display();
     }
 
     private void getHelp() {
@@ -158,7 +160,7 @@ private void openFinalDoor() {
       FinalDoorView finalDoorView = new FinalDoorView();
       
       finalDoorView.display();
-      System.out.println("*** openFinalDoor called ***");
+      
     }
 
     private void displayMap() {

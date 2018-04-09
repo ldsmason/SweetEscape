@@ -14,7 +14,7 @@ import java.io.Serializable;
  */
 public enum Actor implements Serializable {
     
-    Jinseob("Jinseob", "He is also trapped, but he speaks Korean.", new Point(0,0));
+    Jinseob("Jinseob", "He is also trapped, but he speaks Korean.", new Point(6,3));
     
     private String name;
     private String description;
