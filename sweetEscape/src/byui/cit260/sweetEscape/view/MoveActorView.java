@@ -53,9 +53,8 @@ public class MoveActorView extends View{
        }
         
         Player player = SweetEscape.getPlayer();
-        Actor actor = Actor.valueOf(player.getName());
-       // Actor actor;
-        //player.getActor();
+        Actor actor = player.getActor();
+       
         SweetEscape.setPlayer(player);
         
        Location newLocation = null;

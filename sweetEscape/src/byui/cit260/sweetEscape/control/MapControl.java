@@ -335,9 +335,10 @@ public class MapControl {
         Location newLocation = locations[endingLocation.x][endingLocation.y];
         Location oldLocation = locations[startingLocation.x][startingLocation.y];
 
-        actor.setCoordinates(startingLocation);
+        Point actorCoordinates = actor.getCoordinates();
         oldLocation = null;
-        actor.setCoordinates(endingLocation);
+        actorCoordinates.x = endingLocation.x;
+        actorCoordinates.y = endingLocation.y;
 
         oldLocation.setActor(null);
         newLocation.setActor(actor);

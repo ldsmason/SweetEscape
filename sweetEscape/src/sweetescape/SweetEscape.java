@@ -114,9 +114,10 @@ public class SweetEscape implements Serializable{
                }
                    
           } catch (IOException ex) {
-              System.out.println("Errpr closing the file");
+              System.out.println("Error closing the file");
               return;
-          }
+          } 
+          
              
               
           
