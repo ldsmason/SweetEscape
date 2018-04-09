@@ -6,6 +6,7 @@
 package byui.cit260.sweetEscape.control;
 import byui.cit260.sweetEscape.model.Inventory;
 import byui.cit260.sweetEscape.exceptions.InventoryControlException;
+import byui.cit260.sweetEscape.model.Item;
 import java.io.Serializable;
 
 /**
@@ -85,5 +86,18 @@ public class InventoryControl implements Serializable {
         }
         throw new InventoryControlException("Item not found");
     }
+    
+    public static int findTotal(Item[] items) {
+        
+        int total = 0;
+        for (int i = 0; i < items.length; i++) {
+          if (items[i] != null) {
+              total++;
+          }
+          
+        }
+        return total;
+    }
+
    
 }

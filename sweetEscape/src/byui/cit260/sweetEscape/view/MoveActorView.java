@@ -19,6 +19,7 @@ import sweetescape.SweetEscape;
  *
  * @author nathanielmason
  */
+
 public class MoveActorView extends View{
 
     @Override
@@ -83,3 +84,4 @@ public class MoveActorView extends View{
     }
     
 }
+

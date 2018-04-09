@@ -31,6 +31,7 @@ public class OpenDoorThreeView extends View {
 
     public String[] getInputs() {
         
+        
         String value = this.getInput(
                 "The door is locked with a padlock.  Using the driftpin \n"
               + "and the hammer in your inventory, determine the amount \n"
@@ -43,31 +44,33 @@ public class OpenDoorThreeView extends View {
         //guessAccel
         inputs[0] = value;
         
-        /*value = this.getInput(
-                "The padlock is broken, but there is still " + force2 + " \n" 
-              + "newtons of force needed to open the door.  Determine how much \n"
-              + "acceleration is needed to kick open the door based on the mass\n"
-              + "of your body and the amount of force needed to open the door.\n\n"
-              + "First enter your weight in pounds:\n");
-        
-        //lbs
-        inputs[1] = value;
-        
-        value = this.getInput (
-                "Enter the mass of your body in kilograms. \n\n"
-               +"The ratio of lbs to kg is 1 kg = 2.22 lbs\n");
-        
-        //mass
-        inputs[2] = value;
         
         
-        value = this.getInput (
-                "Using the same formula used to break the lock \n"
-              + "(force = mass * accleration), and the mass of your body, now \n"
-              + "find the acceleration needed to kick the door open.\n");
-        
-        //guessMass2
-        inputs[3] = value;*/
+//        value = this.getInput(
+//                "The padlock is broken, but there is still " + force2 + " \n" 
+//              + "newtons of force needed to open the door.  Determine how much \n"
+//              + "acceleration is needed to kick open the door based on the mass\n"
+//              + "of your body and the amount of force needed to open the door.\n\n"
+//              + "First enter your weight in pounds:\n");
+//        
+//        //lbs
+//        inputs[1] = value;
+//        
+//        value = this.getInput (
+//                "Enter the mass of your body in kilograms. \n\n"
+//               +"The ratio of lbs to kg is 1 kg = 2.22 lbs\n");
+//        
+//        //mass
+//        inputs[2] = value;
+//        
+//        
+//        value = this.getInput (
+//                "Using the same formula used to break the lock \n"
+//              + "(force = mass * accleration), and the mass of your body, now \n"
+//              + "find the acceleration needed to kick the door open.\n");
+//        
+//        //guessMass2
+//        inputs[3] = value;
         
         return inputs;
     }
@@ -76,10 +79,9 @@ public class OpenDoorThreeView extends View {
     
     public boolean doAction(String[] inputs) {
         
-        int guess = Integer.parseInt(inputs[0]);
         double guessAccel = Double.parseDouble(inputs[0]);
-        /*double lbs = Double.parseDouble(inputs[1]); 
-        double guessMass2 = Double.parseDouble(inputs[2]);
+        double lbs = Double.parseDouble(inputs[1]); 
+        /*double guessMass2 = Double.parseDouble(inputs[2]);
         double guessAccel2 = Double.parseDouble(inputs[3]);
         double mass2 = lbs/2.2;*/
         try {
