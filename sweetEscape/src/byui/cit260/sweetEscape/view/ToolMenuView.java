@@ -60,7 +60,7 @@ class ToolMenuView  extends View{
            case "F" : findTotal();
            break;
            case "Q" : return true;
-           default : System.out.println("Invalid menu item"); 
+           default : this.console.println("Invalid menu item"); 
            
 
         }

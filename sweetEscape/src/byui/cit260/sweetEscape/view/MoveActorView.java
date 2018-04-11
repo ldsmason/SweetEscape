@@ -63,19 +63,22 @@ public class MoveActorView extends View{
            newLocation = MapControl.movePlayer(actor, newRow, newColumn);
         }
         catch (MapControlException mce) {
-            System.out.println("You entered coordinates off the map");
+            ErrorView.display(this.getClass().getName(),"You entered coordinates off the map");
             return false;
         }
         RegularSceneType scene = newLocation.getScene();
         if(scene instanceof DoorScene) {
             OpenDoorView openDoorView = new OpenDoorView();
             openDoorView.display();
+            
+            FinalDoorView finalDoorView = new FinalDoorView();
+            finalDoorView.display();
         }
         else if(scene instanceof RoomScene) {
             
         }
         else {
-            System.out.println(scene.getDescription());
+            this.console.println(scene.getDescription());
         }
         
         

@@ -75,7 +75,7 @@ public class MapControl {
         System.out.println("*** createScenes() called ***\n");
         //return null;
 
-        RegularSceneType[] scenes = new RegularSceneType[12];
+        RegularSceneType[] scenes = new RegularSceneType[13];
 
         //scenes[0] = new RegularSceneType();
         //scenes[1] = new QuestionSceneType();
@@ -101,10 +101,14 @@ public class MapControl {
                     + "    | 0 |    \n"
                     + "-------------\n"
                     + "=================================================\n");
+        
+         DoorScene door5 = new DoorScene("This the final door",0,0,"|D|","");
 
         scenes[SceneType.start.ordinal()] = start;
         scenes[SceneType.door.ordinal()] = door;
         scenes[SceneType.door2.ordinal()] = door2;
+        scenes[SceneType.door5.ordinal()] = door5;
+        scenes[SceneType.room.ordinal()] = room;
         scenes[SceneType.roomOne.ordinal()] = room1;
         scenes[SceneType.roomTwo.ordinal()] = room2;
         scenes[SceneType.roomThree.ordinal()] = room3;
@@ -251,7 +255,7 @@ public class MapControl {
         locations[7][7].setScene(scenes[SceneType.blank.ordinal()]);
         locations[7][8].setScene(scenes[SceneType.blank.ordinal()]);
         locations[7][9].setScene(scenes[SceneType.blank.ordinal()]);
-        locations[7][10].setScene(scenes[SceneType.door.ordinal()]);
+        locations[7][10].setScene(scenes[SceneType.door5.ordinal()]);
         locations[7][11].setScene(scenes[SceneType.finish.ordinal()]);
 
         locations[8][0].setScene(scenes[SceneType.door.ordinal()]);
@@ -327,9 +331,9 @@ public class MapControl {
         Point startingLocation = actor.getCoordinates();
         Point endingLocation = new Point(newRow, newColumn);
 
-        if (!MapControl.validMove(startingLocation, endingLocation)) {
+       /* if (!MapControl.validMove(startingLocation, endingLocation)) {
             throw new MapControlException("Your path was blocked by a wall");
-        }
+        }*/
 
         Location newLocation = locations[endingLocation.x][endingLocation.y];
         Location oldLocation = locations[startingLocation.x][startingLocation.y];
@@ -339,7 +343,7 @@ public class MapControl {
         actorCoordinates.x = endingLocation.x;
         actorCoordinates.y = endingLocation.y;
 
-        oldLocation.setActor(null);
+        //oldLocation.setActor(null);
         newLocation.setActor(actor);
 
         //newRow = actor.setCoordinates(oldLocation);

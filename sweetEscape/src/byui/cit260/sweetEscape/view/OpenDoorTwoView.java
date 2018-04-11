@@ -40,9 +40,7 @@ public class OpenDoorTwoView extends View {
                     + "take this into account when finding the answer.  Round to \n"
                     + "two decimals.");
        
-            /*Scanner inFile = new Scanner(System.in);
-            String guess = inFile.nextLine();
-            guess = guess.trim();*/
+           
             
                 inputs[0] = guess;
                 
@@ -69,7 +67,7 @@ public class OpenDoorTwoView extends View {
     }
     
     private void calcLiters() {
-        System.out.println("Great Job!");
+        this.console.println("Great Job!");
     }
 
     

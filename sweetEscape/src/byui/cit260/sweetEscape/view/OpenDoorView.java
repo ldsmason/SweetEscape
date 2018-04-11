@@ -59,12 +59,12 @@ class OpenDoorView extends View {
         try {
             guess = Integer.parseInt(inputs[0]);
         } catch (NumberFormatException nfe) {
-            System.out.println("Please enter a number. You cannot enter text");
+            ErrorView.display(this.getClass().getName(), "Please enter a number. You cannot enter text");
         }
 
         if (guess > 9999) {
-            System.out.println("try again the number was too high or decimal point was included.");
-            System.out.println("=================================================");
+            ErrorView.display(this.getClass().getName(),"Try again the number was too high or decimal point was included.");
+            this.console.println("=================================================");
             return false;
         }
         long code = -1;
@@ -75,7 +75,7 @@ class OpenDoorView extends View {
         }
 
         if (code != guess) {
-            System.out.println("try again"
+            ErrorView.display(this.getClass().getName(),"try again"
                     + "\n=================================================");
             return false;
         }
