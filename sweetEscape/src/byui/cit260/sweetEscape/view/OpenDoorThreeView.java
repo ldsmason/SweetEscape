@@ -7,10 +7,8 @@ package byui.cit260.sweetEscape.view;
 
 import byui.cit260.sweetEscape.control.InventoryControl;
 import byui.cit260.sweetEscape.exceptions.InventoryControlException;
-import java.util.Scanner;
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 
 /**

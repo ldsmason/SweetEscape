@@ -73,6 +73,8 @@ class GameMenuView extends View{
            break;
            case "P" : movePlayer();
            break;
+           case "A" : openDoorOne();
+           break;
            case "O" : openDoor();
            break;
            case "C" : openDoorTwo();
@@ -205,6 +207,11 @@ private void openFinalDoor() {
         MoveActorView moveActorView = new MoveActorView();
       
         moveActorView.display(); 
+    }
+
+    private void openDoorOne() {
+        OpenDoorOneView openDoorOneView = new OpenDoorOneView();
+        openDoorOneView.display();
     }
 
    
