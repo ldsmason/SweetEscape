@@ -19,12 +19,11 @@ public class InventoryControl implements Serializable {
             throws InventoryControlException {
 
         double accel = force / mass;
+        
         if (guessAccel != accel) {
             throw new InventoryControlException("Your guess for acceleration is incorrect!");
 
-        } else {
-            return;
-        }
+        } 
 
     }
 
@@ -87,16 +86,16 @@ public class InventoryControl implements Serializable {
         throw new InventoryControlException("Item not found");
     }
     
-    public int findTotal(Item[] items) {
+    public double findTotal(Item[] items) {
         
-        int total = 0;
+        double total = 0;
         for (int i = 0; i < items.length; i++) {
           if (items[i] != null) {
               total++;
              
           }
           else {
-              total += 0;
+              total+=0;
           }
           
         }

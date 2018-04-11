@@ -7,10 +7,8 @@ package byui.cit260.sweetEscape.view;
 
 import byui.cit260.sweetEscape.control.InventoryControl;
 import byui.cit260.sweetEscape.exceptions.InventoryControlException;
-import java.util.Scanner;
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 /**
  *
@@ -24,11 +22,8 @@ public class OpenDoorThreeView extends View {
     double force = Math.round(rand.nextDouble() * 1000);
     double force2 = Math.round(rand.nextDouble() * 10000);
     String[] inputs = new String[4];
-    /*double lbs = Double.parseDouble(inputs[1]); 
-    double guessMass2 = Double.parseDouble(inputs[2]);
-    double guessAccel2 = Double.parseDouble(inputs[3]);
-    double mass2 = lbs/2.2;*/
 
+    @Override
     public String[] getInputs() {
         
         
@@ -45,86 +40,33 @@ public class OpenDoorThreeView extends View {
         inputs[0] = value;
         
         
-        
-//        value = this.getInput(
-//                "The padlock is broken, but there is still " + force2 + " \n" 
-//              + "newtons of force needed to open the door.  Determine how much \n"
-//              + "acceleration is needed to kick open the door based on the mass\n"
-//              + "of your body and the amount of force needed to open the door.\n\n"
-//              + "First enter your weight in pounds:\n");
-//        
-//        //lbs
-//        inputs[1] = value;
-//        
-//        value = this.getInput (
-//                "Enter the mass of your body in kilograms. \n\n"
-//               +"The ratio of lbs to kg is 1 kg = 2.22 lbs\n");
-//        
-//        //mass
-//        inputs[2] = value;
-//        
-//        
-//        value = this.getInput (
-//                "Using the same formula used to break the lock \n"
-//              + "(force = mass * accleration), and the mass of your body, now \n"
-//              + "find the acceleration needed to kick the door open.\n");
-//        
-//        //guessMass2
-//        inputs[3] = value;
-        
         return inputs;
     }
     
     
     
+    @Override
     public boolean doAction(String[] inputs) {
         
         double guessAccel = Double.parseDouble(inputs[0]);
-        double lbs = Double.parseDouble(inputs[1]); 
-        /*double guessMass2 = Double.parseDouble(inputs[2]);
-        double guessAccel2 = Double.parseDouble(inputs[3]);
-        double mass2 = lbs/2.2;*/
+       
         try {
             InventoryControl.pickLock(mass, force, guessAccel); 
-            System.out.println("Way to go you broke the lock!");
+            System.out.println("------------------------------" + 
+                                "Way to go you broke the lock!" +
+                                "The Door's open!" +
+                                "------------------------------");
             return true;
         } catch (InventoryControlException ex) {
             System.out.println(ex.getMessage());
             return false;
         }
         
-        
-       /* boolean valid = false;
-        int guess = Integer.parseInt(inputs[0]);
-        
-        double code = InventoryControl.checkMass(guessMass2, mass2);
-        if (code == 0) {
-            System.out.println("That is correct your mass is " + mass2 + "kg");
-        } 
-        else {
-            System.out.println("Your guess is incorrect! 너 망했어!  Check "
-                    + "your math and try again!");
-            valid = true;
-        }*/
+       
   
     }
 }
     
         
 
-    /*boolean valid = false;
-        double code = InventoryControl.kickDoor(mass, accel2);
-               if (code == -1) {
-                   System.out.println("Try again, your guess is incorrect!");
-               }
-               
-               else if (code == -2) {
-                   System.out.println("Try again, your guess is incorrect!");
-               }
-               else {
-                   System.out.println("Way to go!  The door is now opened!");
-                   valid = true;
-               }
-                
-               return valid;
-}*/
+    
