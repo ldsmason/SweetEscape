@@ -93,11 +93,14 @@ public class InventoryControl implements Serializable {
         for (int i = 0; i < items.length; i++) {
           if (items[i] != null) {
               total++;
+             
+          }
+          else {
+              total = 0;
           }
           
         }
         return total;
+               
     }
-
-   
-}
+}    
