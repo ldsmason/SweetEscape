@@ -36,10 +36,9 @@ class GameMenuView extends View{
                               "-----------------------\n" + 
                               "M - Display Map\n" +
                               "W - Move Player\n"   +     
-                              "I - View Inventory\n" +
                               "T - View list of tools\n" +
-                              "P - Move the player\n"
-                            + "A - Open Door One\n" +
+                              "P - Move the player\n" +
+                              "A - Open Door One\n" +
                               "O - opens the door\n" +
                               "C - opens Door Two\n" +
                               "D - opens Door Three\n" +
@@ -66,12 +65,10 @@ class GameMenuView extends View{
            break;
            case "W" : moveActor();
            break;
-           case "I" : seeInventory();
-           break;
            case "T" : seeTools();
            break;
-//           case "L" : searchInventory();
-//           break;
+           case "L" : searchInventory();
+           break;
            case "P" : movePlayer();
            break;
            case "A" : openDoorOne();
@@ -100,10 +97,6 @@ class GameMenuView extends View{
        return false;
     }
 
-
-    private void seeInventory() {
-        System.out.println("*** seeInventory called ***");
-    }
 
     private void seeTools() {
         ToolMenuView toolMenuView = new ToolMenuView();
@@ -199,11 +192,11 @@ private void openFinalDoor() {
      System.out.println("\nb-----------------------------------------");
     }
 
-//    private void searchInventory() {
-//      SearchItemsView searchItemsView = new SearchItemsView();
-//      
-//      searchItemsView.display();
-//    }
+    private void searchInventory() {
+      SearchItemsView searchItemsView = new SearchItemsView();
+      
+      searchItemsView.display();
+    }
 
     private void moveActor() {
         MoveActorView moveActorView = new MoveActorView();
