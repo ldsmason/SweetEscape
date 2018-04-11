@@ -38,9 +38,8 @@ public class MapControl {
 
         //if items is null OR its length is < 1
         // RETURN null
-        Map map = new Map();
-        map.getRows();
-        map.getColumns();
+        Map map = new Map(noOfRows, noOfColumns);
+        
 
         Location[][] locations = createLocations(noOfRows, noOfColumns);
         map.setLocations(locations);
@@ -317,13 +316,13 @@ public class MapControl {
         Map map = game.getMap();
         Location[][] locations = map.getLocations();
 
-        if (newRow < 1 || newRow > map.getRows()
-                || newColumn < 1 || newColumn > map.getColumns()) {
+        if (newRow < 0 || newRow > map.getRows()
+                || newColumn < 0 || newColumn > map.getColumns()) {
             throw new MapControlException("Row or column cannot be less then one and must be on the map");
         }
 
-        double currentRow = actor.getCoordinates().getX();
-        double currentColumn = actor.getCoordinates().getY();
+       double currentRow = actor.getCoordinates().getX();
+       double currentColumn = actor.getCoordinates().getY();
 
         Point startingLocation = actor.getCoordinates();
         Point endingLocation = new Point(newRow, newColumn);

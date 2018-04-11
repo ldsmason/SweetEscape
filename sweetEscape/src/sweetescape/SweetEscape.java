@@ -105,19 +105,23 @@ public class SweetEscape implements Serializable{
                if(SweetEscape.outFile != null)
                SweetEscape.outFile.close();
                
-                if(input != null) {
+               
+                   
+          } catch (IOException ex) {
+              System.out.println("Error closing the file");
+              return;
+          } 
+          try {
+               if(input != null) {
                    input.close();
                }
                
                if(output != null) {
                    output.close();
                }
-                   
-          } catch (IOException ex) {
-              System.out.println("Error closing the file");
-              return;
-          } 
-          
+          } catch (IOException ioe2) {
+              System.console().printf("%s%s", "Error closing input/output files");
+          }
              
               
           

@@ -58,11 +58,11 @@ public class OpenDoorTwoView extends View {
         
         try {
             InventoryControl.calcLiters(lbs, guess);
-            System.out.println("The door's open!  Let's go!");
+            this.console.println("The door's open!  Let's go!");
             return true;
             
         } catch (InventoryControlException ex) {
-            System.out.println(ex.getMessage());
+            ErrorView.display(this.getClass().getName(),ex.getMessage());
             return false;
         }
         

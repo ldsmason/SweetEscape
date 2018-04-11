@@ -25,13 +25,11 @@ public class Map implements Serializable {
     public Map() {
     }
 
-    public Map(Point point, int rows, int columns, boolean visited, double amountRemaining, Location playerLoc) {
-        this.point = point;
+    public Map(int rows, int columns ) {
+        
         this.rows = rows;
         this.columns = columns;
-        Map.visited = visited;
-        this.amountRemaining = amountRemaining;
-        this.playerLoc = playerLoc;
+        
     }
 
     public Point getPoint() {
