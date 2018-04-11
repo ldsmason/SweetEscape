@@ -12,6 +12,7 @@ import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
 /**
  *
  * @author chadh
@@ -24,8 +25,8 @@ public class OpenDoorThreeView extends View {
     double force = Math.round(rand.nextDouble() * 1000);
     double force2 = Math.round(rand.nextDouble() * 10000);
     String[] inputs = new String[4];
-    
 
+    
     public String[] getInputs() {
         
         
@@ -42,7 +43,7 @@ public class OpenDoorThreeView extends View {
         inputs[0] = value;
         
         
-        
+
 
         return inputs;
     }
@@ -52,10 +53,7 @@ public class OpenDoorThreeView extends View {
     public boolean doAction(String[] inputs) {
         
         double guessAccel = Double.parseDouble(inputs[0]);
-        double lbs = Double.parseDouble(inputs[1]); 
-        /*double guessMass2 = Double.parseDouble(inputs[2]);
-        double guessAccel2 = Double.parseDouble(inputs[3]);
-        double mass2 = lbs/2.2;*/
+       
         try {
             InventoryControl.pickLock(mass, force, guessAccel); 
             this.console.println("Way to go you broke the lock!");
@@ -64,8 +62,8 @@ public class OpenDoorThreeView extends View {
             System.out.println(ex.getMessage());
             return false;
         }
-        
-        
+
+  
   
   
     }
