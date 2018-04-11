@@ -60,7 +60,14 @@ class ToolMenuView  extends View{
            break;
            case "S" : sand();
            break;
-           case "F" : findTotal();
+           case "F" : {
+          try {
+              findTotal();
+          } catch (InventoryControlException ex) {
+              System.out.println(ex.getMessage());
+              return false;
+          }
+      }
            break;
            case "Q" : return true;
            default : this.console.println("Invalid menu item"); 
@@ -90,9 +97,9 @@ class ToolMenuView  extends View{
        this.console.println("It's just some sand!");
     }
    
-    private void findTotal() {
-        InventoryControl inventory = new InventoryControl();
-            System.out.println("The total is " + inventory.findTotal( SweetEscape.getCurrentGame().getInventory()));
+    private void findTotal() throws InventoryControlException {
+        InventoryControl ic = new InventoryControl();
+        System.out.println("The total is " + ic.findTotal(SweetEscape.getCurrentGame().getInventory()));
 
     }
 

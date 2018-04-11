@@ -24,7 +24,7 @@ public class OpenDoorThreeView extends View {
     double force2 = Math.round(rand.nextDouble() * 10000);
     String[] inputs = new String[4];
 
-    
+
     public String[] getInputs() {
         
         
@@ -41,13 +41,12 @@ public class OpenDoorThreeView extends View {
         inputs[0] = value;
         
         
-
-
         return inputs;
     }
     
     
     
+    @Override
     public boolean doAction(String[] inputs) {
         
         double guessAccel = Double.parseDouble(inputs[0]);
@@ -55,11 +54,17 @@ public class OpenDoorThreeView extends View {
         try {
             InventoryControl.pickLock(mass, force, guessAccel); 
             this.console.println("Way to go you broke the lock!");
+
+            System.out.println("------------------------------" + 
+                                "Way to go you broke the lock!" +
+                                "The Door's open!" +
+                                "------------------------------");
             return true;
         } catch (InventoryControlException ex) {
             System.out.println(ex.getMessage());
             return false;
         }
+
 
   
   
@@ -69,4 +74,4 @@ public class OpenDoorThreeView extends View {
     
         
 
- 
+

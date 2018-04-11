@@ -38,7 +38,8 @@ class GameMenuView extends View{
                               "W - Move Player\n"   +     
                               "I - View Inventory\n" +
                               "T - View list of tools\n" +
-                              "P - Move the player\n" +
+                              "P - Move the player\n"
+                            + "A - Open Door One\n" +
                               "O - opens the door\n" +
                               "C - opens Door Two\n" +
                               "D - opens Door Three\n" +
@@ -75,6 +76,7 @@ class GameMenuView extends View{
            break;
            case "A" : openDoorOne();
            break;
+          
            case "O" : openDoor();
            break;
            case "C" : openDoorTwo();
@@ -136,11 +138,10 @@ class GameMenuView extends View{
     }
 
 
-    private void saveGame() {
-      SaveGameView saveGameView = new SaveGameView();
-      
-      saveGameView.display();
-    }
+  private void saveGame() {
+    SaveGameView saveGameView = new SaveGameView();
+    saveGameView.display();
+  }
 
     private void getHelp() {
       HelpMenuView helpMenuView = new HelpMenuView();

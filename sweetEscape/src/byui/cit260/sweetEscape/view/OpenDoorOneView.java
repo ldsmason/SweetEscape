@@ -16,31 +16,6 @@ public class OpenDoorOneView extends View {
     public OpenDoorOneView() {
     }
     
-    
-    public String[] getInputs() {
-    String[] inputs = new String[0];
-    String menuItem = this.getInput("========================================\n"
-            + "You see a door at the end of the hall,\n"
-            + "would you like to open it?\n"
-            + "Yes (Y) or No (N) ?\n"
-            + "========================================");
-    
-            inputs[0] = menuItem;
-            return inputs;
-    }
-    
-    public boolean doAction(String[]inputs) {
-        String menuItem=inputs[0];
-        menuItem = inputs[0].toUpperCase();
-        
-        switch (menuItem) {
-            case "Y" : openDoorOne();
-            break;
-            case "N" : System.out.println("You do not open the door.");
-            break;
-        }
-        return false;
-    }
 
     private void openDoorOne() {
         Door doors = new Door();
@@ -49,4 +24,35 @@ public class OpenDoorOneView extends View {
         System.out.println("***openDoorOne called***");
         
     }
+
+    @Override
+    public String[] getInputs() {
+    String[] inputs = new String[1];
+    String menuItem = this.getInput("========================================\n"
+            + "You see a door at the end of the room,\n"
+            + "would you like to open it?\n"
+            + "Yes (Y) or No (N) ?\n"
+            + "========================================");
+    
+            inputs[0] = menuItem;
+            return inputs;
+    }
+    
+    @Override
+    public boolean doAction(String[]inputs) {
+        String menuItem=inputs[0];
+        menuItem = inputs[0].toUpperCase();
+        
+        switch (menuItem) {
+            case "Y" : this.console.println("You open the door and enter\n"
+                                        + "the hallway."); 
+            return true;
+            case "N" : System.out.println("You do not open the door.");
+            return false;
+            default : System.out.println("Invalid menu item");
+        }
+        return false;
+    }
+
+
 }
