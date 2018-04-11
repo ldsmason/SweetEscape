@@ -96,7 +96,7 @@ public class InventoryControl implements Serializable {
              
           }
           else {
-              total = 0;
+              total += 0;
           }
           
         }
