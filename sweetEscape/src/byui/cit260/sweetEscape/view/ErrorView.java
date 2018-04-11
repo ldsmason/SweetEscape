@@ -16,7 +16,7 @@ public class ErrorView {
     private static PrintWriter console = SweetEscape.getOutput();
      private static PrintWriter log = SweetEscape.getLogFile();
      
-     private static void display(String className, String errorMessage) {
+     public static void display(String className, String errorMessage) {
          console.println(
          "\n ----- ERROR -----------------------------------------------------"
        + "\n" + errorMessage +

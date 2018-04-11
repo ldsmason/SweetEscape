@@ -44,7 +44,7 @@ class OpenDoorView extends View {
         RegularSceneType scene = location.getScene();
         if(scene instanceof DoorScene) {
              DoorScene doorScene = (DoorScene) scene;
-             System.out.println(doorScene.getKeyPad());
+             this.console.println(doorScene.getKeyPad());
         }
        
         String value = this.getInput("Enter the four digit code");
@@ -80,7 +80,7 @@ class OpenDoorView extends View {
             return false;
         }
 
-        System.out.println(
+        this.console.println(
                 "=========================================="
                 + "\nYou just opened the door!"
                 + "\n==========================================");
