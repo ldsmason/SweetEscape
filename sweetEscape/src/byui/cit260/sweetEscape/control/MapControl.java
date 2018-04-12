@@ -17,8 +17,8 @@ import byui.cit260.sweetEscape.model.QuestionSceneType;
 import byui.cit260.sweetEscape.model.RegularSceneType;
 import byui.cit260.sweetEscape.model.RoomScene;
 import byui.cit260.sweetEscape.model.SceneType;
-import byui.cit260.sweetEscape.view.RoomFourView;
-import byui.cit260.sweetEscape.view.RoomThreeView;
+//import byui.cit260.sweetEscape.view.RoomFourView;
+//import byui.cit260.sweetEscape.view.RoomThreeView;
 import java.awt.Point;
 import java.util.ArrayList;
 import sweetescape.SweetEscape;
@@ -138,14 +138,14 @@ public class MapControl {
 
         RoomScene roomScene3 = new RoomScene();
         ArrayList<Inventory> resources3 = new ArrayList<>();
-        RoomThreeView roomThree = new RoomThreeView();
+        //RoomThreeView roomThree = new RoomThreeView();
         resources3.add(Inventory.RedKey);
         resources3.add(Inventory.DriftPin);
         resources3.add(Inventory.LockPick);
 
         RoomScene roomScene4 = new RoomScene();
         ArrayList<Inventory> resources4 = new ArrayList<>();
-        RoomFourView roomFour = new RoomFourView();
+       //RoomFourView roomFour = new RoomFourView();
         resources4.add(Inventory.GreenKey);
 
         scenes[SceneType.roomOne.ordinal()] = roomScene1;
@@ -407,3 +407,4 @@ public class MapControl {
     }
 
 }
+
