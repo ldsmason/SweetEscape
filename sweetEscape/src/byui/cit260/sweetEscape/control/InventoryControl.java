@@ -87,18 +87,24 @@ public class InventoryControl implements Serializable {
     }
     
 
-    public double findTotal(Item[] items) throws InventoryControlException {
-        double total = 0;
-        for (Item item : items) {
+    public int findTotal() throws InventoryControlException {
+       
+        int total = 0;
+
+        Item i = new Item();
+        
+        for (String item : i.items) {
             if (item != null) {
                 total++;
-                return total;
+                
+                System.out.println(total);
             }     
+          
+        }
+        if(total != 0)
+        return total;
+        else
+        throw new InventoryControlException("There are no items in your inventory");
 
-        
-         
-
-    }
-      throw new InventoryControlException("There are no items in your inventory");
-}  
+    }  
 }
