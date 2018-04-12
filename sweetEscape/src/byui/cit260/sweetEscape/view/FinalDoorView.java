@@ -50,7 +50,9 @@ class FinalDoorView extends View {
         String[] inputs = new String[3];
 
         this.console.println("Welcome to the Final Door\n" +
-                             "To put please enter the coorect order of keys. Ex: R, B, G" );
+                             "To open please enter the coorect order of keys. Ex: R, B, G" );
+        
+        
 
 
         String doorKey = this.getInput("Enter the first key: ").toUpperCase();

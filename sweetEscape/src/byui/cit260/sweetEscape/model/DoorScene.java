@@ -28,9 +28,6 @@ public class DoorScene extends RegularSceneType{
     public void setKeyPad(String keyPad) {
         this.keyPad = keyPad;
     }
-    
-    
-    
-    
+      
     
 }

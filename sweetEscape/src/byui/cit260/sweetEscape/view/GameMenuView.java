@@ -44,6 +44,8 @@ class GameMenuView extends View{
                               "C - opens Door Two\n" +
                               "D - opens Door Three\n" +
                               "F - open the final door\n" +
+                              "K - print report \n" +
+                              "R - Room Two explore\n" +
                               "E - Exit game menus\n" +
                               "S - Save Game\n" +
                               "H - Help\n" +
@@ -76,7 +78,8 @@ class GameMenuView extends View{
            break;
            case "A" : openDoorOne();
            break;
-          
+           case "K" : printReport();
+           break;
            case "O" : openDoor();
            break;
            case "C" : openDoorTwo();
@@ -91,7 +94,7 @@ class GameMenuView extends View{
            break;
            case "H" : getHelp();
            break;
-           case "X" : explaoreLocation();
+           case "R" : explaoreLocation();
            break;
            case "E" : return true;
            default : System.out.println("Invalid menu item"); 
@@ -150,7 +153,9 @@ class GameMenuView extends View{
     }
 
     private void explaoreLocation() {
-        System.out.println("*** exploreLocation called ***");
+      RoomTwoView roomTwoView = new RoomTwoView();
+      
+      roomTwoView.display();
     }
 
     private void openDoorThree() {
@@ -213,6 +218,11 @@ private void openFinalDoor() {
     private void openDoorOne() {
         OpenDoorOneView openDoorOneView = new OpenDoorOneView();
         openDoorOneView.display();
+    }
+
+    private void printReport() {
+        PrintReportView printReportView = new PrintReportView();
+        printReportView.display();
     }
 
    

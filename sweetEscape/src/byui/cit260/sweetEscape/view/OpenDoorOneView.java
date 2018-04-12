@@ -17,13 +17,13 @@ public class OpenDoorOneView extends View {
     }
     
 
-    private void openDoorOne() {
+/*    private void openDoorOne() {
         Door doors = new Door();
         OpenDoorOneView openDoorOneView = new OpenDoorOneView();
         openDoorOneView.display();
         System.out.println("***openDoorOne called***");
         
-    }
+    }*/
 
     @Override
     public String[] getInputs() {
@@ -40,7 +40,7 @@ public class OpenDoorOneView extends View {
     
     @Override
     public boolean doAction(String[]inputs) {
-        String menuItem=inputs[0];
+        String menuItem = inputs[0];
         menuItem = inputs[0].toUpperCase();
         
         switch (menuItem) {
