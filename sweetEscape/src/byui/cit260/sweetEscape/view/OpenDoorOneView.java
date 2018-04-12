@@ -16,7 +16,7 @@ public class OpenDoorOneView extends View {
     public OpenDoorOneView() {
     }
     
-    
+
     @Override
     public String[] getInputs() {
     String[] inputs = new String[1];
@@ -45,5 +45,6 @@ public class OpenDoorOneView extends View {
         }
         return false;
     }
+
 
 }

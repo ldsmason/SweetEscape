@@ -51,7 +51,7 @@ public class MainMenuView extends View {
            case "H" : getHelp();
            break;
            case "E" : return true;
-           default : System.out.println("Invalid menu item"); 
+           default :  this.console.println("Invalid menu item"); 
            
 
     }
@@ -82,7 +82,7 @@ public class MainMenuView extends View {
 
     private void restartGame() {
          StartExistingGameView  startExistingGameView = new StartExistingGameView();
-         startExistingGameView.displayStartExistingGameView();
+         startExistingGameView.display();
     }
 
     private void getHelp() {

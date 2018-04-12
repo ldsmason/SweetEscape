@@ -14,6 +14,7 @@ public enum SceneType {
     blank,
     door,
     door2,
+    door5,
     room,
     roomOne,
     roomTwo,

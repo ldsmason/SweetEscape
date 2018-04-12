@@ -4,7 +4,14 @@
  * and open the template in the editor.
  */
 package byui.cit260.sweetEscape.control;
+import byui.cit260.sweetEscape.exceptions.GameControlException;
 import byui.cit260.sweetEscape.model.*;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 //import byui.cit260.sweetEscape.control.*;
 import sweetescape.SweetEscape;
 
@@ -56,8 +63,19 @@ public class GameControl  {
     return 1;
   }
     
-public static void saveGame(Game game, String filePath) {
-    System.out.println("saveGame() in GameControl class");
+public static void saveGame(Game game, String filePath) throws GameControlException, IOException {
+   if(game == null || filePath.length() < 1) {
+       throw new GameControlException("game was inavild");
+   }
+   
+   try (FileOutputStream out = new FileOutputStream(filePath)){
+       try (ObjectOutputStream outObject = new ObjectOutputStream(out)) {
+           outObject.writeObject(game);
+       }
+   }
+   catch (IOException ex) {
+       System.out.println("I/O Error: " + ex.getMessage());
+   }
 }
     
    public static Door getCurrentDoor(){
@@ -75,4 +93,25 @@ public static void saveGame(Game game, String filePath) {
        
        return door;
    }
+
+    public static void getGame(String filePath) throws GameControlException, IOException {
+        Game game = null;
+        
+        if (filePath == null){
+            throw new GameControlException("File cannot be null");
+        }
+        
+        try(FileInputStream in = new FileInputStream(filePath)) {
+            try (ObjectInputStream inObject = new ObjectInputStream(in)) {
+                game = (Game) inObject.readObject();
+                SweetEscape.setCurrentGame(game);
+                SweetEscape.setPlayer(game.getPlayer());
+            }
+            catch (ClassNotFoundException ex) {
+                System.out.println("Could not load game");
+            }
+        } catch (IOException ex) {
+            System.out.println("I/O Error: " + ex.getMessage());
+        }
+    }
 }

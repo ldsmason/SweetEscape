@@ -49,7 +49,8 @@ class FinalDoorView extends View {
     public String[] getInputs() {
         String[] inputs = new String[3];
 
-        System.out.println("Welcome to the Final Door\n");
+        this.console.println("Welcome to the Final Door\n" +
+                             "To put please enter the coorect order of keys. Ex: R, B, G" );
 
 
         String doorKey = this.getInput("Enter the first key: ").toUpperCase();
@@ -76,7 +77,7 @@ class FinalDoorView extends View {
             && inputs[2].equals(this.randomLetters[2]) ) {
             
             // print out you win
-            System.out.println("The door unlocks and you have escaped\n"
+           this.console.println("The door unlocks and you have escaped\n"
                                + "Congratulations you win!");
             return true;
         }
@@ -85,7 +86,7 @@ class FinalDoorView extends View {
             && !inputs[2].equals(this.randomLetters[2]) ){
              
             // print you did not win try again
-            System.out.println("Try again.\n" +
+            ErrorView.display(this.getClass().getName(),"Try again.\n" +
                                "You entered the keys in the wrong order\n");
             
             return false;

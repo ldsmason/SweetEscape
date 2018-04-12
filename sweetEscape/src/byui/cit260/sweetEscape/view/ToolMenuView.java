@@ -7,7 +7,6 @@ package byui.cit260.sweetEscape.view;
 
 import byui.cit260.sweetEscape.control.InventoryControl;
 import byui.cit260.sweetEscape.exceptions.InventoryControlException;
-import byui.cit260.sweetEscape.model.Item;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -61,10 +60,18 @@ class ToolMenuView  extends View{
            break;
            case "S" : sand();
            break;
-//           case "F" : findTotal();
+//           case "F" : {
+//           try {
+//             InventoryControl ic = new InventoryControl();
+//             System.out.println("The total is " + ic.findTotal(SweetEscape.getCurrentGame().getInventory()));
+//          }
+//           catch (InventoryControlException ex) {
+//              System.out.println(ex.getMessage());
+//          }
+//      }
 //           break;
            case "Q" : return true;
-           default : System.out.println("Invalid menu item"); 
+           default : this.console.println("Invalid menu item"); 
            
 
         }

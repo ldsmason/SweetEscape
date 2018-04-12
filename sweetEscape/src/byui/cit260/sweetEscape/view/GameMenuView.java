@@ -73,6 +73,7 @@ class GameMenuView extends View{
            break;
            case "A" : openDoorOne();
            break;
+          
            case "O" : openDoor();
            break;
            case "C" : openDoorTwo();
@@ -83,8 +84,8 @@ class GameMenuView extends View{
            break;
            case "Q" : quitGame();
            break;
-//           case "S" : saveGame();
-//           break;
+           case "S" : saveGame();
+           break;
            case "H" : getHelp();
            break;
            case "X" : explaoreLocation();
@@ -113,7 +114,7 @@ class GameMenuView extends View{
       OpenDoorView openDoorView = new OpenDoorView();
       
       openDoorView.display();
-      System.out.println("*** openDoor called ***");
+     
     }
     
     private void openDoorTwo() {
@@ -122,7 +123,7 @@ class GameMenuView extends View{
       OpenDoorTwoView openDoorTwoView = new OpenDoorTwoView();
       
       openDoorTwoView.display();
-      System.out.println("*** openDoorTwo called ***");
+      
     }
 
     private void quitGame() {
@@ -130,11 +131,10 @@ class GameMenuView extends View{
     }
 
 
-//    private void saveGame() {
-//      SaveGameView saveGameView = new SaveGameView();
-//      
-//      saveGameView.display();
-//    }
+  private void saveGame() {
+    SaveGameView saveGameView = new SaveGameView();
+    saveGameView.display();
+  }
 
     private void getHelp() {
       HelpMenuView helpMenuView = new HelpMenuView();
@@ -163,15 +163,15 @@ private void openFinalDoor() {
      Game game = SweetEscape.getCurrentGame();
     // Location[][] locations = new Location[12][12];   
   
-     System.out.println("Sweet Escape Map\n");
-     System.out.println("   1  2  3  4  5  6  7  8  9  10  11  12\n" +
+    this.console.println("Sweet Escape Map\n");
+     this.console.println("   1  2  3  4  5  6  7  8  9  10  11  12\n" +
                         "-----------------------------------------");
      
      Location[][] locations = game.getMap().getLocations();
      int num = 1;
      for (int i = 0; i < locations.length; i++) {
-         System.out.println();
-         System.out.print(num++ + "|");
+          this.console.println();
+          this.console.print(num++ + "|");
          
           for (int j = 0; j < locations[i].length; j++) {
               Location location = locations[i][j];
@@ -180,23 +180,22 @@ private void openFinalDoor() {
                   System.out.print(mapSymbol);
               }
               else {
-                  System.out.print("??");
+                  this.console.print("??");
               }
-              System.out.print("|");
+              this.console.print("|");
               
          
           }
           
           
       }
-     System.out.println("\nb-----------------------------------------");
+     this.console.println("\n-----------------------------------------");
     }
 
-    private void searchInventory() {
-      SearchItemsView searchItemsView = new SearchItemsView();
-      
-      searchItemsView.display();
-    }
+   private void searchInventory() {
+    SearchItemsView searchItemsView = new SearchItemsView();
+    searchItemsView.display();
+   }
 
     private void moveActor() {
         MoveActorView moveActorView = new MoveActorView();

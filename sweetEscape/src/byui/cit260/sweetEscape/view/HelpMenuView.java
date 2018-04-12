@@ -49,7 +49,7 @@ class HelpMenuView extends View {
            break;
            case "T" : tools();
            case "Q" : return true;
-           default : System.out.println("Invalid menu item"); 
+           default : this.console.println("Invalid menu item"); 
            
 
     }
