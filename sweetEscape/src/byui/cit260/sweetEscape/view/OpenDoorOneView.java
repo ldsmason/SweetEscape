@@ -17,14 +17,6 @@ public class OpenDoorOneView extends View {
     }
     
 
-/*    private void openDoorOne() {
-        Door doors = new Door();
-        OpenDoorOneView openDoorOneView = new OpenDoorOneView();
-        openDoorOneView.display();
-        System.out.println("***openDoorOne called***");
-        
-    }*/
-
     @Override
     public String[] getInputs() {
     String[] inputs = new String[1];

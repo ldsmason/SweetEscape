@@ -14,4 +14,13 @@ public class Item {
     public Item() {
     }
     
+    
+    public String [] items = {
+        "Hammer",
+        "Drift Pin",
+        "Two Liter Bottle",
+        "Sand",
+        "Blue Key",
+        "Red Key",
+        "Green Key"};
 }

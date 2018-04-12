@@ -17,6 +17,8 @@ import byui.cit260.sweetEscape.model.QuestionSceneType;
 import byui.cit260.sweetEscape.model.RegularSceneType;
 import byui.cit260.sweetEscape.model.RoomScene;
 import byui.cit260.sweetEscape.model.SceneType;
+import byui.cit260.sweetEscape.view.RoomFourView;
+import byui.cit260.sweetEscape.view.RoomThreeView;
 import java.awt.Point;
 import java.util.ArrayList;
 import sweetescape.SweetEscape;
@@ -136,12 +138,14 @@ public class MapControl {
 
         RoomScene roomScene3 = new RoomScene();
         ArrayList<Inventory> resources3 = new ArrayList<>();
+        RoomThreeView roomThree = new RoomThreeView();
         resources3.add(Inventory.RedKey);
         resources3.add(Inventory.DriftPin);
         resources3.add(Inventory.LockPick);
 
         RoomScene roomScene4 = new RoomScene();
         ArrayList<Inventory> resources4 = new ArrayList<>();
+        RoomFourView roomFour = new RoomFourView();
         resources4.add(Inventory.GreenKey);
 
         scenes[SceneType.roomOne.ordinal()] = roomScene1;
@@ -271,9 +275,9 @@ public class MapControl {
         locations[8][10].setScene(scenes[SceneType.wall.ordinal()]);
         locations[8][11].setScene(scenes[SceneType.wall.ordinal()]);
 
-        locations[9][0].setScene(scenes[SceneType.room.ordinal()]);
-        locations[9][1].setScene(scenes[SceneType.room.ordinal()]);
-        locations[9][2].setScene(scenes[SceneType.room.ordinal()]);
+        locations[9][0].setScene(scenes[SceneType.roomFour.ordinal()]);
+        locations[9][1].setScene(scenes[SceneType.roomFour.ordinal()]);
+        locations[9][2].setScene(scenes[SceneType.roomFour.ordinal()]);
         locations[9][3].setScene(scenes[SceneType.wall.ordinal()]);
         locations[9][4].setScene(scenes[SceneType.wall.ordinal()]);
         locations[9][5].setScene(scenes[SceneType.wall.ordinal()]);
@@ -284,9 +288,9 @@ public class MapControl {
         locations[9][10].setScene(scenes[SceneType.blank.ordinal()]);
         locations[9][11].setScene(scenes[SceneType.wall.ordinal()]);
 
-        locations[10][0].setScene(scenes[SceneType.room.ordinal()]);
-        locations[10][1].setScene(scenes[SceneType.room.ordinal()]);
-        locations[10][2].setScene(scenes[SceneType.room.ordinal()]);
+        locations[10][0].setScene(scenes[SceneType.roomFour.ordinal()]);
+        locations[10][1].setScene(scenes[SceneType.roomFour.ordinal()]);
+        locations[10][2].setScene(scenes[SceneType.roomFour.ordinal()]);
         locations[10][3].setScene(scenes[SceneType.wall.ordinal()]);
         locations[10][4].setScene(scenes[SceneType.wall.ordinal()]);
         locations[10][5].setScene(scenes[SceneType.wall.ordinal()]);
@@ -297,9 +301,9 @@ public class MapControl {
         locations[10][10].setScene(scenes[SceneType.blank.ordinal()]);
         locations[10][11].setScene(scenes[SceneType.wall.ordinal()]);
 
-        locations[11][0].setScene(scenes[SceneType.room.ordinal()]);
-        locations[11][1].setScene(scenes[SceneType.room.ordinal()]);
-        locations[11][2].setScene(scenes[SceneType.room.ordinal()]);
+        locations[11][0].setScene(scenes[SceneType.roomFour.ordinal()]);
+        locations[11][1].setScene(scenes[SceneType.roomFour.ordinal()]);
+        locations[11][2].setScene(scenes[SceneType.roomFour.ordinal()]);
         locations[11][3].setScene(scenes[SceneType.wall.ordinal()]);
         locations[11][4].setScene(scenes[SceneType.wall.ordinal()]);
         locations[11][5].setScene(scenes[SceneType.wall.ordinal()]);

@@ -71,8 +71,7 @@ public class MoveActorView extends View{
             OpenDoorView openDoorView = new OpenDoorView();
             openDoorView.display();
             
-            //FinalDoorView finalDoorView = new FinalDoorView();
-            //finalDoorView.display();
+
         }
         else if(scene instanceof RoomScene) {
             
