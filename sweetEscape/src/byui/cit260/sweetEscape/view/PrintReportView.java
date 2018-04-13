@@ -21,7 +21,7 @@ public class PrintReportView extends View {
        String[] inputs = new String[1];
        String mainInput = this.getInput("Type the path where you would like to save the game\n"
                                           + "Example C:/Users/tmp/save.dat"
-                                          + "\n or Q - to go back"
+                                          + "\n or Q - to go back\n"
                                           + "Enter the with the file name to save your current game ");
        
        inputs[0] = mainInput;
@@ -53,7 +53,7 @@ public class PrintReportView extends View {
                out.println(inventory.getItemName() + "    " + inventory.getItemDescription());
                out.println();
            }
-           this.console.println("Report wa printed successfully and saved to: " + filePath);
+           this.console.println("Report was printed successfully and saved to: " + filePath);
        } catch (FileNotFoundException ex) {
            ErrorView.display(this.getClass().getName(), ex.getMessage());
        }

@@ -102,9 +102,9 @@ public class MapControl {
                     + "| 7 | 8 | 9 |\n"
                     + "    | 0 |    \n"
                     + "-------------\n"
-                    + "=================================================\n");
+                    + "=================================================\n", 2);
         
-         DoorScene door5 = new DoorScene("This the final door",0,0,"|D|","");
+        DoorScene door5 = new DoorScene("This the final door",0,0,"|D|","", 5);
 
         scenes[SceneType.start.ordinal()] = start;
         scenes[SceneType.door.ordinal()] = door;

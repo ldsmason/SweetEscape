@@ -30,7 +30,7 @@ public class StartExistingGameView extends View{
         
         String mainInput = this.getInput("Type the name of the save game path you used to open the file"
         + "Example C:/Users/tmp/save.dat"
-        + "\n or Q - to go back"
+        + "\n or Q - to go back\n"
         + "\n==================================================\n"
         + "Enter the full file path for your save: ");
        

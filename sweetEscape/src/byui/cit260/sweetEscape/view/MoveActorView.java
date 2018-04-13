@@ -68,9 +68,9 @@ public class MoveActorView extends View{
         }
         RegularSceneType scene = newLocation.getScene();
         if(scene instanceof DoorScene) {
+            
             OpenDoorView openDoorView = new OpenDoorView();
             openDoorView.display();
-            
 
         }
         else if(scene instanceof RoomScene) {

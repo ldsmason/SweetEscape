@@ -34,7 +34,7 @@ public class RoomTwoView extends View {
     
        if (value.equals("Y")) {
           ArrayList<Inventory> itemsFound = new ArrayList<>();     
-          itemsFound.add(Inventory.RedKey);
+          itemsFound.add(Inventory.BlueKey);
           itemsFound.add(Inventory.Hammer);
        }
        else {

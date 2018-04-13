@@ -37,14 +37,15 @@ class GameMenuView extends View{
                               "M - Display Map\n" +
                               "W - Move Player\n"   +     
                               "T - View list of tools\n" +
-                              "P - Move the player\n" +
                               "A - Open Door One\n" +
                               "O - opens the door\n" +
+                              "L - Seasrch Inventory\n" +
                               "C - opens Door Two\n" +
                               "D - opens Door Three\n" +
                               "F - open the final door\n" +
-                              "K - print report \n" +
+                              "P - print report \n" +
                               "R - Room Two explore\n" +
+                              "X - Room One explore\n" +
                               "E - Exit game menus\n" +
                               "S - Save Game\n" +
                               "H - Help\n" +
@@ -71,11 +72,9 @@ class GameMenuView extends View{
            break;
            case "L" : searchInventory();
            break;
-           case "P" : movePlayer();
-           break;
            case "A" : openDoorOne();
            break;
-           case "K" : printReport();
+           case "P" : printReport();
            break;
            case "O" : openDoor();
            break;
@@ -85,13 +84,13 @@ class GameMenuView extends View{
            break;
            case "F" : openFinalDoor();
            break;
-           case "Q" : quitGame();
-           break;
            case "S" : saveGame();
            break;
            case "H" : getHelp();
            break;
            case "R" : explaoreLocation();
+           break;
+           case "X" : exploreRoomOne();
            break;
            case "E" : return true;
            default : System.out.println("Invalid menu item"); 
@@ -107,9 +106,6 @@ class GameMenuView extends View{
         toolMenuView.display();
     }
     
-     private void movePlayer() {
-        System.out.println("*** movePlayer called ***");
-    }
     
     private void openDoor() {
       Door doors = new Door();
@@ -127,10 +123,6 @@ class GameMenuView extends View{
       
       openDoorTwoView.display();
       
-    }
-
-    private void quitGame() {
-           System.out.println("*** quitGame called ***");
     }
 
 
@@ -216,6 +208,12 @@ private void openFinalDoor() {
     private void printReport() {
         PrintReportView printReportView = new PrintReportView();
         printReportView.display();
+    }
+
+    private void exploreRoomOne() {
+        RoomOneView roomOneView = new RoomOneView();
+      
+      roomOneView.display();
     }
 
    

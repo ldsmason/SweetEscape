@@ -15,7 +15,6 @@ public class Door implements Serializable {
     private double openDoor;
     private double unableToOpen;
     private int doorNumber;
-    double price = 40;
     String description;
     String promptmessage;
    
@@ -45,14 +44,6 @@ public class Door implements Serializable {
 
     public void setDoorNumber(int doorNumber) {
         this.doorNumber = doorNumber;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     public String getDescription() {

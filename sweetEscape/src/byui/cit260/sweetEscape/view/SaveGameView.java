@@ -23,7 +23,7 @@ public class SaveGameView extends View{
         
         String mainInput = this.getInput("Type the path where you would like to save the game\n"
                                           + "Example C:/Users/tmp/save.dat"
-                                          + "\n or Q - to go back"
+                                          + "\n or Q - to go back\n"
                                           + "Enter the with the file name to save your current game ");
        
         inputs[0] = mainInput;

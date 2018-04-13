@@ -12,11 +12,12 @@ package byui.cit260.sweetEscape.model;
 public class DoorScene extends RegularSceneType{
     
     private String keyPad = "";
+    private int doorNumber;
 
     public DoorScene() {
     }
 
-    public DoorScene(String description, int inspectItem, int invalidLocation, String mapSymbol, String keyPad) {
+    public DoorScene(String description, int inspectItem, int invalidLocation, String mapSymbol, String keyPad, int doorNumber) {
         super(description, inspectItem, invalidLocation, mapSymbol);
         this.keyPad = keyPad;
     }
@@ -27,6 +28,14 @@ public class DoorScene extends RegularSceneType{
 
     public void setKeyPad(String keyPad) {
         this.keyPad = keyPad;
+    }
+
+    public int getDoorNumber() {
+        return doorNumber;
+    }
+
+    public void setDoorNumber(int doorNumber) {
+        this.doorNumber = doorNumber;
     }
       
     

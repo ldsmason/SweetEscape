@@ -35,6 +35,8 @@ class OpenDoorView extends View {
         Random rand = new Random();
         //double num = rand.nextDouble();
         this.num = rand.nextInt(max + 1);
+        
+        
 
         this.getInput("You see written all over the wall the number " + num
                 + "\nYou also see the equation answer = num/2 + 32, code = answer*answer\n");
