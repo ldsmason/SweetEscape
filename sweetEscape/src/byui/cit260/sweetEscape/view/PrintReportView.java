@@ -46,8 +46,8 @@ public class PrintReportView extends View {
        }
        try (PrintWriter out = new PrintWriter(filePath)) {
            out.println("\n\n             Current Inventory              ");
-           out.printf("%n%ls%20s", "Item", "Description");
-           out.printf("%n%ls%20s", "----", "----------");
+           out.printf("%n%s%20s", "Item", "Description");
+           out.printf("%n%s%20s", "----", "----------");
            out.println();
            for (Inventory inventory : allItems) {
                out.println(inventory.getItemName() + "    " + inventory.getItemDescription());

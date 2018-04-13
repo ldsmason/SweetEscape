@@ -74,8 +74,6 @@ public class MapControl {
     }
 
     private static RegularSceneType[] createScenes() {
-        System.out.println("*** createScenes() called ***\n");
-        //return null;
 
         RegularSceneType[] scenes = new RegularSceneType[13];
 
